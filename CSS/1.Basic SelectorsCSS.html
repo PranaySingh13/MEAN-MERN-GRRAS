@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Selectors</title>
+    <style>
+        /*Tag/Element Selector :- The element selector selects HTML elements based on the element name.*/
+        p {
+            font-family: cursive;
+            color: tomato;
+        }
+
+        /*Id Selector :- The id of an element is unique within a page, so the id selector is used to select one unique element!*/
+        #s1 {
+            color: teal;
+        }
+
+        /*Class Selector :- The class selector selects HTML elements with a specific class attribute.*/
+        .c {
+            color: violet;
+        }
+
+        #p1 {
+            color: blue;
+        }
+
+        /* Priority Order :- id>class>tag */
+    </style>
+</head>
+
+<body>
+    <h1 class="c">Class Selectors</h1>
+    <h1>No css/h1>
+    <p>Tag selectors css</p>
+    <span id="s1">Id Selectors css</span>
+    <div class="c">
+        <span>
+            Class Selectors css
+        </span>
+    </div>
+    <div class="c" id="p1">
+        Combinational CSS to check priority css
+    </div>
+</body>
+
+</html>
