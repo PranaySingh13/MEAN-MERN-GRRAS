@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Box Model</title>
+    <style>
+    /*The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.*/
+    div.a{
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        margin: 40px;
+        border: 2px solid black;
+        box-sizing: content-box;
+        color: crimson;
+        background-color:yellow;
+    }
+    div.b{
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        color: crimson;
+        background-color:yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        The CSS Box Model
+    In CSS, the term "box model" is used when talking about design and layout.
+    The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.
+     -->
+
+     <!-- 1. content-box(Default Box) 
+        Default. The width and height properties (and min/max properties) includes only the content. Border and padding are not included
+    -->
+    <div class="a">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio animi blanditiis, eum molestiae error eius similique pariatur in praesentium tempore, beatae quisquam unde dolore veniam natus. Illum aut sunt omnis!</p>
+    </div>
+
+    <!-- 2. border-box (Best Practice to use)
+    The width and height properties (and min/max properties) includes content, padding and border -->
+    <div class="b">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio animi blanditiis, eum molestiae error eius similique pariatur in praesentium tempore, beatae quisquam unde dolore veniam natus. Illum aut sunt omnis!</p>
+    </div>
+
+    <!-- Best Styling Practice for WebPage 
+    style{
+        width:100%;
+        padding: --px;
+        box-sizing: border-box;
+    }
+    
+    Important: 
+    When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add padding, borders and margins.
+
+    The total width of an element should be calculated like this:
+
+    Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+
+    The total height of an element should be calculated like this:
+
+    Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+    
+    -->
+</body>
+</html>
