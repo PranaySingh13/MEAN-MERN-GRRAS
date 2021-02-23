@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+    div.static {
+        position: static;
+        border: 3px solid #73AD21;
+    }
+    div.relative {
+        position: relative;
+        left: 30px;
+        top: 20px;
+        border: 3px solid #73AD21;
+    }
+    div.fixed {
+        position: fixed;
+        background-color: yellow;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        border: 3px solid #73AD21;
+    }
+    div.relativenew {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        top: 30px;
+        margin-bottom: 40px;
+        border: 3px solid #73AD21;
+    } 
+
+    div.absolute {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        height: 100px;
+        border: 3px solid #73AD21;
+    }
+    div.sticky {
+        position: sticky;
+        top: 0px;
+        padding: 5px;
+        background-color: #cae8ca;
+        border: 2px solid #4CAF50;
+    }
+    img {
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+    }
+    </style>
+</head>
+<body>
+    <!-- 
+        The position Property
+        The position property specifies the type of positioning method used for an element.
+
+        There are five different position values:
+
+        static
+        relative
+        fixed
+        absolute
+        sticky
+     -->
+
+     <!-- 1. position: static;
+        HTML elements are positioned static by default.
+        Static positioned elements are not affected by the top, bottom, left, and right properties. -->
+
+        <div class="static">
+            This div element has position: static.
+        </div>
+    <!-- 2. position: relative;
+        An element with position: relative; is positioned relative to its normal position.
+        Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element. -->
+
+        <div class="relative">
+            This div element has position: relative;
+        </div>
+    <!-- 3. position: fixed;
+        An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+        A fixed element does not leave a gap in the page where it would normally have been located.   -->
+
+        <div class="fixed">
+            This div element has position: fixed;
+        </div>
+    <!-- 4. position: absolute;
+        An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+        However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+
+        Note: A "positioned" element is one whose position is anything except static.  -->
+
+        <div class="relativenew">This div element has position: relative;
+            <div class="absolute">This div element has position: absolute;</div>
+        </div>
+    <!-- 5.position: sticky;
+        An element with position: sticky; is positioned based on the user's scroll position.
+        A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). -->
+
+        <div class="sticky">I am sticky!</div>
+
+        <div style="padding-bottom:2000px">
+        <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+        <p>Scroll back up to remove the stickyness.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        </div>
+    
+    <!-- 6. Overlapping Elements
+        When elements are positioned, they can overlap other elements.
+        The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+        An element can have a positive or negative stack order:-->
+
+        <h1>This is a heading</h1>
+        <img src="w3.jpg" width="100" height="140">
+        <p>Because the image has a z-index of -1, it will be placed behind the text.</p>
+</body>
+</html>
