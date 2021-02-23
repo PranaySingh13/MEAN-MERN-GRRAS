@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-element</title>
+    <style>
+        p::first-line {
+            color: blue;
+            background-color: chartreuse;
+            font-family: cursive;
+        }
+
+        h6::first-letter {
+            color: chocolate;
+            font-size: xx-large;
+        }
+
+        h5::first-line {
+            color: blue;
+            background-color: chartreuse;
+            font-family: cursive;
+        }
+
+        h5::first-letter {
+            color: chocolate;
+            font-size: xx-large;
+        }
+
+        h4::before {
+            content: "Before Content Started 1 2 3 ";
+        }
+
+        h3::after {
+            content: "After Content Ended";
+        }
+
+        h2::selection {
+            color: darkblue;
+            background-color: lawngreen;
+        }
+
+        ::marker {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- A CSS pseudo-element is used to style specified parts of an element. -->
+
+    <!-- 1. The ::first-line Pseudo-element
+    The ::first-line pseudo-element is used to add a special style to the first line of a text. -->
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolor accusamus expedita sequi esse delectus,
+        facere voluptas incidunt, quisquam tenetur neque laborum quidem consequatur nulla, unde assumenda. Laudantium,
+        dolorem porro.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolor accusamus expedita sequi esse delectus,
+        facere voluptas incidunt, quisquam tenetur neque laborum quidem consequatur nulla, unde assumenda. Laudantium,
+        dolorem porro.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolor accusamus expedita sequi esse delectus,
+        facere voluptas incidunt, quisquam tenetur neque laborum quidem consequatur nulla, unde assumenda. Laudantium,
+        dolorem porro.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat dolor accusamus expedita sequi esse delectus,
+        facere voluptas incidunt, quisquam tenetur neque laborum quidem consequatur nulla, unde assumenda. Laudantium,
+        dolorem porro.</p>
+
+    <!-- 2. The ::first-letter Pseudo-element
+    The ::first-letter pseudo-element is used to add a special style to the first letter of a text.   -->
+    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vel possimus excepturi voluptatem magnam
+        veritatis. Excepturi eligendi omnis quasi laborum ab et veniam! Accusamus quos odio eos alias pariatur totam.
+    </h6>
+
+    <!-- 3. Multiple Pseudo-elements
+    Several pseudo-elements can also be combined. -->
+    <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, iste incidunt quaerat, ipsa dicta rerum est
+        quam, molestias nulla at explicabo error. Omnis saepe atque vitae numquam quod quis laboriosam?</h5>
+
+    <!-- 4. The ::before Pseudo-element
+    The ::before pseudo-element can be used to insert some content before the content of an element. -->
+    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, iste doloribus deserunt omnis, aperiam tenetur
+        porro molestias praesentium, sed accusamus error culpa totam fugiat repellat quisquam quas rem nisi inventore?
+    </h4>
+
+    <!-- 5. The ::after Pseudo-element
+    The ::after pseudo-element can be used to insert some content after the content of an element. -->
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolor non facere deleniti velit vel modi veniam
+        nemo asperiores. Dicta magnam temporibus earum sunt facere sit eveniet debitis quo necessitatibus?</h3>
+
+    <!-- 6. The ::selection Pseudo-element
+    The ::selection pseudo-element matches the portion of an element that is selected by a user. -->
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, harum temporibus dolorum vitae in mollitia
+        accusamus perspiciatis quae minima cum! Molestias ex voluptatibus itaque odio quos! Placeat, ab! Aliquam,
+        corrupti.</h2>
+
+    <!-- 7. The ::marker Pseudo-element
+    The ::marker pseudo-element selects the markers of list items. -->
+    <ul>
+        <li>Name</li>
+        <li>Age</li>
+        <li>Gender</li>
+    </ul>
+    <ol>
+        <li>Degree</li>
+        <li>Status</li>
+        <li>Qualification</li>
+    </ol>
+</body>
+
+</html>
