@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-classes</title>
+    <style>
+        /* unvisited link */
+        a:link {
+            color: red;
+        }
+
+        /* visited link */
+        a:visited {
+            color: green;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: hotpink;
+        }
+
+        /* selected link */
+        a:active {
+            color: blue;
+        }
+
+        p {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+        }
+
+        div:hover p {
+            display: block;
+        }
+        h2:first-child{
+            color: red;
+        }
+        tr:nth-child(2n){
+            background-color: seagreen;
+        }
+        tr:nth-child(2n+1){
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- A pseudo-class is used to define a special state of an element. -->
+
+    
+    <!-- 1.The :first-child Pseudo-class
+    The :first-child pseudo-class matches a specified element that is the first child of another element. -->
+    <h2>Hello</h2>
+    <h2>Hi</h2>
+
+    <!-- 2.Anchor Pseudo-classes
+    Links can be displayed in different ways: -->
+    <!-- 
+        Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+     -->
+    <h1><a href="4.Pseudo-Elements Selectors.html">Link</a></h1>
+
+    <!-- Simple Tooltip Hover -->
+    <div>Hover over me to show the p element
+        <p>Tada! Here I am!</p>
+    </div>
+
+    <!-- 3. nth-child() Selector 
+     The :nth-child(n) selector matches every element that is the nth child, regardless of type, of its parent.
+    n can be a number, a keyword, or a formula.   -->
+   
+    <table border="1" style="height: 200px; width: 200px;">
+        <tr>
+            <td>Hey</td>
+        </tr>
+        <tr>
+            <td>Hi</td>
+        </tr>
+        <tr>
+            <td>Gm</td>
+        </tr>
+        <tr>
+            <td>Gn</td>
+        </tr>
+    </table>
+    
+    <!-- All Pseudo Classes Link https://www.w3schools.com/css/css_pseudo_classes.asp -->
+</body>
+
+</html>
