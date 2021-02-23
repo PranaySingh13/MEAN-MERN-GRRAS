@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margins & Paddings</title>
+  <style>
+    div {
+      border: 1px solid black;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 150px;
+      margin-left: 80px;
+      background-color: lightblue;
+    }
+
+    p {
+      border: 1px solid black;
+      /*Four ways to define margin*/
+      margin: 25px 50px 75px 100px;/*top right bottom left*/
+      margin: 25px 50px 75px;/*top right-left bottom*/
+      margin: 25px 50px;/*top-bottom right-left*/
+      margin: 25px;/*all four margins have same value*/
+      background-color: sandybrown;
+    }
+
+    h1 {
+      margin: auto;/* the margin property to auto to horizontally center the element within its container.*/
+    }
+
+    div.x {
+      border: 1px solid red;
+      margin-left: 100px;
+    }
+
+    p.y {
+      margin-left: inherit; /*element be inherited from the parent element*/
+    }
+
+    h2 {
+      margin: 0 0 50px 0;
+      background-color: blueviolet;
+    } 
+
+    h3 {
+      margin: 20px 0 0 0;
+      background-color: springgreen;
+    }
+
+    div.a{
+      border: 1px solid black;
+      background-color: lightblue;
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 50px;
+      padding-left: 80px;
+    }
+    div.b{
+      border: 1px solid black;
+       /*Four ways to define padding*/
+      padding: 25px 50px 75px 100px;/*top right bottom left*/
+      padding: 25px 50px 75px;/*top right-left bottom*/
+      padding: 25px 50px;/*top-bottom right-left*/
+      padding: 25px;/*all four padding have same value*/
+      background-color: chartreuse;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CSS Margins
+    The CSS margin properties are used to create space around elements, outside of any defined borders. -->
+
+  <!-- Note
+    All the margin properties can have the following values:
+
+    auto - the browser calculates the margin
+    length - specifies a margin in px, pt, cm, etc.
+    % - specifies a margin in % of the width of the containing element
+    inherit - specifies that the margin should be inherited from the parent element
+    
+    Tip: Negative values are allowed.
+    -->
+
+  <!-- 1. Set different margins for all four sides -->
+
+  <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ratione adipisci libero mollitia odio quibusdam?
+    Sequi dolores dignissimos sit quia? Eaque ratione cupiditate natus neque explicabo temporibus minima quo laudantium.
+  </div>
+
+  <!-- 2. Margin - Shorthand Property
+    To shorten the code, it is possible to specify all the margin properties in one property. -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas natus voluptate vitae autem, perferendis
+    eius officiis ipsa dolorum, quae, ea sequi veritatis consequatur ad distinctio laudantium nihil ratione velit!</p>
+
+
+<h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae expedita maiores nulla iure quaerat,
+  autem ab eos, voluptas dolores quasi, officia tenetur sit. Voluptas dolore laborum dolorem eos temporibus!</h4>
+
+<div class="x">
+  <p class="y">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem deserunt placeat molestias asperiores,
+    perferendis, ducimus delectus deleniti vitae architecto quidem a recusandae porro omnis laboriosam neque. Eum totam
+    reiciendis assumenda!</p>
+</div>
+
+<!-- 3. CSS Margin Collapse
+  Margin Collapse
+  Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+  This does not happen on left and right margins! Only top and bottom margins-->
+
+  <h2>Heading1</h2>
+  <h3>Heading2</h3>
+  <span>Common sense would seem to suggest that the vertical margin between the h2 and the h3 would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.</span>
+
+  <!-- CSS Padding
+  Padding is used to create space around an element's content, inside of any defined borders. -->
+
+  <!-- 
+    Padding - Individual Sides
+      CSS has properties for specifying the padding for each side of an element:
+
+      padding-top
+      padding-right
+      padding-bottom
+      padding-left
+      All the padding properties can have the following values:
+
+      length - specifies a padding in px, pt, cm, etc.
+      % - specifies a padding in % of the width of the containing element
+      inherit - specifies that the padding should be inherited from the parent element
+     
+      Note: Negative values are not allowed.
+   -->
+   <div class="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error deleniti, quam laudantium veritatis labore debitis reiciendis optio! Necessitatibus, esse cum? Aliquam repudiandae eveniet corporis explicabo id nesciunt impedit facere similique?</div>
+
+   <!-- Padding - Shorthand Property
+  To shorten the code, it is possible to specify all the padding properties in one property. -->
+  <div class="b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error deleniti, quam laudantium veritatis labore debitis reiciendis optio! Necessitatibus, esse cum? Aliquam repudiandae eveniet corporis explicabo id nesciunt impedit facere similique?</div>
+
+</body>
+</html>
