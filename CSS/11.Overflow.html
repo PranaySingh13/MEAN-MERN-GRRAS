@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .a{
+            width: 200px;
+            height: 200px;
+            padding: 15px;
+            background-color: burlywood;
+            overflow: visible;
+            margin-bottom: 100px;
+        }
+        .b{
+            width: 200px;
+            height: 200px;
+            padding: 15px;
+            background-color:cadetblue;
+            overflow: hidden;
+            margin-bottom: 100px;
+        }
+        .c{
+            width: 200px;
+            height: 200px;
+            padding: 15px;
+            background-color: cyan;
+            overflow: scroll;
+            margin-bottom: 100px;
+        }
+        .d{
+            width: 200px;
+            height: 200px;
+            padding: 15px;
+            background-color:darkorchid;
+            overflow: auto;
+            margin-bottom: 100px;
+        }
+        .e{
+            width: 200px;
+            height: 200px;
+            padding: 15px;
+            background-color:gold;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- CSS Overflow
+    The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area. -->
+    
+    <!-- Note: The overflow property only works for block elements with a specified height. -->
+
+    <!-- visible - Default. The overflow is not clipped. The content renders outside the element's box -->
+    <div class="a">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quis ea voluptates natus et repudiandae iusto illum fuga perferendis voluptatibus. Quas nostrum aperiam enim ratione nisi, vitae exercitationem velit dolorum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab ut quisquam ipsa reprehenderit, modi ratione quo deserunt tenetur eos nostrum quidem itaque, in nisi unde debitis perferendis quibusdam quaerat?</div>
+    
+    <!-- hidden - The overflow is clipped, and the rest of the content will be invisible -->
+    <div class="b">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quis ea voluptates natus et repudiandae iusto illum fuga perferendis voluptatibus. Quas nostrum aperiam enim ratione nisi, vitae exercitationem velit dolorum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab ut quisquam ipsa reprehenderit, modi ratione quo deserunt tenetur eos nostrum quidem itaque, in nisi unde debitis perferendis quibusdam quaerat?</div>
+    
+    <!-- scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content -->
+    <div class="c">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quis ea voluptates natus et repudiandae iusto illum fuga perferendis voluptatibus. Quas nostrum aperiam enim ratione nisi, vitae exercitationem velit dolorum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab ut quisquam ipsa reprehenderit, modi ratione quo deserunt tenetur eos nostrum quidem itaque, in nisi unde debitis perferendis quibusdam quaerat?</div>
+    
+    <!-- auto - Similar to scroll, but it adds scrollbars only when necessary -->
+    <div class="d">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus tempora vero et odio, obcaecati asperiores unde voluptates! Ex totam deleniti placeat at atque. Aut, odit rem repudiandae vero incidunt unde.</div>
+    <div class="d">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quis ea voluptates natus et repudiandae iusto illum fuga perferendis voluptatibus. Quas nostrum aperiam enim ratione nisi, vitae exercitationem velit dolorum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab ut quisquam ipsa reprehenderit, modi ratione quo deserunt tenetur eos nostrum quidem itaque, in nisi unde debitis perferendis quibusdam quaerat?</div>
+   
+    <!--overflow-x and overflow-y
+    The overflow-x and overflow-y properties specifies whether to change the overflow of content just horizontally or vertically (or both):
+
+    overflow-x specifies what to do with the left/right edges of the content.
+    overflow-y specifies what to do with the top/bottom edges of the content.  -->
+
+    <div class="e">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed inventore culpa sequi nesciunt enim ad numquam, facilis qui aperiam nam harum veniam. Laudantium optio eligendi delectus at aut alias atque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita culpa excepturi quisquam quam quaerat, neque itaque explicabo voluptatem molestias ea dolore, eius fugiat. Adipisci hic cum tenetur ipsa id cumque.</div>
+</body>
+</html>
