@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear</title>
+
+    <style>
+        .div1 {
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            border: 3px solid #73AD21;
+        }
+
+        .div2 {
+            border: 1px solid red;
+        }
+
+        .div3 {
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            border: 3px solid #73AD21;
+        }
+
+        .div4 {
+            border: 1px solid red;
+            clear: left;
+        }
+
+        div {
+            border: 3px solid #4CAF50;
+            padding: 5px;
+        }
+
+        .img1 {
+            float: right;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .img2 {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The clear Property
+    The clear property specifies what elements can float beside the cleared element and on which side. -->
+
+    <!-- The clear property can have one of the following values:
+
+        none - Allows floating elements on both sides. This is default
+        left - No floating elements allowed on the left side
+        right- No floating elements allowed on the right side
+        both - No floating elements allowed on either the left or the right side
+        inherit - The element inherits the clear value of its parent
+    The most common way to use the clear property is after you have used a float property on an element.
+
+    When clearing floats, you should match the clear to the float: If an element is floated to the left, then you should clear to the left. Your floated element will continue to float, but the cleared element will appear below it on the web page. -->
+
+    <h2>Without clear</h2>
+    <div class="div1">div1</div>
+    <div class="div2">div2 - Notice that div2 is after div1 in the HTML code. However, since div1 floats to the left,
+        the text in div2 flows around div1.</div>
+    <br><br>
+
+    <h2>With clear</h2>
+    <div class="div3">div3</div>
+    <div class="div4">div4 - Here, clear: left; moves div4 down below the floating div3. The value "left" clears
+        elements floated to the left. You can also clear "right" and "both".</div>
+
+    <!-- The clearfix Hack
+    If an element is taller than the element containing it, and it is floated, it will "overflow" outside of its container:
+    Then we can add overflow: auto; to the containing element to fix this problem: -->
+
+    <p>In this example, the image is taller than the element containing it, and it is floated, so it overflows outside
+        of its container:</p>
+
+    <div>
+        <h2>Without Clearfix</h2>
+        <img class="img1" src="w3.jpg" alt="w3" width="170" height="170">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+    </div>
+
+    <p style="clear:right">Add the clearfix hack to the containing element, to fix this problem:</p>
+
+    <div class="clearfix">
+        <h2>With Clearfix</h2>
+        <img class="img2" src="w3.jpg" alt="w3" width="170" height="170">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+    </div>
+</body>
+
+</html>
