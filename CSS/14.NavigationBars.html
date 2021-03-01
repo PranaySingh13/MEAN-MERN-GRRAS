@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bars</title>
+    <style>
+        ul.a li {
+            list-style-type: none;
+            /*Removes the bullets.*/
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.b{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color:tomato;
+        }
+
+        li.b a{
+            display:block;
+            color:yellow;
+            padding: 10px 50px;
+            text-decoration: none;
+        }
+
+        li.b a:hover{
+            background-color: darkslategrey;
+            color: white;
+        }
+
+        ul.c{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color:tomato;
+        }
+
+        li.c a{
+            display:block;
+            color:yellow;
+            padding: 10px 50px;
+            text-decoration: none;
+        }
+        li.c a.active{
+            background-color: yellowgreen;
+            color: teal;
+        }
+        li.c a:hover:not(.active){
+            background-color: darkslategrey;
+            color: white;
+        }
+        ul.d{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li.d{
+            display: inline;
+        } 
+        ul.e{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li.e{
+            float: left;
+        }
+        li.e a{
+            display: block;
+            padding: 8px;
+            background-color: tomato;
+        }
+        ul.f{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:tomato;
+        }
+        li.f{
+            float:left;
+        }
+        li.f a{
+            display:block;
+            color:yellow;
+            text-align: center;
+            padding: 10px 50px;
+            text-decoration: none;
+        }
+
+        li.f a:hover{
+            background-color: darkslategrey;
+            color: white;
+        }
+        ul.g{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:tomato;
+        }
+        li.g{
+            float:left;
+        }
+        li.g a{
+            display:block;
+            color:yellow;
+            text-align: center;
+            padding: 10px 50px;
+            text-decoration: none;
+        }
+        li.g a.active{
+            background-color: yellowgreen;
+            color: teal;
+        }
+        li.g a:hover:not(.active){
+            background-color: darkslategrey;
+            color: white;
+        }
+        ul.h{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:tomato;
+            position: sticky;
+            top: 0px;
+        }
+        li.h{
+            float:left;
+        }
+        li.h a{
+            display:block;
+            color:yellow;
+            text-align: center;
+            padding: 10px 50px;
+            text-decoration: none;
+        }
+        li.h a.active{
+            background-color: yellowgreen;
+            color: teal;
+        }
+        li.h a:hover:not(.active){
+            background-color: darkslategrey;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bars
+    Having easy-to-use navigation is important for any web site. -->
+
+    <!-- A navigation bar is basically a list of links, so using the <ul> and <li> elements makes perfect sense. -->
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact Us</a></li>
+    </ul>
+
+    <!-- Now let's remove the bullets and the margins and padding from the list: -->
+    <ul class="a">
+        <li><a href="">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact Us</a></li>
+    </ul>
+
+    <!-- Vertical Navigation Bar -->
+    <!-- To build a vertical navigation bar, you can style the <a> elements inside the list -->
+    
+    <!-- display: block; - Displaying the links as block elements makes the whole link area clickable (not just the text), and it allows us to specify the width (and padding, margin, height, etc. if you want)
+    width: 60px; - Block elements take up the full width available by default. We want to specify a 60 pixels width
+    You can also set the width of <ul>, and remove the width of <a>, as they will take up the full width available when displayed as block elements. This will produce the same result as our previous example: -->
+    <ul class="b">
+        <li class="b"><a href="">Home</a></li>
+        <li class="b"><a href="">About Us</a></li>
+        <li class="b"><a href="">Services</a></li>
+        <li class="b"><a href="">Contact Us</a></li>
+    </ul>
+
+    <br>
+    <!-- Active/Current Navigation Link
+    Add an "active" class to the current link to let the user know which page he/she is on: -->
+    <ul class="c">
+        <li class="c"><a class="active" href="">Home</a></li>
+        <li class="c"><a href="">About Us</a></li>
+        <li class="c"><a href="">Services</a></li>
+        <li class="c"><a href="">Contact Us</a></li>
+    </ul>
+
+    <!-- Horizontal Navigation Bar-->
+    <!-- There are two ways to create a horizontal navigation bar. Using inline or floating list items. -->
+
+    <!-- Inline List Items
+    One way to build a horizontal navigation bar is to specify the <li> elements as inline, in addition to the "standard" code from the previous page: -->
+    <!-- display: inline; - By default, <li> elements are block elements. Here, we remove the line breaks before and after each list item, to display them on one line -->
+    <ul class="d">
+        <li class="d"><a href="">Home</a></li>
+        <li class="d"><a href="">About Us</a></li>
+        <li class="d"><a href="">Services</a></li>
+        <li class="d"><a href="">Contact Us</a></li>
+    </ul>
+    
+    <!-- Floating List Items
+    Another way of creating a horizontal navigation bar is to float the <li> elements, and specify a layout for the navigation links:-->
+    <ul class="e">
+        <li class="e"><a href="">Home</a></li>
+        <li class="e"><a href="">About Us</a></li>
+        <li class="e"><a href="">Services</a></li>
+        <li class="e"><a href="">Contact Us</a></li>
+    </ul>
+    <br>
+    <!-- Active/Current Navigation Link
+    Add an "active" class to the current link to let the user know which page he/she is on: -->
+    <ul class="f">
+        <li class="f"><a href="">Home</a></li>
+        <li class="f"><a href="">About Us</a></li>
+        <li class="f"><a href="">Services</a></li>
+        <li class="f"><a href="">Contact Us</a></li>
+    </ul>
+    <br>
+    <ul class="g">
+        <li class="g"><a class="active" href="">Home</a></li>
+        <li class="g"><a href="">About Us</a></li>
+        <li class="g"><a href="">Services</a></li>
+        <li class="g"><a href="">Contact Us</a></li>
+    </ul>
+
+    <!-- Add position: sticky; to <ul> to create a sticky navbar.
+    A sticky element toggles between relative and fixed, depending on the scroll position. -->
+
+    <br>
+    <ul class="h">
+        <li class="h"><a class="active" href="">Home</a></li>
+        <li class="h"><a href="">About Us</a></li>
+        <li class="h"><a href="">Services</a></li>
+        <li class="h"><a href="">Contact Us</a></li>
+    </ul>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</body>
+
+</html>
