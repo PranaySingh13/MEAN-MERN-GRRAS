@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform and Transition</title>
+    <style>
+        .a{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+        }
+        .a:hover{
+            /* The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis). */
+            transform: translate(50px,50px);
+        }
+        .b{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+        }
+        .b:hover{
+            /* The rotate() method rotates an element clockwise or counter-clockwise according to a given degree. */
+            transform: rotate(-20deg);
+        }
+        .c{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+        }
+        .c:hover{
+            /* The scale() method increases or decreases the size of an element (according to the parameters given for the width and height). */
+            transform: scale(2,2);
+        }
+        
+        .d{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+        }
+        .d:hover{
+            /* The skew() method skews an element along the X and Y-axis by the given angles. */
+            transform: skew(20deg);
+        }
+        .e{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+        }
+        .e:hover{
+            /* The matrix() method combines all the 2D transform methods into one. */
+            /* The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()) */
+            transform: matrix(1,-0.3,0,1,0,0);
+        }
+        .f{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+            transition: width 2s, height 4s;
+        }
+        .f:hover{
+            width: 300px;
+            height: 300px;
+        }
+        .g{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: darkred;
+            color: darksalmon;
+            text-align: center;
+            transition: width 2s, height 4s, transform 2s;
+        }
+        .g:hover{
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- CSS transforms allow you to move, rotate, scale, and skew elements. -->
+    <div class="a">A</div>
+    <div class="b">B</div>
+    <div class="c">C</div>
+    <div class="d">D</div>
+    <div class="e">E</div>
+
+    <!-- CSS Transitions
+    CSS transitions allows you to change property values smoothly, over a given duration. -->
+    <!-- How to Use CSS Transitions?
+        To create a transition effect, you must specify two things:
+        1. the CSS property you want to add an effect to
+        2. the duration of the effect
+
+    Note: If the duration part is not specified, the transition will have no effect, because the default value is 0. -->
+    <div class="f">F</div>
+
+    <!-- Transition + Transformation -->
+    <div class="g">G</div>
+
+
+</body>
+</html>
