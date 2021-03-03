@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLexbox</title>
+    <style>
+        .flex-container1 {
+            display: flex;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container1 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container2 {
+            display: flex;
+            /* The column value stacks the flex items vertically (from top to bottom): */
+            flex-direction: column;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container2 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container3 {
+            display: flex;
+            /* The column-reverse value stacks the flex items vertically (but from bottom to top): */
+            flex-direction: column-reverse;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container3 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container4 {
+            display: flex;
+            /* The row value stacks the flex items horizontally (from left to right): */
+            flex-direction: row;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container4 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container5 {
+            display: flex;
+            /* The row-reverse value stacks the flex items horizontally (but from right to left): */
+            flex-direction: row-reverse;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container5 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container6 {
+            display: flex;
+            /* The wrap value specifies that the flex items will wrap if necessary: */
+            flex-wrap: wrap;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container6 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container7 {
+            display: flex;
+            /*  (this is default) The nowrap value specifies that the flex items will not wrap: */
+            flex-wrap: nowrap;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container7 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 9.5px;
+            font-size: x-large;
+        }
+
+        .flex-container8 {
+            display: flex;
+            /* The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order: */
+            flex-wrap: wrap-reverse;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container8 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 9.5px;
+            font-size: x-large;
+        }
+
+        .flex-container9 {
+            display: flex;
+            /* The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties. */
+            flex-flow: row wrap;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container9 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 9.5px;
+            font-size: x-large;
+        }
+
+        .flex-container10 {
+            display: flex;
+            /* The center value aligns the flex items at the center of the container: */
+            justify-content: center;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container10 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container11 {
+            display: flex;
+            /* (this is default) The flex-start value aligns the flex items at the beginning of the container: */
+            justify-content: flex-start;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container11 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container12 {
+            display: flex;
+            /* The flex-end value aligns the flex items at the end of the container: */
+            justify-content: flex-end;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container12 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container13 {
+            display: flex;
+            /* The space-around value displays the flex items with space before, between, and after the lines: */
+            justify-content: space-around;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container13 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container14 {
+            display: flex;
+            /* The space-between value displays the flex items with space between the lines: */
+            justify-content: space-between;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container14 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container15 {
+            display: flex;
+            height: 200px;
+            /* The center value aligns the flex items in the middle of the container: */
+            align-items: center;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container15 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container16 {
+            display: flex;
+            height: 200px;
+            /* The flex-start value aligns the flex items at the top of the container: */
+            align-items: flex-start;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container16 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container17 {
+            display: flex;
+            height: 200px;
+            /* The flex-end value aligns the flex items at the bottom of the container: */
+            align-items: flex-end;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container17 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container18 {
+            display: flex;
+            height: 200px;
+            /* (this is default) The stretch value stretches the flex items to fill the container: */
+            align-items: stretch;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container18 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container19 {
+            display: flex;
+            height: 200px;
+            /* The baseline value aligns the flex items such as their baselines aligns: */
+            align-items: baseline;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container19 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container20 {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            /* The space-between value displays the flex lines with equal space between them: */
+            align-content: space-between;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container20 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container21 {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            /* The space-around value displays the flex lines with space before, between, and after them: */
+            align-content: space-around;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container21 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container22 {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            /* (this is default) The stretch value stretches the flex lines to take up the remaining space: */
+            align-content: stretch;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container22 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container23 {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            /* The center value displays display the flex lines in the middle of the container: */
+            align-content: center;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container23 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container24 {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            /* The flex-start value displays the flex lines at the start of the container: */
+            align-content: flex-start;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container24 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container25 {
+            display: flex;
+            height: 600px;
+            flex-wrap: wrap;
+            /* The flex-end value displays the flex lines at the end of the container:*/
+            align-content: flex-end;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container25 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container26 {
+            display: flex;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container26 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            width: 100px;
+            height: 100px;
+        }
+
+        .flex-container27 {
+            display: flex;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container27 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        .flex-container28 {
+            display: flex;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container28 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        .flex-container29 {
+            display: flex;
+            align-items: stretch;
+            background-color: cornflowerblue;
+        }
+
+        .flex-container29 div {
+            background-color: darkblue;
+            color: darkkhaki;
+            width: 100px;
+            padding: 20px;
+            font-size: x-large;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Flex is type of box -->
+    <!-- CSS Flexbox Layout Module
+     The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.-->
+
+    <!-- Flexbox Elements
+    To start using the Flexbox model, you need to first define a flex container. -->
+    <!-- The flex container becomes flexible by setting the display property to flex: -->
+    <div class="flex-container1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <!-- The flex container properties are:
+        flex-direction
+        flex-wrap
+        flex-flow
+        justify-content
+        align-items
+        align-content
+        -->
+
+    <!-- The flex-direction Property
+    The flex-direction property defines in which direction the container wants to stack the flex items. -->
+    <br>
+    <div class="flex-container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <!-- The flex-wrap Property
+    The flex-wrap property specifies whether the flex items should wrap or not. -->
+    <br>
+    <div class="flex-container6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <br>
+    <div class="flex-container7">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <br>
+    <div class="flex-container8">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <!-- The flex-flow Property
+    The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties -->
+    <br>
+    <div class="flex-container9">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <!-- The justify-content Property
+    The justify-content property is used to align the flex items: -->
+    <br>
+    <div class="flex-container10">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container11">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container12">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container13">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container14">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <!-- The align-items Property
+    The align-items property is used to align the flex items. -->
+    <br>
+    <div class="flex-container15">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container16">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container17">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container18">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="flex-container19">
+        <div>
+            <h1>1</h1>
+        </div>
+        <div>
+            <h2>2</h2>
+        </div>
+        <div>
+            <h2>3</h2>
+        </div>
+    </div>
+
+    <!-- The align-content Property
+    The align-content property is used to align the flex lines. -->
+    <br>
+    <div class="flex-container20">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <br>
+    <div class="flex-container21">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <br>
+    <div class="flex-container22">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <br>
+    <div class="flex-container23">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <br>
+    <div class="flex-container24">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <br>
+    <div class="flex-container25">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <!-- Perfect Centering -->
+    <!-- SOLUTION: Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered: -->
+    <br>
+    <div class="flex-container26">
+        <div></div>
+    </div>
+
+    <!-- CSS Flex Items -->
+    <!-- The flex item properties are:
+        order
+        flex-grow
+        flex-shrink
+        flex-basis
+        flex
+        align-self
+        -->
+
+    <!-- The order Property
+    The order property specifies the order of the flex items. -->
+    <br>
+    <div class="flex-container27">
+        <div style="order: 3">1</div>
+        <div style="order: 2">2</div>
+        <div style="order: 4">3</div>
+        <div style="order: 1">4</div>
+    </div>
+
+    <!-- The flex-grow Property
+    The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items. -->
+
+    <!-- Make the third flex item grow eight times faster than the other flex items: -->
+    <br>
+    <div class="flex-container28">
+        <div style="flex-grow: 1">1</div>
+        <div style="flex-grow: 1">2</div>
+        <div style="flex-grow: 8">3</div>
+    </div>
+
+    <!-- The flex-shrink Property
+    The flex-shrink property specifies how much a flex item will shrink relative to the rest of the flex items. -->
+    <!-- The value must be a number, default value is 1. -->
+    <div class="flex-container29">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-shrink: 0">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+
+    <!-- https://www.w3schools.com/css/css3_flexbox_items.asp -->
+</body>
+
+</html>
