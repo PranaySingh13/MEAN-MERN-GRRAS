@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container2 {
+            display: inline-grid;
+            grid-template-columns: auto auto auto;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container3 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-column-gap: 50px;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container4 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-row-gap: 50px;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container5 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 50px 50px;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container6 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 50px 50px;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-container6>div {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container6 .grid-item1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .grid-container7 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 50px 50px;
+            background-color: #075697;
+            padding: 10px;
+        }
+
+        .grid-container7>div {
+            background-color: rgba(176, 236, 119, 0.8);
+            border: 1px solid rgba(243, 13, 13, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-container7 .grid-item1 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        .grid-container8 {
+            display: grid;
+            grid-template-columns: 80px 200px auto 30px;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container8>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container9 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 80px 200px;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container9>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container10 {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container10>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-item8 {
+            /*Make "grid-item8" start on row-line 1 and column-line 2, and end on row-line 5 and column line 6:
+     */
+            grid-area: 1 / 2 / 5 / 6;
+        }
+
+        .grid-container11 {
+            display: grid;
+            grid-template-areas: 'myArea myArea myArea myArea myArea';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container11>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container11 .grid-item1 {
+            grid-area: myArea;
+        }
+
+        .grid-container12 {
+            display: grid;
+            grid-template-areas: 'myArea myArea . . .';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container12>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container12 .grid-item1 {
+            grid-area: myArea;
+        }
+
+        .grid-container13 {
+            display: grid;
+            grid-template-areas: 'myArea . . . . ''myArea . . . .';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container13>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container13 .grid-item1 {
+            grid-area: myArea;
+        }
+
+        .grid-container14 {
+            display: grid;
+            grid-template-areas: 'myArea myArea . . . ''myArea myArea . . .';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container14>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container14 .grid-item1 {
+            grid-area: myArea;
+        }
+
+        .grid-container15 {
+            display: grid;
+            grid-template-areas: 'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container15>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .grid-container15 .grid-item1 {
+            grid-area: header;
+        }
+
+        .grid-container15 .grid-item2 {
+            grid-area: menu;
+        }
+
+        .grid-container15 .grid-item3 {
+            grid-area: main;
+        }
+
+        .grid-container15 .grid-item4 {
+            grid-area: right;
+        }
+
+        .grid-container15 .grid-item5 {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Grid Layout
+    The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning. -->
+
+    <!-- Grid Elements
+    A grid layout consists of a parent element, with one or more child elements. -->
+
+    <!-- Display Property
+    An HTML element becomes a grid container when its display property is set to grid or inline-grid. -->
+
+    <div class="grid-container1">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <br>
+    <div class="grid-container2">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- Grid Columns
+    The vertical lines of grid items are called columns.-->
+
+    <!-- Grid Rows
+    The horizontal lines of grid items are called rows. -->
+
+    <!-- Grid Gaps
+    The spaces between each column/row are called gaps. -->
+
+    <!-- You can adjust the gap size by using one of the following properties:
+        grid-column-gap : The grid-column-gap property sets the gap between the columns:
+        grid-row-gap : The grid-row-gap property sets the gap between the rows:
+        grid-gap : The grid-gap property is a shorthand property for the grid-row-gap and the grid-column-gap properties:-->
+
+    <br>
+    <div class="grid-container3">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <br>
+    <div class="grid-container4">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <br>
+    <div class="grid-container5">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- Grid Lines
+        The lines between columns are called column lines.
+        The lines between rows are called row lines. -->
+
+    <br>
+    <div class="grid-container6">
+        <div class="grid-item1">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <br>
+    <div class="grid-container7">
+        <div class="grid-item1">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- The grid-template-columns Property
+    The grid-template-columns property defines the number of columns in your grid layout, and it can define the width of each column. -->
+    <!-- Note: If you have more than 4 items in a 4 columns grid, the grid will automatically add a new row to put the items in. -->
+    <br>
+    <div class="grid-container8">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <!-- The grid-template-rows Property
+    The grid-template-rows property defines the height of each row. -->
+    <br>
+    <div class="grid-container9">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- The grid-area Property
+    The grid-area property can be used as a shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties. -->
+    <br>
+    <div class="grid-container10">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item8">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
+        <div class="grid-item">13</div>
+        <div class="grid-item">14</div>
+        <div class="grid-item">15</div>
+    </div>
+
+    <!-- Naming Grid Items
+    The grid-area property can also be used to assign names to grid items. -->
+    <!-- Named grid items can be referred to by the grid-template-areas property of the grid container. -->
+
+    <!-- Each row is defined by apostrophes (' ')
+        The columns in each row is defined inside the apostrophes, separated by a space.
+        Note: A period sign represents a grid item with no name. -->
+    <br>
+    <div class="grid-container11">
+        <div class="grid-item1">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- Let "myArea" span two columns in a five columns grid layout (period signs represent items with no name): -->
+    <br>
+    <div class="grid-container12">
+        <div class="grid-item1">1</div>
+        <div class="grid-item2">2</div>
+        <div class="grid-item3">3</div>
+        <div class="grid-item4">4</div>
+        <div class="grid-item5">5</div>
+        <div class="grid-item6">6</div>
+    </div>
+    <!-- To define two rows, define the column of the second row inside another set of apostrophes: -->
+    <!-- Make "item1" span two columns and two rows: -->
+    <br>
+    <div class="grid-container13">
+        <div class="grid-item1">1</div>
+        <div class="grid-item2">2</div>
+        <div class="grid-item3">3</div>
+        <div class="grid-item4">4</div>
+        <div class="grid-item5">5</div>
+        <div class="grid-item6">6</div>
+    </div>
+    <br>
+    <div class="grid-container14">
+        <div class="grid-item1">1</div>
+        <div class="grid-item2">2</div>
+        <div class="grid-item3">3</div>
+        <div class="grid-item4">4</div>
+        <div class="grid-item5">5</div>
+        <div class="grid-item6">6</div>
+    </div>
+
+    <!-- ready-to-use webpage template: -->
+    <br>
+    <div class="grid-container15">
+        <div class="grid-item1">Header</div>
+        <div class="grid-item2">Menu</div>
+        <div class="grid-item3">Main</div>
+        <div class="grid-item4">Right</div>
+        <div class="grid-item5">Footer</div>
+    </div>
+</body>
+
+</html>
