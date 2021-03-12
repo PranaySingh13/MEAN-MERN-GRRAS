@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bars
+    A navigation bar is a navigation header that is placed at the top of the page: -->
+
+    <!-- Basic Navbar
+        With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
+
+        A standard navigation bar is created with the .navbar class, followed by a responsive collapsing class: .navbar-expand-xl|lg|md|sm (stacks the navbar vertically on extra large, large, medium or small screens).
+
+        To add links inside the navbar, use a <ul> element with class="navbar-nav". Then add <li> elements with a .nav-item class followed by an <a> element with a .nav-link class: -->
+
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm bg-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
+
+    </nav>
+    <br>
+    <!-- Vertical Navbar
+    Remove the .navbar-expand-xl|lg|md|sm class to create a vertical navigation bar: -->
+    <nav class="navbar bg-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
+
+    </nav>
+    <br>
+
+    <!-- Centered Navbar
+    Add the .justify-content-center class to center the navigation bar. -->
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
+
+    </nav>
+    <br>
+
+    <!-- Colored Navbar -->
+    <!-- Use any of the .bg-color classes to change the background color of the navbar (.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light)
+
+    Tip: Add a white text color to all links in the navbar with the .navbar-dark class, or use the .navbar-light class to add a black text color. -->
+    <!-- Grey with black text -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <!-- Grey with black text -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+
+    <!-- Brand / Logo
+    The .navbar-brand class is used to highlight the brand/logo/project name of your page: -->
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">Logo</a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+
+    <!-- When using the .navbar-brand class on images, Bootstrap 4 will automatically style the image to fit the navbar vertically. -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <img src="w3.jpg" alt="Logo" style="width:40px;">
+        </a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+
+    <!-- Collapsing The Navigation Bar -->
+    <!-- To create a collapsible navigation bar, use a button with class="navbar-toggler", data-toggle="collapse" and data-target="#thetarget". Then wrap the navbar content (links, etc) inside a div element with class="collapse navbar-collapse", followed by an id that matches the data-target of the button: "thetarget" -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <!-- Navbar With Dropdown -->
+    <!-- Navbars can also hold dropdown menus: -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Logo</a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Dropdown link
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <br>
+
+    <!-- Navbar Forms and Buttons -->
+    <!-- Add a <form> element with class="form-inline" to group inputs and buttons side-by-side: -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </nav>
+    <br>
+
+    <!-- Navbar Text -->
+    <!-- Use the .navbar-text class to vertical align any elements inside the navbar that are not links (ensures proper padding and text color). -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+        </ul>
+
+        <!-- Navbar text-->
+        <span class="navbar-text">
+            Navbar text
+        </span>
+    </nav>
+    <br>
+
+    <!-- Fixed Navigation Bar -->
+
+    <!-- The navigation bar can also be fixed at the top or at the bottom of the page.
+        A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.
+        The .fixed-top class makes the navigation bar fixed at the top: -->
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Logo</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <!-- Use the .fixed-bottom class to make the navbar stay at the bottom of the page: -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+        <a class="navbar-brand" href="#">Logo</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+    <!-- Use the .sticky-top class to make the navbar fixed/stay at the top of the page when you scroll past it.  -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" href="#">Logo</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </nav>
+
+</body>
+
+</html>
