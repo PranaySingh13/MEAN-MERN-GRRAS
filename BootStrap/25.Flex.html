@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Bootstrap 4 Flex
+    Use flex classes to control the layout of Bootstrap 4 components. -->
+
+    <!-- Flexbox
+    The biggest difference between Bootstrap 3 and Bootstrap 4 is that Bootstrap 4 now uses flexbox, instead of floats, to handle the layout. -->
+
+    <!-- To create a flexbox container -->
+    <!-- To create a flexbox container and to transform direct children into flex items, use the d-flex class: -->
+
+    <div class="d-flex p-3 bg-secondary text-white">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <br>
+
+    <!-- To create an inline flexbox container, use the d-inline-flex class: -->
+    <div class="d-inline-flex p-3 bg-secondary text-white">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <!-- Horizontal Direction
+        Use .flex-row to display the flex items horizontally (side by side). This is default.
+        Tip: Use .flex-row-reverse to right-align the horizontal direction: -->
+
+    <br><br>
+
+    <div class="d-flex flex-row bg-secondary">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+    <br>
+    <div class="d-flex flex-row-reverse bg-secondary">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <!-- Vertical Direction
+    Use .flex-column to display the flex items vertically (on top of each other), or .flex-column-reverse to reverse the vertical direction: -->
+
+    <br>
+    <div class="d-flex flex-column">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+    <br>
+    <div class="d-flex flex-column-reverse">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <!-- Justify Content
+    Use the .justify-content-* classes to change the alignment of flex items. Valid classes are start (default), end, center, between or around -->
+
+    <br>
+    <div class="d-flex justify-content-start bg-secondary mb-3">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-end bg-secondary mb-3">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-center bg-secondary mb-3">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-between bg-secondary mb-3">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-around bg-secondary mb-3">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <!-- Fill / Equal Widths
+    Use .flex-fill on flex items to force them into equal widths: -->
+
+    <br>
+
+    <div class="d-flex">
+        <div class="p-2 bg-info flex-fill">Flex item 1</div>
+        <div class="p-2 bg-warning flex-fill">Flex item 2</div>
+        <div class="p-2 bg-primary flex-fill">Flex item 3</div>
+    </div>
+
+    <br>
+    <!-- Grow
+    Use .flex-grow-1 on a flex item to take up the rest of the space. In the example below, the first two flex items take up their necessary space, while the last item takes up the rest of the available space: -->
+    <div class="d-flex">
+        <div class="p-2 bg-info">Flex item 1</div>
+        <div class="p-2 bg-warning">Flex item 2</div>
+        <div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
+    </div>
+
+    <!-- Wrap
+    Control how flex items wrap in a flex container with .flex-nowrap (default), .flex-wrap or .flex-wrap-reverse. -->
+
+    <p><code>.flex-wrap:</code></p>
+    <div class="d-flex flex-wrap bg-light">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p><code>.flex-wrap-reverse:</code></p>
+    <div class="d-flex flex-wrap-reverse bg-light">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p><code>.flex-nowrap:</code></p>
+    <div class="d-flex flex-nowrap bg-light">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+        <div class="p-2 border">Flex item 26</div>
+        <div class="p-2 border">Flex item 27</div>
+        <div class="p-2 border">Flex item 28</div>
+        <div class="p-2 border">Flex item 29</div>
+        <div class="p-2 border">Flex item 30</div>
+        <div class="p-2 border">Flex item 31</div>
+        <div class="p-2 border">Flex item 32</div>
+        <div class="p-2 border">Flex item 33</div>
+        <div class="p-2 border">Flex item 34</div>
+        <div class="p-2 border">Flex item 35</div>
+    </div>
+
+    <br>
+
+    <!-- Align Content
+        Control the vertical alignment of gathered flex items with the .align-content-* classes. Valid classes are .align-content-start (default), .align-content-end, .align-content-center, .align-content-between, .align-content-around and .align-content-stretch.
+        Note: These classes have no effect on single rows of flex items. -->
+    <p>.align-content-start (default):</p>
+    <div class="d-flex flex-wrap align-content-start bg-light" style="height:300px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p>.align-content-end:</p>
+    <div class="d-flex flex-wrap align-content-end bg-light" style="height:300px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p>.align-content-center:</p>
+    <div class="d-flex flex-wrap align-content-center bg-light" style="height:300px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p>.align-content-around:</p>
+    <div class="d-flex flex-wrap align-content-around bg-light" style="height:300px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p>.align-content-stretch:</p>
+    <div class="d-flex flex-wrap align-content-stretch bg-light" style="height:300px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+        <div class="p-2 border">Flex item 4</div>
+        <div class="p-2 border">Flex item 5</div>
+        <div class="p-2 border">Flex item 6</div>
+        <div class="p-2 border">Flex item 7</div>
+        <div class="p-2 border">Flex item 8</div>
+        <div class="p-2 border">Flex item 9</div>
+        <div class="p-2 border">Flex item 10</div>
+        <div class="p-2 border">Flex item 11</div>
+        <div class="p-2 border">Flex item 12</div>
+        <div class="p-2 border">Flex item 13 </div>
+        <div class="p-2 border">Flex item 14</div>
+        <div class="p-2 border">Flex item 15</div>
+        <div class="p-2 border">Flex item 16</div>
+        <div class="p-2 border">Flex item 17</div>
+        <div class="p-2 border">Flex item 18</div>
+        <div class="p-2 border">Flex item 19</div>
+        <div class="p-2 border">Flex item 20</div>
+        <div class="p-2 border">Flex item 21</div>
+        <div class="p-2 border">Flex item 22</div>
+        <div class="p-2 border">Flex item 23</div>
+        <div class="p-2 border">Flex item 24</div>
+        <div class="p-2 border">Flex item 25</div>
+    </div>
+
+    <br>
+
+    <!-- Align Items
+    Control the vertical alignment of single rows of flex items with the .align-items-* classes. Valid classes are .align-items-start, .align-items-end, .align-items-center, .align-items-baseline, and .align-items-stretch (default). -->
+    <p>.align-items-start:</p>
+    <div class="d-flex align-items-start bg-light" style="height:150px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+    </div>
+    <br>
+    <p>.align-items-end:</p>
+    <div class="d-flex align-items-end bg-light" style="height:150px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+    </div>
+    <br>
+    <p>.align-items-center:</p>
+    <div class="d-flex align-items-center bg-light" style="height:150px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+    </div>
+    <br>
+    <p>.align-items-baseline:</p>
+    <div class="d-flex align-items-baseline bg-light" style="height:150px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+    </div>
+    <br>
+    <p>.align-items-stretch (default):</p>
+    <div class="d-flex align-items-stretch bg-light" style="height:150px">
+        <div class="p-2 border">Flex item 1</div>
+        <div class="p-2 border">Flex item 2</div>
+        <div class="p-2 border">Flex item 3</div>
+    </div>
+
+    <!-- Note: In Details, Please visit below link -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_flex.asp -->
+</body>
+
+</html>
