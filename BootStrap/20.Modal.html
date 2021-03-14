@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Bootstrap 4 Modal
+    The Modal component is a dialog box/popup window that is displayed on top of the current page -->
+
+    <!-- How To Create a Modal
+    The following example shows how to create a basic modal: -->
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- Add animation
+    Use the .fade class to add a fading effect when opening and closing the modal -->
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- Modal Size
+        Change the size of the modal by adding the .modal-sm class for small modals, .modal-lg class for large modals, or .modal-xl for extra large modals.
+        Add the size class to the <div> element with class .modal-dialog -->
+
+    <!-- By default, modals are "medium" in size. -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal3">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal4">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal5">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- Centered Modal
+    Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal6">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal6">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- Scrolling Modal -->
+    <!-- it is possible to only scroll inside the modal, instead of the page itself, by adding .modal-dialog-scrollable to .modal-dialog -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal7">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vitae perferendis maxime debitis excepturi accusamus ab expedita. Quae illum animi excepturi tenetur unde ad voluptate quibusdam assumenda explicabo, qui vero.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quibusdam nesciunt ratione deleniti possimus quam, error inventore sed praesentium! Vel praesentium velit ducimus fuga sed ut suscipit hic repudiandae quisquam.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi unde sunt, enim excepturi expedita quibusdam at voluptatibus eum minima quos necessitatibus odio nihil, reiciendis accusamus nemo recusandae natus aspernatur quas!
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, animi. Obcaecati eos quas maiores. Corrupti minus dolorum non nostrum, perspiciatis magni error assumenda odit accusantium adipisci facilis mollitia earum omnis!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta inventore, qui nobis velit quibusdam hic enim itaque quisquam nihil? Ipsum fugit quae dolore in! Laudantium eum blanditiis praesentium nobis nulla.
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
