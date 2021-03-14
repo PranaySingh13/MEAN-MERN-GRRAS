@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilities</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .border {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            margin: 6px;
+        }
+
+        .rounded {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            margin: 6px;
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bootstrap 4 Utilities
+    Bootstrap 4 has a lot of utility/helper classes to quickly style elements without using any CSS code. -->
+
+    <!-- Borders
+    Use the border classes to add or remove borders from an element: -->
+
+    <span class="border"></span>
+    <span class="border border-0"></span>
+    <span class="border border-top-0"></span>
+    <span class="border border-right-0"></span>
+    <span class="border border-bottom-0"></span>
+    <span class="border border-left-0"></span>
+
+    <br><br>
+
+    <!-- Border Color
+    Add a color to the border with any of the contextual border color classes: -->
+    <span class="border border-primary"></span>
+    <span class="border border-secondary"></span>
+    <span class="border border-success"></span>
+    <span class="border border-danger"></span>
+    <span class="border border-warning"></span>
+    <span class="border border-info"></span>
+    <span class="border border-light"></span>
+    <span class="border border-dark"></span>
+    <span class="border border-white"></span>
+
+    <br><br>
+
+    <!-- Border Radius
+    Add rounded corners to an element with the rounded classes -->
+
+    <span class="rounded rounded-sm"></span>
+    <span class="rounded"></span>
+    <span class="rounded rounded-lg"></span>
+    <span class="rounded rounded-top"></span>
+    <span class="rounded rounded-right"></span>
+    <span class="rounded rounded-bottom"></span>
+    <span class="rounded rounded-left"></span>
+    <span class="rounded rounded-circle"></span>
+    <span class="rounded rounded-0"></span>
+
+    <br><br>
+
+    <!-- Float and Clearfix
+    Float an element to the right with the .float-right class or to the left with .float-left, and clear floats with the .clearfix class -->
+    <div class="clearfix">
+        <span class="float-left">Float left</span>
+        <span class="float-right">Float right</span>
+    </div>
+
+    <br><br>
+
+    <!-- Center Align
+    Center an element with the .mx-auto class (adds margin-left and margin-right: auto) -->
+    <div class="mx-auto bg-warning" style="width:150px">Centered</div>
+
+    <br><br>
+
+    <!-- Width
+    Set the width of an element with the w-* classes (.w-25, .w-50, .w-75, .w-100, .mw-100) -->
+    <div class="w-25 bg-warning">Width 25%</div>
+    <div class="w-50 bg-warning">Width 50%</div>
+    <div class="w-75 bg-warning">Width 75%</div>
+    <div class="w-100 bg-warning">Width 100%</div>
+    <div class="mw-100 bg-warning">Max Width 100%</div>
+
+    <br><br>
+    <!-- Height
+    Set the height of an element with the h-* classes (.h-25, .h-50, .h-75, .h-100, .mh-100) -->
+    <div style="height:200px;background-color:#ddd">
+        <div class="h-25 bg-warning">Height 25%</div>
+        <div class="h-50 bg-warning">Height 50%</div>
+        <div class="h-75 bg-warning">Height 75%</div>
+        <div class="h-100 bg-warning">Height 100%</div>
+        <div class="mh-100 bg-warning" style="height:500px">Max Height 100%</div>
+    </div>
+
+    <br><br>
+
+    <!-- Spacing
+    Bootstrap 4 has a wide range of responsive margin and padding utility classes. They work for all breakpoints: xs (<=576px), sm (>=576px), md (>=768px), lg (>=992px) or xl (>=1200px)) -->
+
+    <!-- he classes are used in the format: {property}{sides}-{size} for xs and {property}{sides}-{breakpoint}-{size} for sm, md, lg, and xl. -->
+
+    <!-- Where property is one of:
+
+        m - sets margin
+        p - sets padding
+        Where sides is one of:
+
+        t - sets margin-top or padding-top
+        b - sets margin-bottom or padding-bottom
+        l - sets margin-left or padding-left
+        r - sets margin-right or padding-right
+        x - sets both padding-left and padding-right or margin-left and margin-right
+        y - sets both padding-top and padding-bottom or margin-top and margin-bottom
+        blank - sets a margin or padding on all 4 sides of the element
+        Where size is one of:
+
+        0 - sets margin or padding to 0
+        1 - sets margin or padding to .25rem (4px if font-size is 16px)
+        2 - sets margin or padding to .5rem (8px if font-size is 16px)
+        3 - sets margin or padding to 1rem (16px if font-size is 16px)
+        4 - sets margin or padding to 1.5rem (24px if font-size is 16px)
+        5 - sets margin or padding to 3rem (48px if font-size is 16px)
+        auto - sets margin to auto
+        Note: margins can also be negative, by adding an "n" in front of size:
+
+        n1 - sets margin to -.25rem (-4px if font-size is 16px)
+        n2 - sets margin to -.5rem (-8px if font-size is 16px)
+        n3 - sets margin to -1rem (-16px if font-size is 16px)
+        n4 - sets margin to -1.5rem (-24px if font-size is 16px)
+        n5 - sets margin to -3rem (-48px if font-size is 16px) -->
+
+    <div class="pt-4 bg-warning">I only have a top padding (1.5rem = 24px)</div>
+    <div class="p-5 bg-success">I have a padding on all sides (3rem = 48px)</div>
+    <div class="m-5 pb-5 bg-info">I have a margin on all sides (3rem = 48px) and a bottom padding (3rem = 48px)</div>
+
+        <!-- Shadows
+    Use the shadow- classes to add shadows to an element: -->
+    
+    <div class="shadow-none p-4 mb-4 bg-light">No shadow</div>
+<div class="shadow-sm p-4 mb-4 bg-white">Small shadow</div>
+<div class="shadow p-4 mb-4 bg-white">Default shadow</div>
+<div class="shadow-lg p-4 mb-4 bg-white">Large shadow</div>
+
+
+
+
+
+</body>
+
+</html>
