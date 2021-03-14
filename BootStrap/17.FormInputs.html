@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Inputs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Bootstrap supports the following form controls:
+            input
+            textarea
+            checkbox
+            radio
+            select -->
+
+
+    <!-- Bootstrap Input
+        Bootstrap supports all the HTML5 input types: text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color.
+
+        Note: Inputs will NOT be fully styled if their type is not properly declared! -->
+
+    <!-- The following example contains two input elements; one of type="text" and one of type="password". As we mentioned in the Forms chapter, we use the .form-control class to style inputs with full-width and proper padding, etc -->
+    <div class="form-group">
+        <label for="usr">Name:</label>
+        <input type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+    </div>
+
+    <br>
+
+    <!-- Bootstrap Textarea -->
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+
+    <br>
+
+    <!-- Bootstrap Checkboxes -->
+    <!-- Checkboxes are used if you want the user to select any number of options from a list of preset options. -->
+    <!-- Use a wrapper element with class="form-check" to ensure proper margins for labels and checkboxes.
+    Add the .form-check-label class to label elements, and .form-check-input to style checkboxes properly inside the .form-check container. -->
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Option 1
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Option 2
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+        </label>
+    </div>
+
+    <br>
+
+    <!-- Inline Checkboxes
+    Use the .form-check-inline class if you want the checkboxes to appear on the same line: -->
+    <div class="form-check-inline">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Option 1
+        </label>
+    </div>
+    <div class="form-check-inline">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="">Option 2
+        </label>
+    </div>
+    <div class="form-check-inline">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+        </label>
+    </div>
+
+    <br>
+
+    <!-- Bootstrap Radio Buttons -->
+    <!-- Radio buttons are used if you want to limit the user to just one selection from a list of preset options. -->
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio">Option 1
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio">Option 2
+        </label>
+    </div>
+    <div class="form-check disabled">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
+        </label>
+    </div>
+
+    <br>
+
+    <!-- As with checkboxes, use the .form-check-inline class if you want the radio buttons to appear on the same line: -->
+    <div class="form-check-inline">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio">Option 1
+        </label>
+    </div>
+    <div class="form-check-inline">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio">Option 2
+        </label>
+    </div>
+    <div class="form-check-inline disabled">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio" disabled>Option 3
+        </label>
+    </div>
+
+    <br>
+
+    <!-- Bootstrap Select List -->
+    <!-- Select lists are used if you want to allow the user to pick from multiple options. -->
+    <div class="form-group">
+        <label for="sel1">Select list:</label>
+        <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+
+    <br>
+
+    <!-- Form Control Sizing -->
+    <!-- Change the size of the form control with .form-control-sm or .form-control-lg: -->
+    <form action="/action_page.php">
+        <div class="form-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Small form control" name="text1">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Default form control" name="text2">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control form-control-lg" placeholder="Large form control" name="text3">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <br>
+
+    <!-- Form Control File and Range -->
+    <!-- Add the .form-control-range class to input type"range" or .form-control-file to input type"file" to style a range control or a file field with full-width: -->
+    <form action="/action_page.php">
+        <div class="form-group">
+            <input type="range" class="form-control-range" name="range">
+        </div>
+        <div class="form-group">
+            <input type="file" class="form-control-file border" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
