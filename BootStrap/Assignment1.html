@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        .d-flex {
+        .container-fluid {
             height: 600px;
             background-color: rgb(234, 241, 241);
         }
@@ -27,7 +27,47 @@
 </head>
 
 <body>
-    <div class="d-flex flex-wrap p-5 justify-content-center align-items-center">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-12 d-flex flex-column p-5 mt-5"
+                style="text-align: justify;">
+                <div>
+                    <img src="facebooklogo.jpg" alt="">
+                </div>
+                <br>
+                <div>
+                    <h2 class="logocontent">Facebook helps you connect and share with the people in your life.</h2>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-12" style="text-align: center;background-color: rgb(234, 241, 241);">
+                <div class="col-lg-9 col-md-9 col-sm-6 col-6 bg-light p-3 mt-5 rounded rounded-lg">
+                    <form action="/">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email address or phone number"
+                                id="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        <div class="form-group">
+                            <a href="" class="text-primary">Forgotten Password ?</a>
+                        </div>
+                        <div class="form-group mt-4" style="border-bottom: 1px solid #dadde1">
+                        </div>
+                        <div class="form-group mt-5">
+                            <button type="submit" class="btn btn-success">Create New Account</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="d-flex flex-wrap p-5 justify-content-center align-items-center">
         <div class="p-5">
             <img src="facebooklogo.jpg" alt="">
             <h2 class="logocontent">Facebook helps you connect and share with the people in your life.</h2>
@@ -53,7 +93,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>
