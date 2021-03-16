@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+
+<body>
+    <!-- JavaScript Operators -->
+
+    <!-- Arithmetic Operators -->
+    <!-- Arithmetic operators perform arithmetic on numbers (literals or variables).
+
+        Operator	Description
+        +	        Addition
+        -	        Subtraction
+        *	        Multiplication
+        **	        Exponentiation (ES2016)
+        /	        Division
+        %	        Modulus (Remainder)
+        ++	        Increment
+        --	        Decrement 
+    -->
+
+    <!-- Adding 
+    The addition operator (+) adds numbers -->
+    <script>
+        var x = 5;
+        var y = 4;
+        var z = x + y;
+        console.log(z);
+    </script>
+
+    <!-- Subtracting
+    The subtraction operator (-) subtracts numbers. -->
+    <script>
+        var x = 5;
+        var y = 2;
+        var z = x - y;
+        console.log(z);
+    </script>
+
+    <!-- Multiplying
+    The multiplication operator (*) multiplies numbers. -->
+    <script>
+        var x = 5;
+        var y = 2;
+        var z = x * y;
+        console.log(z);
+    </script>
+
+    <!-- Dividing
+    The division operator (/) divides numbers. -->
+    <script>
+        var x = 5;
+        var y = 2;
+        var z = x / y;
+        console.log(z);
+    </script>
+
+    <!-- Remainder
+    The modulus operator (%) returns the division remainder. -->
+    <script>
+        var x = 5;
+        var y = 2;
+        var z = x % y;
+        console.log(z);
+    </script>
+
+    <!-- Incrementing
+    The increment operator (++) increments numbers. -->
+    <script>
+        var x = 5;
+        x++;
+        var z = x;
+        console.log(z);
+    </script>
+
+    <!-- Decrementing
+    The decrement operator (--) decrements numbers. -->
+    <script>
+        var x = 5;
+        x--;
+        var z = x;
+        console.log(z);
+    </script>
+
+    <!-- Exponentiation(New Features in ECMAScript 2016)
+    The exponentiation operator (**) raises the first operand to the power of the second operand. -->
+    <script>
+        var x = 5;
+        var z = x ** 2;          // result is 25
+        console.log(z);
+    </script>
+
+    <!-- Operator Precedence
+    Operator precedence describes the order in which operations are performed in an arithmetic expression. -->
+
+    <!-- Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-). -->
+    <script>
+        var x = 100 + 50 * 3;
+        console.log(x);
+    </script>
+
+    <!-- When using parentheses, the operations inside the parentheses are computed first. -->
+    <script>
+        var x = (100 + 50) * 3;
+        console.log(x);
+    </script>
+
+    <!-- When many operations have the same precedence (like addition and subtraction), they are computed from left to right -->
+    <script>
+        var x = 100 + 50 - 3;
+        console.log(x);
+    </script>
+
+    <!-- Note: For seeing the JavaScript Operator Precedence Values
+     https://www.w3schools.com/js/js_arithmetic.asp   -->
+
+
+    <!-- Assignment Operators -->
+    <!-- Assignment operators assign values to JavaScript variables. -->
+
+    <!-- Operator	Example	    Same As
+            =	    x = y	    x = y
+            +=	    x+= y	    x = x + y
+            -=	    x -= y	    x = x - y
+            *=	    x *= y	    x = x * y
+            /=	    x /= y	    x = x / y
+            %=	    x %= y	    x = x % y
+            <<=	    x <<= y	    x = x << y
+            >>=	    x >>= y	    x = x >> y
+            >>>=	x >>>= y	x = x >>> y
+            &=	    x &= y	    x = x & y
+            ^=	    x ^= y	    x = x ^ y
+            |=	    x |= y	    x = x | y
+            **=	    x **= y	    x = x ** y 
+        -->
+    <script>
+        //The = assignment operator assigns a value to a variable.
+        var x = 10;
+        console.log(x);
+
+        // The += assignment operator adds a value to a variable.
+        var x = 10;
+        x += 5;
+        console.log(x);
+
+        // The -= assignment operator subtracts a value from a variable.
+        var x = 10;
+        x -= 5;
+        console.log(x);
+
+        // The *= assignment operator multiplies a variable.
+        var x = 10;
+        x *= 5;
+        console.log(x);
+
+        // The /= assignment divides a variable.
+        var x = 10;
+        x /= 5;
+        console.log(x);
+
+        // The %= assignment operator assigns a remainder to a variable.
+        var x = 10;
+        x %= 5;
+        console.log(x);
+
+        // Exponentiation Assignment(New Features in ECMAScript 2016)
+        // The exponentiation assignment operator (**=) raises the value of a variable to the power of the right operand.
+        let x = 5;
+        x **= 2; // result 25
+        console.log(x);
+    </script>
+
+</body>
+
+</html>
