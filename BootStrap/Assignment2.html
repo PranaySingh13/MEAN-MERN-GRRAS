@@ -14,67 +14,71 @@
         .container-fluid {
             height: 100vh;
             background-color: rgb(234, 241, 241);
-             position: relative;
-        }
-
-        .brandname {
-            position: absolute;
-            top: 28px;
-            left: 100px;
+            position: relative;
         }
 
         .link1 {
             position: absolute;
-            top: 28px;
+            /* top: 28px; */
             right: 325px;
         }
 
         .link2 {
             position: absolute;
-            top: 28px;
+            /* top: 28px; */
             right: 260px;
         }
 
         .link3 {
             position: absolute;
-            top: 28px;
+            /* top: 28px; */
             right: 175px;
         }
 
         .link4 {
             position: absolute;
-            top: 28px;
+            /* top: 28px; */
             right: 125px;
         }
 
         .downloadButton {
             position: absolute;
-            top: 28px;
+            /* top: 20px; */
             right: 16px;
-        }
-
-        .rounded {
-            width: 70px;
-            height: 70px;
-            margin: 6px;
-            background-color: yellow;
-            position: absolute;
-            left: 10px;
         }
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="d-flex flex-wrap justify-content-around text-primary">
+        <nav class="navbar navbar-expand-sm bg-transparent navbar-dark fixed-top">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <!-- Brand/logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="yellowlogo.png" alt="logo" style="width:40px;">
+                </a>
+                <!-- Brand/logo -->
+                <a class="navbar-brand text-primary" href="#">MOBIRISE</a>
+                <li class="nav-item">
+                    <a class="nav-link link1 text-primary" href="#">ONE PAGE</a>
+                </li>
+                <li class="nav-item link2">
+                    <a class="nav-link text-primary" href="#">SLIDER</a>
+                </li>
+                <li class="nav-item link3">
+                    <a class="nav-link text-primary" href="#">VIDEO BG</a>
+                </li>
+                <li class="nav-item link4">
+                    <a class="nav-link text-primary" href="#">BLOG</a>
+                </li>
+                <li class="nav-item downloadButton">
+                    <a class="nav-link" href="#"><button class="bg-transparent text-primary">Download</button></a>
+                </li>
+            </ul>
+        </nav>
+        <div>
             <img src="mobilebanner.webp" alt="" height="300px" width="100%">
-            <span class="rounded rounded-circle"></span>
-            <div class="brandname">MOBIRISE</div>
-            <div class="link1">ONE PAGE</div>
-            <div class="link2">SLIDER</div>
-            <div class="link3">VIDEO BG</div>
-            <div class="link4">BLOG</div>
-            <div class="downloadButton"><button>Download</button></div>
         </div>
         <div class="d-flex flex-wrap justify-content-around m-auto p-3">
             <div class="card" style="width:250px">
