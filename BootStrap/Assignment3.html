@@ -19,116 +19,41 @@
         background-color: rgb(234, 241, 241);
         position: relative;
     }
-
-    .phone {
-        position: absolute;
-        left: 1%;
-    }
-
-    .facebook {
-        position: absolute;
-        left: 70%;
-    }
-
-    .twitter {
-        position: absolute;
-        left: 74%;
-    }
-
-    .linkedin {
-        position: absolute;
-        left: 78%;
-    }
-
-    .pinterest {
-        position: absolute;
-        left: 82%;
-    }
-
-    .google {
-        position: absolute;
-        left: 86%;
-    }
-
-    /* .instagram{
-        position: absolute;
-        left: 90%;
-    } */
-    .brandname {
-        position: absolute;
-        left: 10%;
-    }
-
-    .home {
-        position: absolute;
-        left: 27%;
-    }
-
-    .features {
-        position: absolute;
-        left: 42%;
-    }
-
-    .pages {
-        position: absolute;
-        left: 55%;
-    }
-
-    .portfolio {
-        position: absolute;
-        left: 66%;
-    }
-
-    .blog {
-        position: absolute;
-        left: 80%;
-    }
-
-    .contact {
-        position: absolute;
-        left: 90%;
-    }
 </style>
 </head>
 
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <ul class="navbar-nav">
-                <li class="nav-item phone">
-                    <a class="nav-link" href="#"><i class="fas fa-phone-alt"></i>+91-9806871458</a>
-                </li>
-                <li class="nav-item facebook">
+            <a class="nav-link text-light" href="#"><i class="fas fa-phone-alt"></i>+91-9806871458</a>
+            <ul class="navbar-nav ml-auto"> <!--ml-auto will completely right align the list -->
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
                 </li>
-                <li class="nav-item twitter">
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
                 </li>
-                <li class="nav-item linkedin">
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fab fa-linkedin-in"></i></a>
                 </li>
-                <li class="nav-item pinterest">
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fab fa-pinterest"></i></a>
                 </li>
-                <li class="nav-item google">
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fab fa-google-plus"></i></a>
                 </li>
-                <li class="nav-item instagram">
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
                 </li>
             </ul>
         </nav>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="navbar-brand" href="#">
-                        <img src="eternalogo.jpg" alt="logo">
-                    </a>
-                    <!-- Brand/logo -->
-                    <a class="navbar-brand text-dark brandname" href="#">MOBIRISE</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown home">
+            <a class="navbar-brand" href="#">
+                <img src="eternalogo.jpg" alt="logo">
+            </a>
+            <a class="navbar-brand text-dark" href="#">MOBIRISE</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-danger text-light" href="#" id="navbardrop"
                         data-toggle="dropdown">
                         <i class="fas fa-home"></i>Home
@@ -139,8 +64,7 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown features">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbardrop"
                         data-toggle="dropdown">
                         Features
@@ -151,8 +75,7 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown pages">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbardrop"
                         data-toggle="dropdown">
                         Pages
@@ -163,8 +86,7 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown portfolio">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbardrop"
                         data-toggle="dropdown">
                         Portfolio
@@ -175,8 +97,7 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown blog">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-light text-dark" href="#" id="navbardrop"
                         data-toggle="dropdown">
                         Blog
@@ -187,7 +108,7 @@
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
-                <li class="nav-item contact">
+                <li class="nav-item">
                     <a class="nav-link text-dark" href="#">Contact</a>
                 </li>
             </ul>
@@ -223,7 +144,8 @@
         </div>
         <div style="text-align: center;background-color: white;">
             <h2>Our Pricing</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quis rem laborum in labore voluptate, fuga reprehenderit non accusamus est laboriosam</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quis rem laborum in labore voluptate,
+                fuga reprehenderit non accusamus est laboriosam</p>
         </div>
         <div class="d-flex justify-content-around">
             <div class="card" style="width:250px">
