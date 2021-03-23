@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+
+<body>
+    <!-- JavaScript Data Types
+    JavaScript variables can hold many data types: numbers, strings, objects and more -->
+    <script>
+        var age = 26; // Number
+        var gender = "Male"; // String
+        var person = { firstName: "Pranay", lastName: "Singh" };// Object
+        console.log(person, gender, age);
+    </script>
+
+    <!-- When adding a number and a string, JavaScript will treat the number as a string. -->
+    <!-- JavaScript evaluates expressions from left to right. Different sequences can produce different results -->
+    <script>
+        var x = 15 + "Pranay";
+        console.log(x);
+        var y = "Pranay" + 15;
+        console.log(y);
+        var a = 15 + 5 + "Singh";
+        console.log(a);
+        var b = "Singh" + 15 + 5;
+        console.log(b);
+    </script>
+    <!-- In the first example, JavaScript treats 15 and 5 as numbers, until it reaches "Singh".
+
+        In the second example, since the first operand is a string, all operands are treated as strings. -->
+
+    <!-- JavaScript Types are Dynamic
+    JavaScript has dynamic types. This means that the same variable can be used to hold different data types: -->
+    <script>
+        var x;           // Now x is undefined
+        x = 5;           // Now x is a Number
+        x = "John";      // Now x is a String
+        console.log(x);
+    </script>
+
+    <!-- JavaScript Strings
+    A string (or a text string) is a series of characters -->
+
+    <!-- Strings are written with quotes. You can use single or double quotes -->
+    <script>
+        var carName1 = "Volvo XC60";   // Using double quotes
+        var carName2 = 'Volvo XC60';   // Using single quotes
+        console.log(carName1, carName2);
+    </script>
+
+    <!-- You can use quotes inside a string, as long as they don't match the quotes surrounding the string -->
+    <script>
+        var answer1 = "It's alright";             // Single quote inside double quotes
+        var answer2 = "He is called 'Johnny'";    // Single quotes inside double quotes
+        var answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes
+        console.log(answer1, answer2, answer3);
+    </script>
+
+    <!-- JavaScript Numbers
+        JavaScript has only one type of numbers.
+        Numbers can be written with, or without decimals -->
+
+    <script>
+        var x1 = 35.23; // Written with decimals
+        var x2 = 35; // Written without decimals
+        console.log(x1, x2);
+    </script>
+
+    <!-- Extra large or extra small numbers can be written with scientific (exponential) notation -->
+    <script>
+        var y = 123e5;      // 12300000
+        var z = 123e-5;     // 0.00123
+        console.log(y, z);
+    </script>
+
+    <!-- JavaScript Booleans
+    Booleans can only have two values: true or false. -->
+    <!-- Booleans are often used in conditional testing. -->
+    <script>
+        var x = 5;
+        var y = 5;
+        var z = 6;
+        console.log((x == y));       // Returns true
+        console.log((x == z));        // Returns false
+    </script>
+
+    <!-- JavaScript Arrays
+        JavaScript arrays are written with square brackets.
+        Array items are separated by commas.
+        The following code declares (creates) an array called cars, containing three items (car names) -->
+
+    <!-- Array indexes are zero-based, which means the first item is [0], second is [1], and so on. -->
+    <script>
+        var cars = ["Audi", "BMW", "Alto"];
+        console.log(cars);
+        console.log(cars[0]);
+        console.log(cars[1]);
+        console.log(cars[2]);
+    </script>
+
+    <!-- JavaScript Objects
+    JavaScript objects are written with curly braces {}.-->
+    <!-- Object properties are written as name:value pairs, separated by commas. -->
+    <script>
+        var person = { firstName: "Pranay", lastName: "Singh", age: 26 };// Object
+        console.log(person);
+    </script>
+
+    <!-- The typeof Operator
+    You can use the JavaScript typeof operator to find the type of a JavaScript variable. -->
+    <script>
+        console.log(typeof "Pranay", typeof 26, typeof 3.10); //returns string and number
+    </script>
+
+    <!-- Undefined
+    In JavaScript, a variable without a value, has the value undefined. The type is also undefined. -->
+    <!-- Any variable can be emptied, by setting the value to undefined. The type will also be undefined. -->
+    <script>
+        var car; // Value is undefined, type is undefined
+        console.log(car, typeof car);
+
+        car = undefined;    // Value is undefined, type is undefined
+    </script>
+
+    <!-- Empty Values
+        An empty value has nothing to do with undefined.
+        An empty string has both a legal value and a type. -->
+    <script>
+        var car = ""; // The value is "", the typeof is "string"
+        console.log(car, typeof car);
+    </script>
+
+    <!-- Null
+        In JavaScript null is "nothing". It is supposed to be something that doesn't exist.
+        Unfortunately, in JavaScript, the data type of null is an object. -->
+
+    <!-- You can consider it a bug in JavaScript that typeof null is an object. It should be null. -->
+    <script>
+        var person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
+        person = null;    // Now value is null, but type is still an object
+        console.log(person, typeof person);
+    </script>
+
+    <!-- Difference Between Undefined and Null
+    undefined and null are equal in value but different in type -->
+
+    <script>
+        typeof undefined           // undefined
+        typeof null                // object
+
+        null === undefined         // false
+        null == undefined          // true
+    </script>
+
+    <!-- Complex Data
+            The typeof operator can return one of two complex types:
+
+            function
+            object
+            The typeof operator returns "object" for objects, arrays, and null.
+            The typeof operator does not return "object" for functions. -->
+    <!-- The typeof operator returns "object" for arrays because in JavaScript arrays are objects. -->
+    <script>
+        typeof { name: 'John', age: 34 } // Returns "object"
+        typeof [1, 2, 3, 4]             // Returns "object" (not "array", see note below)
+        typeof null                  // Returns "object"
+        typeof function myFunc() { }   // Returns "function"
+    </script>
+
+</body>
+
+</html>
