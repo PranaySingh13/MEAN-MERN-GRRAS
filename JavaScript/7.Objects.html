@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <!-- JavaScript Objects -->
+    <!-- Objects are variables too. But objects can contain many values. -->
+    <!-- The values are written as name:value pairs (name and value separated by a colon). -->
+    <script>
+        var car = { type: "Fiat", model: "500", color: "white" };
+        console.log(car);
+    </script>
+
+    <!-- Object Definition
+    You define (and create) a JavaScript object with an object literal: -->
+    <script>
+        var person = { firstName: "Pranay", lastName: "Singh", age: 27, gender: "Male" };
+        console.log(person);
+    </script>
+    <!-- Spaces and line breaks are not important. An object definition can span multiple lines: -->
+    <script>
+        var person = {
+            firstName: "pranay",
+            lastName: "singh",
+            age: 27,
+            gender: "male"
+        };
+        console.log(person);
+    </script>
+    <!-- Object Properties
+    The name:values pairs in JavaScript objects are called properties:
+
+        Property	Property Value
+        firstName	pranay
+        lastName	singh
+        age	        27
+        gender	    male -->
+
+    <!-- Accessing Object Properties
+    You can access object properties in two ways: -->
+    <script>
+        var person = {
+            firstName: "pranay",
+            lastName: "singh",
+            age: 27,
+            gender: "male"
+        };
+        //first way
+        console.log(person.firstName);
+
+        //second way
+        console.log(person["lastName"]);
+    </script>
+
+    <!-- Object Methods
+        Objects can also have methods.
+        Methods are actions that can be performed on objects.
+        Methods are stored in properties as function definitions. -->
+
+    <!-- V.Imp -->
+    <!-- A method is a function stored as a property. -->
+    <script>
+        var person = {
+            firstName: "pranay",
+            lastName: "singh",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+    </script>
+    <!-- The this Keyword
+    In a function definition, this refers to the "owner" of the function.
+    In the example above, this is the person object that "owns" the fullName function.
+    In other words, this.firstName means the firstName property of this object. -->
+
+    <!-- Accessing Object Methods
+        You access an object method with the following syntax -->
+    <!-- objectName.methodName() -->
+    <!-- If you access a method without the () parentheses, it will return the function definition: -->
+    <script>
+        console.log(person.fullName());
+        console.log(person.fullName);
+    </script>
+
+    
+</body>
+
+</html>
