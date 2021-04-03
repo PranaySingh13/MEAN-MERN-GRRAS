@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <!-- JavaScript Strings -->
+    <!-- JavaScript strings are used for storing and manipulating text. -->
+    <!-- A JavaScript string is zero or more characters written inside quotes. -->
+    <!-- You can use single or double quotes -->
+    <script>
+        var x="Pranay";//double quotes
+        var y='Singh';//single quotes
+        console.log(x,y);
+    </script>
+
+    <!-- You can use quotes inside a string, as long as they don't match the quotes surrounding the string -->
+    <script>
+        var x ="It is alright";
+        var y ="He is called 'Pranay'";
+        var z ='He is called "Singh"';
+        console.log(x,y,z);
+    </script>    
+
+    <!-- String Length
+    To find the length of a string, use the built-in length property: -->
+    <script>
+        var text="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        console.log(text.length);
+    </script>
+
+    <!-- Escape Character
+    Because strings must be written within quotes, JavaScript will misunderstand this string -->
+    <!--var x="We are the so-called "Vikings" from the north.";
+    -->
+    <!-- The string will be chopped to "We are the so-called ".
+        The solution to avoid this problem, is to use the backslash escape character.
+        The backslash (\) escape character turns special characters into string characters -->
+    <!-- The backslash (\) escape character turns special characters into string characters:
+        Code	Result	Description
+        \'	    '	    Single quote
+        \"	    "	    Double quote
+        \\	    \	    Backslash
+        The sequence \"  inserts a double quote in a string -->
+    <script>
+        var x="Hello.. I am \"Pranay Singh\"";
+        console.log(x);
+    </script>
+    <!-- The sequence \'  inserts a single quote in a string -->
+    <script>
+        var x='It\'s alright...';
+        console.log(x);
+    </script>
+    <!-- The sequence \\  inserts a backslash in a string -->
+    <script>
+        var x ="I am \\ Pranay";
+        console.log(x);
+    </script>
+    <!-- Six other escape sequences are valid in JavaScript:
+
+        Code	Result
+        \b	    Backspace
+        \f	    Form Feed
+        \n	    New Line
+        \r	    Carriage Return
+        \t  	Horizontal Tabulator
+        \v	    Vertical Tabulator -->
+    
+    <!-- When using the == operator, equal strings are equal -->
+    <script>
+        var x="Pranay";
+        var y=new String("Pranay");//(not recommended to use because of slow execution)another way of defining the string with return type of object 
+        console.log(x==y,typeof x,typeof y);
+    </script>
+
+    <!-- When using the === operator, equal values may not be equal, because the === operator expects equality in both data type and value. -->
+    <script>
+        var x="Pranay";
+        var y=new String("Pranay");
+        console.log(x===y); 
+    </script>
+
+    <!--  comparing two JavaScript objects will always return false. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
