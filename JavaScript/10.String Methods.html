@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+
+<body>
+    <!-- JavaScript String Methods -->
+    <!-- String methods help you to work with strings. -->
+
+    <!-- String Methods and Properties -->
+
+    <!-- String Length
+    The length property returns the length of a string -->
+    <script>
+        var text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        console.log(text.length);
+    </script>
+
+    <!-- Finding a String in a String
+    The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string: -->
+
+    <!-- JavaScript counts positions from zero.
+    0 is the first position in a string, 1 is the second, 2 is the third ... -->
+    <script>
+        var str = "Please locate where 'locate' occurs!";
+        console.log(str.indexOf("locate"));
+    </script>
+
+    <!-- The lastIndexOf() method returns the index of the last occurrence of a specified text in a string -->
+    <script>
+        var str = "Please locate where 'locate' occurs!";
+        console.log(str.lastIndexOf("locate"));
+    </script>
+
+    <!-- Both indexOf(), and lastIndexOf() return -1 if the text is not found.-->
+    <script>
+        var str = "Please locate where 'locate' occurs!";
+        console.log(str.lastIndexOf("Pranay"));
+    </script>
+
+    <!-- Both methods accept a second parameter as the starting position for the search -->
+    <script>
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.indexOf("locate", 15);
+        console.log(pos);
+    </script>
+
+    <!-- The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string. -->
+    <script>
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.lastIndexOf("locate", 15);
+        console.log(pos);
+    </script>
+
+    <!-- Searching for a String in a String
+    The search() method searches a string for a specified value and returns the position of the match -->
+    <script>
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.search("locate");
+        console.log(pos);
+    </script>
+    <!-- The two methods are NOT equal. These are the differences:
+
+        The search() method cannot take a second start position argument.
+        The indexOf() method cannot take powerful search values (regular expressions). -->
+
+    <!-- Extracting String Parts
+        There are 3 methods for extracting a part of a string:
+
+        slice(start, end)
+        substring(start, end)
+        substr(start, length) -->
+
+    <!-- The slice() Method
+    slice() extracts a part of a string and returns the extracted part in a new string.
+    The method takes 2 parameters: the start position, and the end position (end not included). -->
+
+    <script>
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(7, 13));//from position 7 to position 12(13-1)
+    </script>
+
+    <!-- If a parameter is negative, the position is counted from the end of the string. -->
+    <script>
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(-12, -6));
+    </script>
+
+    <!-- If you omit the second parameter, the method will slice out the rest of the string -->
+    <script>
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(7));
+    </script>
+
+    <!-- or, counting from the end -->
+    <script>
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(-12));
+    </script>
+
+    <!-- The substring() Method
+        substring() is similar to slice().
+        The difference is that substring() cannot accept negative indexes. -->
+    <!-- If you omit the second parameter, substring() will slice out the rest of the string. -->
+    <script>
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.substring(7, 13));
+        console.log(str.substring(7));
+    </script>
+
+    <!-- The substr() Method
+        substr() is similar to slice().
+        The difference is that the second parameter specifies the length of the extracted part. -->
+    <!-- If you omit the second parameter, substr() will slice out the rest of the string. -->
+    <script>
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.substr(7, 6));
+        console.log(str.substr(7));
+    </script>
+
+    <!-- Replacing String Content
+    The replace() method replaces a specified value with another value in a string -->
+    <script>
+        var str = "Please Visit Microsoft";
+        console.log(str.replace("Microsoft", "W3Schools"));
+    </script>
+
+    <!-- The replace() method does not change the string it is called on. It returns a new string.
+    By default, the replace() method replaces only the first match -->
+    <script>
+        var str = "Please Visit Microsoft after Microsoft";
+        console.log(str.replace("Microsoft", "W3Schools"));
+    </script>
+
+    <!-- By default, the replace() method is case sensitive. Writing MICROSOFT (with upper-case) will not work -->
+    <script>
+        var str = "Please Visit Microsoft";
+        console.log(str.replace("MICROSOFT", "W3Schools"));
+    </script>
+
+    <!-- To replace case insensitive, use a regular expression with an /i flag (insensitive) -->
+    <script>
+        var str = "Please Visit Microsoft";
+        console.log(str.replace(/MICROSOFT/i, "W3Schools"));
+    </script>
+
+    <!-- Note that regular expressions are written without quotes.
+    
+    **To replace all matches, use a regular expression with a /g flag (global match) -->
+    <script>
+        var str = "Please Visit Microsoft after Microsoft";
+        console.log(str.replace(/Microsoft/g, "W3Schools"));
+    </script>
+
+    <!-- Converting to Upper and Lower Case
+    A string is converted to upper case with toUpperCase() -->
+    <script>
+        var str = "hello world";
+        console.log(str.toUpperCase());
+    </script>
+
+    <!-- A string is converted to lower case with toLowerCase() -->
+    <script>
+        var str = "Hello World";
+        console.log(str.toLowerCase());
+    </script>
+
+    <!-- The concat() Method
+    concat() joins two or more strings -->
+    <script>
+        var str1 = "Hello";
+        var str2 = "World";
+        console.log(str1.concat(" ", str2));
+    </script>
+
+    <!-- The concat() method can be used instead of the plus operator. These two lines do the same -->
+    <script>
+        var str1 = "Hello" + " " + "World";
+        var str2 = "Hello".concat(" ", "World");
+        console.log(str1 == str2); //true
+    </script>
+
+    <!-- String.trim()
+    The trim() method removes whitespace from both sides of a string -->
+    <script>
+        var str = "       Hello World!        ";
+        console.log(str);
+        console.log(str.trim());
+    </script>
+
+    <!-- Extracting String Characters
+        There are 3 methods for extracting string characters:
+
+        charAt(position)
+        charCodeAt(position)
+        Property access [ ] -->
+
+    <!-- The charAt() Method
+    The charAt() method returns the character at a specified index (position) in a string -->
+    <script>
+        var str = "Hello World";
+        console.log(str.charAt(0), str.charAt(10));
+    </script>
+
+    <!-- The charCodeAt() Method
+        The charCodeAt() method returns the unicode of the character at a specified index in a string:
+        The method returns a UTF-16 code (an integer between 0 and 65535). -->
+    <script>
+        var str = "Hello World";
+        console.log(str.charCodeAt(0));
+    </script>
+
+    <!-- Property Access
+    ECMAScript 5 (2009) allows property access [ ] on strings -->
+    <script>
+        var str = "Hello World";
+        console.log(str[0]);
+    </script>
+
+    <!-- Converting a String to an Array
+    A string can be converted to an array with the split() method -->
+    <script>
+        var txt1 = "a,b,c,d,e";   // String
+        var txt2 = "Hello World";
+        var txt3 = "Hey | You";
+        var a = txt1.split(",");          // Split on commas
+        var b = txt2.split(" ");          // Split on spaces
+        var c = txt3.split("|");          // Split on pipe
+        console.log(a[1]);
+        console.log(b[0]);
+        console.log(c[1]);
+    </script>
+
+</body>
+
+</html>
