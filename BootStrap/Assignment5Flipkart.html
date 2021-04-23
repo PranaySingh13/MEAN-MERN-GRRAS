@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- For Using Icons -->
+    <script src="https://kit.fontawesome.com/3ca1dae5d6.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    .container-fluid {
+        height: 1000px;
+        background-color: rgb(227, 245, 245);
+        position: relative;
+    }
+
+    .withicon {
+        position: relative;
+
+    }
+
+    .withicon input {
+        position: absolute;
+        top: -20px;
+        height: 40px;
+    }
+
+    .withicon i {
+        position: absolute;
+        top: -10px;
+        left: 525px;
+        font-size: larger;
+        color: rgb(0, 153, 255);
+    }
+
+    .image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .image1 img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image a:hover {
+        text-decoration: none;
+        color: rgb(0, 204, 255);
+    }
+
+    .image1 a:hover {
+        text-decoration: none;
+        color: green;
+    }
+
+    .image_anchor {
+        font-size: smaller;
+        font-weight: bold;
+    }
+
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .l1 {
+        position: relative;
+    }
+
+    .l1 li:hover {
+        color: rgb(0, 204, 255);
+    }
+
+    .l2 {
+        position: absolute;
+        left: 100%;
+        top: 0%;
+        width: 110%;
+        display: none;
+        list-style: none;
+    }
+
+    .l1 li:hover .l2 {
+        display: block;
+    }
+
+    .l2 li:hover {
+        color: rgb(0, 204, 255);
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+            <!-- Brand/logo -->
+            <img src="flipkart logo.png" alt="logo" title="Flipkart" data-toggle="tooltip" data-placement="bottom"
+                style="width: 90px;margin-left: 150px;margin-right: 10px;">
+            <form class="form-inline" action="/action_page.php">
+                <div class="withicon">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search for products, brands and more"
+                        size="70">
+                    <i class="fas fa-search"></i>
+                </div>
+            </form>
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown" style="padding-right: 30px;top:5px;">
+                    <a class="nav-link dropdown-toggle bg-light text-primary" href="#" id="navbardrop"
+                        data-toggle="dropdown" style="width: 110px;height: 30px;text-align: center;">
+                        Login
+                    </a>
+                    <div class="dropdown-menu" style="width: 225px;">
+                        <a class="dropdown-item" href="#">New Customer ?&nbsp;&nbsp;<span class="text-primary">Sign
+                                Up</span></a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-user-circle text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;My
+                            Profile</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-plus-circle text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Flipkart
+                            Plus Zone</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-clipboard-list text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orders</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-heart text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Wishlist</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-award text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rewards</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-gifts text-primary"></i>&nbsp;&nbsp;&nbsp;Gift Cards</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" style="padding-right: 30px;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        More
+                    </a>
+                    <div class="dropdown-menu" style="width: 250px;">
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-bell text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Notification
+                            Preferences</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-gift text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Sell On Flipkart</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-question-circle text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;24*7 Customer
+                            Care</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-chart-line text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Advertise</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="fas fa-download text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Download App</a>
+                    </div>
+                </li>
+                <li class="nav-item" style="padding-right: 125px;">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="d-flex justify-content-around bg-white" style="height: 180px;width: 100%;">
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="top offers.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Top Offers</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="grocery.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Grocery</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="mobiles.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Mobiles</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="fashion.png" alt="Card image"><br>
+                <div class="dropdown">
+                    <a href="#" class="text-dark image_anchor dropdown-toggle" data-toggle="dropdown">Fashion</a>
+                    <ul class="dropdown-menu l1">
+                        <li class="dropdown-item" href="#">Men's Top Wear
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Men's T-Shirts</li>
+                                <li class="dropdown-item" href="#">Men's Casual Shirts</li>
+                                <li class="dropdown-item" href="#">Men's Formal Shirts</li>
+                                <li class="dropdown-item" href="#">Men's Kurtas</li>
+                                <li class="dropdown-item" href="#">Men's Blazzer</li>
+                                <li class="dropdown-item" href="#">Men's Ethinic Sets</li>
+                                <li class="dropdown-item" href="#">Men's Raincoat</li>
+                                <li class="dropdown-item" href="#">Men's Windcheaters</li>
+                                <li class="dropdown-item" href="#">Men's Suits</li>
+                                <li class="dropdown-item" href="#">Men's Fabrics</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Men's Bottom Wear
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Men's Jeans</li>
+                                <li class="dropdown-item" href="#">Men's Trousers</li>
+                                <li class="dropdown-item" href="#">Men's Trackpants</li>
+                                <li class="dropdown-item" href="#">Men's Shorts</li>
+                                <li class="dropdown-item" href="#">Men's Cargos</li>
+                                <li class="dropdown-item" href="#">Men's Threefourths</li>
+                                <li class="dropdown-item" href="#">Men's Pyjamas & Loungepants</li>
+                                <li class="dropdown-item" href="#">Men's Dhoti</li>
+                                <li class="dropdown-item" href="#">Men's Ethinic Pyjamas</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Women Ethinic
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Women Sarees</li>
+                                <li class="dropdown-item" href="#">Women Kurtas & Kurtis</li>
+                                <li class="dropdown-item" href="#">Women Ethinics</li>
+                                <li class="dropdown-item" href="#">Women Dress Material</li>
+                                <li class="dropdown-item" href="#">Women Cargos</li>
+                                <li class="dropdown-item" href="#">Women Threefourths</li>
+                                <li class="dropdown-item" href="#">Women Pyjamas & Loungepants</li>
+                                <li class="dropdown-item" href="#">Women Dhoti</li>
+                                <li class="dropdown-item" href="#">Women Ethinic Pyjamas</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Women Western
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Women Jeans</li>
+                                <li class="dropdown-item" href="#">Women Trousers</li>
+                                <li class="dropdown-item" href="#">Women Trackpants</li>
+                                <li class="dropdown-item" href="#">Women Shorts</li>
+                                <li class="dropdown-item" href="#">Women Cargos</li>
+                                <li class="dropdown-item" href="#">Women Threefourths</li>
+                                <li class="dropdown-item" href="#">Women Pyjamas & Loungepants</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Men Footwear
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Men's Sports Shoes</li>
+                                <li class="dropdown-item" href="#">Men's Formals</li>
+                                <li class="dropdown-item" href="#">Men's Slippers</li>
+                                <li class="dropdown-item" href="#">Men's Sandals</li>
+                                <li class="dropdown-item" href="#">Men's Socks</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Women Footwear
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Women Sports Shoes</li>
+                                <li class="dropdown-item" href="#">Women Formals</li>
+                                <li class="dropdown-item" href="#">Women Slippers</li>
+                                <li class="dropdown-item" href="#">Women Sandals</li>
+                                <li class="dropdown-item" href="#">Women Socks</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Watches and Accessories
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Rolex</li>
+                                <li class="dropdown-item" href="#">Titan</li>
+                                <li class="dropdown-item" href="#">Fastrack</li>
+                                <li class="dropdown-item" href="#">Diesel</li>
+                                <li class="dropdown-item" href="#">Daniel Clein</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Bags, Suitcase & Luggage
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Sports Bag</li>
+                                <li class="dropdown-item" href="#">Gym Bag</li>
+                                <li class="dropdown-item" href="#">Travel Bag</li>
+                                <li class="dropdown-item" href="#">Leather Bag</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item" href="#">Kids
+                            <ul class="dropdown-menu l2">
+                                <li class="dropdown-item" href="#">All</li>
+                                <li class="dropdown-item" href="#">Pens</li>
+                                <li class="dropdown-item" href="#">Games</li>
+                                <li class="dropdown-item" href="#">Pencil</li>
+                                <li class="dropdown-item" href="#">Compass</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="electronics.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Electronics</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="home.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Home</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="appliances.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Appliances</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="travel.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Travel</a>
+            </div>
+            <div class="mt-3 pt-5 image">
+                <img class="card-img-top" src="beauty toys.png" alt="Card image"><br>
+                <a href="#" class="text-dark image_anchor">Beauty,Toys & More</a>
+            </div>
+        </div>
+        <div id="demo" class="carousel slide " data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="carouselsave.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="carouselsave1.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="carouselsave2.jpg" alt="">
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        <div class="d-flex bg-white mt-2 pt-2 pl-4"
+            style="height: 50px;width: 100%;border-bottom: 1px solid rgb(206, 201, 201);">
+            <div>
+                <h4>Deals of the Day</h4>
+            </div>
+            <div>
+                <img src="clock.svg" alt="">
+            </div>
+            <div class="pt-1">
+                <span>15 :</span>
+                <span>45 :</span>
+                <span>26</span>
+            </div>
+            <div class="ml-auto mr-4">
+                <input type="button" value="View All" class="bg-primary text-white"
+                    style="width: 100px;height: 35px;border: 0px solid whitesmoke;">
+            </div>
+        </div>
+        <div class="d-flex justify-content-around">
+            <div class="col-10 bg-white p-2">
+                <div class="d-flex justify-content-around bg-white" style="height: 180px;width: 100%;">
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="peelers.jpeg" alt="Card image"><br>
+                        <p>Peelers & More</p>
+                        <a href="#" class="text-dark image_anchor" title="Peelers & More" data-toggle="tooltip"
+                            data-placement="bottom">From &#8377;99/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="helmets.jpg" alt="Card image"><br>
+                        <p>Helmets</p>
+                        <a href="#" class="text-dark image_anchor" title="Helmets" data-toggle="tooltip"
+                            data-placement="bottom">From
+                            &#8377;1000/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="home temples.jpeg" alt="Card image"><br>
+                        <p>Home Temples</p>
+                        <a href="#" class="text-dark image_anchor" title="Home Temples" data-toggle="tooltip"
+                            data-placement="bottom">From &#8377;8000/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="home.png" alt="Card image"><br>
+                        <p>Home Sofa</p>
+                        <a href="#" class="text-dark image_anchor" title="Home Sofa" data-toggle="tooltip"
+                            data-placement="bottom">From
+                            &#8377;2150/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="kitchen tools.jpeg" alt="Card image"><br>
+                        <p>Kitchen Tools</p>
+                        <a href="#" class="text-dark image_anchor" title="Kitchen Tools" data-toggle="tooltip"
+                            data-placement="bottom">From &#8377;599/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="mobiles.png" alt="Card image"><br>
+                        <p>Mobiles</p>
+                        <a href="#" class="text-dark image_anchor" title="Mobiles" data-toggle="tooltip"
+                            data-placement="bottom">From
+                            &#8377;15000/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="personal hygiene.jpeg" alt="Card image"><br>
+                        <p>Personal Hygiene</p>
+                        <a href="#" class="text-dark image_anchor" title="Personal Hygiene" data-toggle="tooltip"
+                            data-placement="bottom">From &#8377;99/-</a>
+                    </div>
+                    <div class="pt-2 image1" style="text-align: center;">
+                        <img class="card-img-top" src="power bank.jpg" alt="Card image"><br>
+                        <p>Power Bank</p>
+                        <a href="#" class="text-dark image_anchor" title="Power Bank" data-toggle="tooltip"
+                            data-placement="bottom">From
+                            &#8377;999/-</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 p-1">
+                <img src="furniture space.jpg" alt="" style="height: 250px;width: 100%;">
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-around bg-white mt-2" style="height: 180px;width: 100%;">
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="provogue.jpeg" alt="Card image"><br>
+                <p>Provouge</p>
+                <a href="#" class="text-dark image_anchor" title="Provouge" data-toggle="tooltip"
+                    data-placement="bottom">From &#8377;99/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="roti makers.jpeg" alt="Card image"><br>
+                <p>Roti Makers</p>
+                <a href="#" class="text-dark image_anchor" title="Roti Makers" data-toggle="tooltip"
+                    data-placement="bottom">From
+                    &#8377;1000/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="sandwhich makers.jpeg" alt="Card image"><br>
+                <p>Sandwhich Makers</p>
+                <a href="#" class="text-dark image_anchor" title="Sandwhich Makers" data-toggle="tooltip"
+                    data-placement="bottom">From &#8377;8000/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="home.png" alt="Card image"><br>
+                <p>Home Sofa</p>
+                <a href="#" class="text-dark image_anchor" title="Home Sofa" data-toggle="tooltip"
+                    data-placement="bottom">From
+                    &#8377;2150/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="kitchen tools.jpeg" alt="Card image"><br>
+                <p>Kitchen Tools</p>
+                <a href="#" class="text-dark image_anchor" title="Kitchen Tools" data-toggle="tooltip"
+                    data-placement="bottom">From &#8377;599/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="mobiles.png" alt="Card image"><br>
+                <p>Mobiles</p>
+                <a href="#" class="text-dark image_anchor" title="Mobiles" data-toggle="tooltip"
+                    data-placement="bottom">From
+                    &#8377;15000/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="personal hygiene.jpeg" alt="Card image"><br>
+                <p>Personal Hygiene</p>
+                <a href="#" class="text-dark image_anchor" title="Personal Hygiene" data-toggle="tooltip"
+                    data-placement="bottom">From &#8377;99/-</a>
+            </div>
+            <div class="pt-2 image1" style="text-align: center;">
+                <img class="card-img-top" src="power bank.jpg" alt="Card image"><br>
+                <p>Power Bank</p>
+                <a href="#" class="text-dark image_anchor" title="Power Bank" data-toggle="tooltip"
+                    data-placement="bottom">From
+                    &#8377;999/-</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
