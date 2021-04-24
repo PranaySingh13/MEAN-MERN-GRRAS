@@ -106,6 +106,12 @@
     .l2 li:hover {
         color: rgb(0, 204, 255);
     }
+
+    .dropdownHeight {
+        height: 50px;
+        border-bottom: 1px solid rgb(206, 201, 201);
+        padding-top: 10px;
+    }
 </style>
 
 <body>
@@ -125,26 +131,27 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown" style="padding-right: 30px;top:5px;">
                     <a class="nav-link dropdown-toggle bg-light text-primary" href="#" id="navbardrop"
-                        data-toggle="dropdown" style="width: 110px;height: 30px;text-align: center;">
+                        data-toggle="dropdown" style="width: 110px;height: 35px;text-align: center;">
                         Login
                     </a>
                     <div class="dropdown-menu" style="width: 225px;">
-                        <a class="dropdown-item" href="#">New Customer ?&nbsp;&nbsp;<span class="text-primary">Sign
+                        <a class="dropdown-item dropdownHeight" href="#">New
+                            Customer ?&nbsp;&nbsp;<span class="text-primary">Sign
                                 Up</span></a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-user-circle text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;My
                             Profile</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-plus-circle text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Flipkart
                             Plus Zone</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-clipboard-list text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orders</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-heart text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Wishlist</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-award text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rewards</a>
-                        <a class="dropdown-item" href="#"><i
-                                class="fas fa-gifts text-primary"></i>&nbsp;&nbsp;&nbsp;Gift Cards</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-gifts text-primary"
+                                style="height: 40px;padding-top: 10px;"></i>&nbsp;&nbsp;&nbsp;Gift Cards</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown" style="padding-right: 30px;">
@@ -152,17 +159,17 @@
                         More
                     </a>
                     <div class="dropdown-menu" style="width: 250px;">
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-bell text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Notification
                             Preferences</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-gift text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Sell On Flipkart</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-question-circle text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;24*7 Customer
                             Care</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item dropdownHeight" href="#"><i
                                 class="fas fa-chart-line text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Advertise</a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;"><i
                                 class="fas fa-download text-primary"></i>&nbsp;&nbsp;&nbsp;&nbsp;Download App</a>
                     </div>
                 </li>
@@ -192,107 +199,115 @@
                 <div class="dropdown">
                     <a href="#" class="text-dark image_anchor dropdown-toggle" data-toggle="dropdown">Fashion</a>
                     <ul class="dropdown-menu l1">
-                        <li class="dropdown-item" href="#">Men's Top Wear
+                        <li class="dropdown-item dropdownHeight" href="#">Men's Top Wear
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Men's T-Shirts</li>
-                                <li class="dropdown-item" href="#">Men's Casual Shirts</li>
-                                <li class="dropdown-item" href="#">Men's Formal Shirts</li>
-                                <li class="dropdown-item" href="#">Men's Kurtas</li>
-                                <li class="dropdown-item" href="#">Men's Blazzer</li>
-                                <li class="dropdown-item" href="#">Men's Ethinic Sets</li>
-                                <li class="dropdown-item" href="#">Men's Raincoat</li>
-                                <li class="dropdown-item" href="#">Men's Windcheaters</li>
-                                <li class="dropdown-item" href="#">Men's Suits</li>
-                                <li class="dropdown-item" href="#">Men's Fabrics</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's T-Shirts</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Casual Shirts</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Formal Shirts</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Kurtas</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Blazzer</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Ethinic Sets</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Raincoat</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Windcheaters</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Suits</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Men's Fabrics
+                                </li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Men's Bottom Wear
+                        <li class="dropdown-item dropdownHeight" href="#">Men's Bottom Wear
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Men's Jeans</li>
-                                <li class="dropdown-item" href="#">Men's Trousers</li>
-                                <li class="dropdown-item" href="#">Men's Trackpants</li>
-                                <li class="dropdown-item" href="#">Men's Shorts</li>
-                                <li class="dropdown-item" href="#">Men's Cargos</li>
-                                <li class="dropdown-item" href="#">Men's Threefourths</li>
-                                <li class="dropdown-item" href="#">Men's Pyjamas & Loungepants</li>
-                                <li class="dropdown-item" href="#">Men's Dhoti</li>
-                                <li class="dropdown-item" href="#">Men's Ethinic Pyjamas</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Jeans</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Trousers</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Trackpants</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Shorts</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Cargos</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Threefourths</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Pyjamas & Loungepants</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Dhoti</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Men's Ethinic
+                                    Pyjamas</li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Women Ethinic
+                        <li class="dropdown-item dropdownHeight" href="#">Women Ethinic
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Women Sarees</li>
-                                <li class="dropdown-item" href="#">Women Kurtas & Kurtis</li>
-                                <li class="dropdown-item" href="#">Women Ethinics</li>
-                                <li class="dropdown-item" href="#">Women Dress Material</li>
-                                <li class="dropdown-item" href="#">Women Cargos</li>
-                                <li class="dropdown-item" href="#">Women Threefourths</li>
-                                <li class="dropdown-item" href="#">Women Pyjamas & Loungepants</li>
-                                <li class="dropdown-item" href="#">Women Dhoti</li>
-                                <li class="dropdown-item" href="#">Women Ethinic Pyjamas</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Sarees</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Kurtas & Kurtis</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Ethinics</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Dress Material</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Cargos</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Threefourths</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Pyjamas & Loungepants</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Dhoti</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Women Ethinic
+                                    Pyjamas</li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Women Western
+                        <li class="dropdown-item dropdownHeight" href="#">Women Western
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Women Jeans</li>
-                                <li class="dropdown-item" href="#">Women Trousers</li>
-                                <li class="dropdown-item" href="#">Women Trackpants</li>
-                                <li class="dropdown-item" href="#">Women Shorts</li>
-                                <li class="dropdown-item" href="#">Women Cargos</li>
-                                <li class="dropdown-item" href="#">Women Threefourths</li>
-                                <li class="dropdown-item" href="#">Women Pyjamas & Loungepants</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Jeans</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Trousers</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Trackpants</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Shorts</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Cargos</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Threefourths</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Women Pyjamas
+                                    & Loungepants</li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Men Footwear
+                        <li class="dropdown-item dropdownHeight" href="#">Men Footwear
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Men's Sports Shoes</li>
-                                <li class="dropdown-item" href="#">Men's Formals</li>
-                                <li class="dropdown-item" href="#">Men's Slippers</li>
-                                <li class="dropdown-item" href="#">Men's Sandals</li>
-                                <li class="dropdown-item" href="#">Men's Socks</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Sports Shoes</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Formals</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Slippers</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Men's Sandals</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Men's Socks
+                                </li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Women Footwear
+                        <li class="dropdown-item dropdownHeight" href="#">Women Footwear
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Women Sports Shoes</li>
-                                <li class="dropdown-item" href="#">Women Formals</li>
-                                <li class="dropdown-item" href="#">Women Slippers</li>
-                                <li class="dropdown-item" href="#">Women Sandals</li>
-                                <li class="dropdown-item" href="#">Women Socks</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Sports Shoes</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Formals</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Slippers</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Women Sandals</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Women Socks
+                                </li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Watches and Accessories
+                        <li class="dropdown-item dropdownHeight" href="#">Watches and Accessories
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Rolex</li>
-                                <li class="dropdown-item" href="#">Titan</li>
-                                <li class="dropdown-item" href="#">Fastrack</li>
-                                <li class="dropdown-item" href="#">Diesel</li>
-                                <li class="dropdown-item" href="#">Daniel Clein</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Rolex</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Titan</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Fastrack</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Diesel</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Daniel Clein
+                                </li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Bags, Suitcase & Luggage
+                        <li class="dropdown-item dropdownHeight" href="#">Bags, Suitcase & Luggage
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Sports Bag</li>
-                                <li class="dropdown-item" href="#">Gym Bag</li>
-                                <li class="dropdown-item" href="#">Travel Bag</li>
-                                <li class="dropdown-item" href="#">Leather Bag</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Sports Bag</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Gym Bag</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Travel Bag</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Leather Bag
+                                </li>
                             </ul>
                         </li>
-                        <li class="dropdown-item" href="#">Kids
+                        <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Kids
                             <ul class="dropdown-menu l2">
-                                <li class="dropdown-item" href="#">All</li>
-                                <li class="dropdown-item" href="#">Pens</li>
-                                <li class="dropdown-item" href="#">Games</li>
-                                <li class="dropdown-item" href="#">Pencil</li>
-                                <li class="dropdown-item" href="#">Compass</li>
+                                <li class="dropdown-item dropdownHeight" href="#">All</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Pens</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Games</li>
+                                <li class="dropdown-item dropdownHeight" href="#">Pencil</li>
+                                <li class="dropdown-item" href="#" style="height: 40px;padding-top: 10px;">Compass</li>
                             </ul>
                         </li>
                     </ul>
