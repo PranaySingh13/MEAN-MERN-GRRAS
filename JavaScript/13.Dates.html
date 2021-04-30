@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dates</title>
+</head>
+
+<body>
+    <!-- JavaScript Date Output
+    By default, JavaScript will use the browser's time zone and display a date as a full text string -->
+
+    <!-- Displaying Dates
+    JavaScript will (by default) output dates in full text string format -->
+    <!-- When you display a date object in HTML, it is automatically converted to a string, with the toString() method. -->
+
+    <!-- Creating Date Objects
+    Date objects are created with the new Date() constructor.
+    There are 4 ways to create a new date object: -->
+
+    <!-- new Date()
+    new Date() creates a new date object with the current date and time: -->
+    <!-- Date objects are static. The computer time is ticking, but date objects are not. -->
+    <script>
+        var d = new Date();
+        console.log(d);
+    </script>
+    <!-- new Date(year, month, ...)
+    new Date(year, month, ...) creates a new date object with a specified date and time.
+    7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order) -->
+
+    <!-- Note: JavaScript counts months from 0 to 11.
+    January is 0. December is 11. -->
+    <!-- 6 numbers specify year, month, day, hour, minute, second: -->
+    <!-- 5 numbers specify year, month, day, hour, and minute: -->
+    <!-- 4 numbers specify year, month, day, and hour: -->
+    <!-- 3 numbers specify year, month, and day: -->
+    <!-- 2 numbers specify year and month: -->
+    <!-- You cannot omit month. If you supply only one parameter it will be treated as milliseconds. -->
+
+    <!-- Previous Century
+    One and two digit years will be interpreted as 19xx -->
+    <script>
+        var d = new Date(1993, 00, 13, 14, 12, 30, 99);
+        console.log(d);
+        var d = new Date(1993, 00, 13, 14, 12, 30);
+        console.log(d);
+        var d = new Date(1993, 00, 13, 14, 12);
+        console.log(d);
+        var d = new Date(1993, 00, 13, 14);
+        console.log(d);
+        var d = new Date(1993, 00, 13);
+        console.log(d);
+        var d = new Date(1993, 00);
+        console.log(d);
+        var d = new Date(1993); //treated as milliseconds
+        console.log(d);
+
+        var d = new Date(93, 11, 13); //1993
+        console.log(d);
+        var d = new Date(9, 11, 13); //1909
+        console.log(d);
+    </script>
+
+    <!-- new Date(dateString)
+    new Date(dateString) creates a new date object from a date string: -->
+    <script>
+        var d = new Date("January 13, 1993 02:12:00");
+        console.log(d);
+    </script>
+
+    <!-- JavaScript Stores Dates as Milliseconds
+    JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).
+    Zero time is January 01, 1970 00:00:00 UTC. -->
+
+    <!-- new Date(milliseconds)
+    new Date(milliseconds) creates a new date object as zero time plus milliseconds -->
+    <script>
+        var d = new Date(100000000000);
+        console.log(d);
+        var d = new Date(-100000000000);
+        console.log(d);
+
+        //One day (24 hours) is 86 400 000 milliseconds.
+        var d = new Date(86400000);
+        console.log(d);
+        var d = new Date(-86400000);
+        console.log(d);
+    </script>
+
+    <!-- Displaying Dates
+    JavaScript will (by default) output dates in full text string format -->
+    <script>
+        var d = new Date();
+        console.log(d);
+        console.log(d.toString());
+    </script>
+    <!-- When you display a date object in HTML, it is automatically converted to a string, with the toString() method. -->
+
+    <!-- The toUTCString() method converts a date to a UTC string (a date display standard). -->
+    <script>
+        var d = new Date();
+        console.log(d.toUTCString());
+    </script>
+    <!-- UTC is the primary time standard by which the world regulates clocks and time. -->
+
+    <!-- The toDateString() method converts a date to a more readable format: -->
+    <script>
+        var d = new Date();
+        console.log(d.toDateString());
+    </script>
+
+    <!-- The toISOString() method converts a date to a string, using the ISO standard format -->
+    <script>
+        var d = new Date();
+        console.log(d.toISOString());
+    </script>
+    <!-- ISO is standard format time. ISO also supports ms in its format.
+    So if you want to send data to the server, send the ISO, because ISO is the standard format -->
+
+
+</body>
+
+</html>
