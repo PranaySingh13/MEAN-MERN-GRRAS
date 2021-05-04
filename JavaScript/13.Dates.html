@@ -120,7 +120,13 @@
     <!-- ISO is standard format time. ISO also supports ms in its format.
     So if you want to send data to the server, send the ISO, because ISO is the standard format -->
 
-
+    <!-- toJSON() Method -->
+    <!-- The toJSON() method converts a Date object into a string, formatted as a JSON date.
+    JSON dates have the same format as the ISO-8601 standard: YYYY-MM-DDTHH:mm:ss.sssZ -->
+    <script>
+        var d = new Date();
+        console.log(d.toJSON());
+    </script>
 </body>
 
 </html>
