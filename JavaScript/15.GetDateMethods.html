@@ -100,12 +100,18 @@
         console.log(days[d.getUTCDay()]);
     </script>
 
-    <!-- Testing the differnce between IST and UTC/GMT(both are same) Time  -->
+    <!-- Testing the differnce between IST(Local) and UTC/GMT(both are same) Time  -->
+    <!-- Definition and Usage
+    The getTimezoneOffset() method returns the time difference between UTC time and local time, in minutes.
+    For example, If your time zone is GMT+2, -120 will be returned.
+
+    Note: The returned value is not a constant, because of the practice of using Daylight Saving Time.
+    Tip: The Universal Coordinated Time (UTC) is the time set by the World Time Standard.
+    Note: UTC time is the same as GMT time. -->
     <script>
         var d = new Date();
-        var istHours = d.getHours();
-        var utcHours = d.getUTCHours();
-        console.log(istHours - utcHours + " Hours");
+        console.log(d.getTimezoneOffset() + " minutes"); // -330minutes
+        console.log(d.getTimezoneOffset() / 60 + " hours"); //-5.5 hours (because our current timezone is GMT+5:30 hours)
     </script>
 
 
