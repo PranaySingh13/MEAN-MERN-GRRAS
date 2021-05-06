@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object</title>
+</head>
+
+<body>
+    <!-- JavaScript Math Object -->
+    <!-- The JavaScript Math object allows you to perform mathematical tasks on numbers. -->
+
+    <!-- The Math Object
+        Unlike other objects, the Math object has no constructor.
+        The Math object is static.
+        All methods and properties can be used without creating a Math object first.
+        -->
+
+    <!-- Math Properties (Constants)
+        The syntax for any Math property is : Math.property.
+        JavaScript provides 8 mathematical constants that can be accessed as Math properties -->
+    <script>
+        console.log(Math.E);// returns Euler's number
+        console.log(Math.PI);// returns PI
+        console.log(Math.SQRT2);// returns the square root of 2
+        console.log(Math.SQRT1_2);// returns the square root of 1/2
+        console.log(Math.LN2);// returns the natural logarithm of 2
+        console.log(Math.LN10);// returns the natural logarithm of 10
+        console.log(Math.LOG2E);// returns base 2 logarithm of E
+        console.log(Math.LOG10E);// returns base 10 logarithm of E
+    </script>
+
+    <!-- Math Methods
+    The syntax for Math any methods is : Math.method.(number) -->
+
+    <!-- Number to Integer
+    There are 4 common methods to round a number to an integer: -->
+    <!-- 
+    Math.round(x)	Returns x rounded to its nearest integer
+    Math.ceil(x)	Returns x rounded up to its nearest integer
+    Math.floor(x)	Returns x rounded down to its nearest integer
+    Math.trunc(x)	Returns the integer part of x (new in ES6) -->
+
+    <!-- Math.round()
+    Math.round(x) returns the nearest integer: -->
+    <script>
+        console.log(Math.round(4.9));    // returns 5
+        console.log(Math.round(4.7));    // returns 5
+        console.log(Math.round(4.4));    // returns 4
+        console.log(Math.round(4.2));    // returns 4
+        console.log(Math.round(-4.2));    // returns -4
+    </script>
+
+    <!-- Math.ceil()
+    Math.ceil(x) returns the value of x rounded up to its nearest integer -->
+    <script>
+        console.log(Math.ceil(4.9));    // returns 5
+        console.log(Math.ceil(4.7));    // returns 5
+        console.log(Math.ceil(4.4));    // returns 5
+        console.log(Math.ceil(4.2));    // returns 5
+        console.log(Math.ceil(-4.2));   // returns -4
+    </script>
+
+    <!-- Math.floor()
+    Math.floor(x) returns the value of x rounded down to its nearest integer -->
+    <script>
+        console.log(Math.floor(4.9));    // returns 4
+        console.log(Math.floor(4.7));    // returns 4
+        console.log(Math.floor(4.4));    // returns 4
+        console.log(Math.floor(4.2));    // returns 4
+        console.log(Math.floor(-4.2));   // returns -5
+    </script>
+
+    <!-- Note:
+    Math.trunc() and Math.sign() were added to JavaScript 2015 - ES6. -->
+
+    <!-- Math.trunc()
+    Math.trunc(x) returns the integer part of x: -->
+    <script>
+        console.log(Math.trunc(4.9));    // returns 4
+        console.log(Math.trunc(4.7));    // returns 4
+        console.log(Math.trunc(4.4));    // returns 4
+        console.log(Math.trunc(4.2));    // returns 4
+        console.log(Math.trunc(-4.2));   // returns -4
+    </script>
+
+    <!-- Math.sign()
+    Math.sign(x) returns if x is negative, null or positive -->
+    <script>
+        console.log(Math.sign(4));    // returns 1
+        console.log(Math.sign(0));    // returns 0
+        console.log(Math.sign(-4));    // returns -1
+    </script>
+
+    <!-- Math.pow()
+    Math.pow(x, y) returns the value of x to the power of y -->
+    <script>
+        console.log(Math.pow(9, 2)); //returns 81
+        console.log(Math.pow(5, 3)); //returns 125
+    </script>
+
+    <!-- Math.sqrt()
+    Math.sqrt(x) returns the square root of x -->
+    <script>
+        console.log(Math.sqrt(81)); //returns 9
+    </script>
+
+    <!-- Math.abs()
+    Math.abs(x) returns the absolute (positive) value of x -->
+    <script>
+        console.log(Math.abs(-4.9)); //returns 4.9
+    </script>
+
+    <!-- Math.sin()
+    Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).
+    If you want to use degrees instead of radians, you have to convert degrees to radians:
+    Angle in radians = Angle in degrees x PI / 180. -->
+    <script>
+        console.log(Math.sin(90 * Math.PI / 180));  // returns 1 (the sine of 90 degrees in radians)
+        console.log(Math.sin(30 * Math.PI / 180));  // returns 0.5
+    </script>
+
+    <!-- Math.cos()
+    Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x (given in radians).
+    If you want to use degrees instead of radians, you have to convert degrees to radians:
+    Angle in radians = Angle in degrees x PI / 180. -->
+    <script>
+        console.log(Math.cos(0 * Math.PI / 180)); // returns 1 (the cos of 0 degrees)
+        console.log(Math.cos(60 * Math.PI / 180));
+    </script>
+
+    <!-- Math.min() and Math.max()
+    Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments -->
+    <script>
+        console.log(Math.min(0, 150, 30, 20, -8, -200));
+        console.log(Math.max(0, 150, 30, 20, -8, -200));
+    </script>
+
+    <!-- Math.random()
+    Math.random() returns a random number between 0 (inclusive), and 1 (exclusive) -->
+    <script>
+        console.log(Math.random());
+    </script>
+
+    <!-- The Math.log() Method
+    Math.log(x) returns the natural logarithm of x -->
+    <script>
+        console.log(Math.log(1));// returns 0
+    </script>
+
+    <!-- The Math.log() Method
+    Math.log(x) returns the natural logarithm of 1+x -->
+    <script>
+        console.log(Math.log1p(0)); //returns 0
+    </script>
+
+    <!-- The natural logarithm returns the time needed to reach a certain level of growth.
+    Math.E and Math.log() are twins.
+    How many times must we multiply Math.E to get 10? -->
+    <script>
+        console.log(Math.log(10)); //returns 2.302585092994046
+        console.log(Math.E * 3.6788);
+    </script>
+
+    <!-- The Math.log2() Method -->
+    <!-- The binary logarithm (log2 n) is the power to which the number 2 must be raised to obtain the value n. -->
+    <!-- Math.log2(x) returns the base 2 logarithm of x.
+    How many times must we multiply 2 to get 8? -->
+    <script>
+        console.log(Math.log2(8)); //returns 3
+        console.log(Math.log2(64)); //returns 6
+    </script>
+
+    <!-- The Math.log10() Method    -->
+    <!-- The binary logarithm (log10 n) is the power to which the number 10 must be raised to obtain the value n. -->
+    <!-- Math.log10(x) returns the base 10 logarithm of x -->
+    <!-- How many times must we multiply 10 to get 1000? -->
+    <script>
+        console.log(Math.log10(1000)); //returns 3
+        console.log(Math.log10(10000)); //returs 4
+    </script>
+
+    <!-- JavaScript Random -->
+    <!-- Math.random()
+    Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive) -->
+
+    <!-- Note:
+    Math.random() always returns a number lower than 1. -->
+
+    <!-- JavaScript Random Integers
+    Math.random() used with Math.floor() can be used to return random integers. -->
+
+    <script>
+        console.log(Math.floor(Math.random() * 10)); // returns a random integer from 0 to 9
+        console.log(Math.floor(Math.random() * 11)); // returns a random integer from 0 to 10
+        console.log(Math.floor(Math.random() * 100)); // returns a random integer from 0 to 99
+        console.log(Math.floor(Math.random() * 101)); // returns a random integer from 0 to 100
+        console.log(Math.floor(Math.random() * 10) + 1); // returns a random integer from 1 to 10
+        console.log(Math.floor(Math.random() * 100) + 1); // returns a random integer from 1 to 100
+    </script>
+
+    <!-- A Proper Random Function
+    As you can see from the examples above, it might be a good idea to create a proper random function to use for all random integer purposes.
+    This JavaScript function always returns a random number between min (included) and max (excluded) -->
+    <script>
+        function getRandomIntegerForMaxNumExclusion(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        function getRandomIntegerForMaxNumInclusion(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log(getRandomIntegerForMaxNumExclusion(1, 5));
+        console.log(getRandomIntegerForMaxNumInclusion(1, 5));
+    </script>
+
+    <!-- Math Object Methods -->
+    <!-- Method	        Description
+        abs(x)	        Returns the absolute value of x
+        acos(x)	        Returns the arccosine of x, in radians
+        acosh(x)	    Returns the hyperbolic arccosine of x
+        asin(x)	        Returns the arcsine of x, in radians
+        asinh(x)	    Returns the hyperbolic arcsine of x
+        atan(x)	        Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians
+        atan2(y, x)	    Returns the arctangent of the quotient of its arguments
+        atanh(x)	    Returns the hyperbolic arctangent of x
+        cbrt(x)	        Returns the cubic root of x
+        ceil(x)	        Returns x, rounded upwards to the nearest integer
+        clz32(x)	    Returns the number of leading zeros in a 32-bit binary representation of x
+        cos(x)	        Returns the cosine of x (x is in radians)
+        cosh(x)	        Returns the hyperbolic cosine of x
+        exp(x)	        Returns the value of Ex
+        expm1(x)	    Returns the value of Ex minus 1
+        floor(x)	    Returns x, rounded downwards to the nearest integer
+        fround(x)	    Returns the nearest (32-bit single precision) float representation of a number
+        log(x)	        Returns the natural logarithmof x
+        log10(x)	    Returns the base-10 logarithm of x
+        log1p(x)	    Returns the natural logarithm of 1 + x
+        log2(x)	        Returns the base-2 logarithm of x
+max(x, y, z, ..., n)	Returns the number with the highest value
+min(x, y, z, ..., n)	Returns the number with the lowest value
+        pow(x, y)	    Returns the value of x to the power of y
+        random()	    Returns a random number between 0 and 1
+        round(x)	    Rounds x to the nearest integer
+        sign(x)	        Returns the sign of a number (checks whether it is positive, negative or zero)
+        sin(x)	        Returns the sine of x (x is in radians)
+        sinh(x)	        Returns the hyperbolic sine of x
+        sqrt(x)     	Returns the square root of x
+        tan(x)	        Returns the tangent of an angle
+        tanh(x)	        Returns the hyperbolic tangent of a number
+        trunc(x)	    Returns the integer part of a number (x) -->
+</body>
+
+</html>
