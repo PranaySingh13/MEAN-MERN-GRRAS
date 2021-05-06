@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+
+<body>
+    <!-- The switch statement is used to perform different actions based on different conditions.-->
+
+    <!-- The JavaScript Switch Statement
+    Use the switch statement to select one of many code blocks to be executed. -->
+
+    <!-- Syntax
+        switch(expression) {
+        case x:
+            // code block
+            break;
+        case y:
+            // code block
+            break;
+        default:
+            // code block
+        } -->
+
+    <!-- This is how it works:
+
+    The switch expression is evaluated once.
+    The value of the expression is compared with the values of each case.
+    If there is a match, the associated block of code is executed.
+    If there is no match, the default code block is executed. -->
+
+    <script>
+        var day = "";
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thrusday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            default:
+                break;
+        }
+        console.log(day);
+    </script>
+
+    <!-- The break Keyword
+    When JavaScript reaches a break keyword, it breaks out of the switch block.
+    This will stop the execution inside the switch block.
+    It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.
+
+    Note: If you omit the break statement, the next case will be executed even if the evaluation does not match the case. -->
+
+    <!-- The default Keyword
+    The default keyword specifies the code to run if there is no case match: -->
+    <script>
+        var day = "";
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            default:
+                day = "Looking forward to the Weekend";
+        }
+        console.log(day);
+    </script>
+
+    <!-- Note -->
+    <!-- The default case does not have to be the last case in a switch block: -->
+    <script>
+        var day = "";
+        switch (new Date().getDay()) {
+            default:
+                day = "Looking forward to the Weekend";
+                break; //If you omit the break statement, the next case will be executed even if the evaluation does not match the case.
+            case 0:
+                day = "Sunday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+        }
+        console.log(day);
+    </script>
+
+    <!-- If default is not the last case in the switch block, remember to end the default case with a break. -->
+
+    <!-- Common Code Blocks
+    Sometimes you will want different switch cases to use the same code. -->
+    <script>
+        var day = "";
+        switch (new Date().getDay()) {
+            case 4:// case 4 and 5 share the same code block, and 0 and 6 share another code block
+            case 5:
+                day = "Soon it is Weekend";
+                break;
+            case 0:
+            case 6:
+                day = "It is Weekend";
+                break;
+            default:
+                day = "Looking forward to the Weekend";
+        }
+        console.log(day);
+    </script>
+
+    <!-- Switching Details
+        If multiple cases matches a case value, the first case is selected.
+        If no matching cases are found, the program continues to the default label.
+        If no default label is found, the program continues to the statement(s) after the switch. -->
+
+    <!-- V.Imp  -->
+    <!-- Strict Comparison
+    Switch cases use strict comparison (===).
+    The values must be of the same type to match.
+    A strict comparison can only be true if the operands are of the same type.
+    In this example there will be no match for x: -->
+    <script>
+        var x = "0";
+        switch (x) {
+            case 0:
+                text = "Off";
+                break;
+            case 1:
+                text = "On";
+                break;
+            default:
+                text = "No value found";
+        }
+        console.log(text);
+    </script>
+
+
+
+</body>
+
+</html>
