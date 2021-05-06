@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input from HTML</title>
+</head>
+
+<body>
+    <!-- Taking input from the user through HTML -->
+
+    <!-- Window prompt() Method -->
+    <!-- The prompt() method displays a dialog box that prompts the visitor for input.
+        A prompt box is often used if you want the user to input a value before entering a page.
+        Note: When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value. Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.
+        The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.
+        -->
+
+    <!-- Syntax
+    prompt(text, defaultText) -->
+
+    <!-- Parameter Values
+        Parameter	    Type	Description
+        text	        String	Required. The text to display in the dialog box
+        defaultText	    String	Optional. The default input text -->
+    <script>
+        var firstname = prompt("Enter your Firstname", "Firstname");
+        var lastname = prompt("Enter your Lastname");
+        console.log(firstname + " " + lastname);
+    </script>
+
+    <!-- Window alert() Method -->
+    <!-- The alert() method displays an alert box with a specified message and an OK button.
+    An alert box is often used if you want to make sure information comes through to the user. -->
+    <!-- Note: The alert box takes the focus away from the current window, and forces the browser to read the message. Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed. -->
+
+    <!-- Syntax
+        alert(message)
+
+        Parameter Values
+        Parameter	Type	Description
+        message	    String	Optional. Specifies the text to display in the alert box, or an object converted into a string and displayed -->
+
+    <script>
+        alert(firstname + " " + lastname);
+        alert(firstname + "\n" + lastname);//Alert box with line-breaks
+        alert(location.hostname);//Alert the hostname of the current URL
+    </script>
+
+    <!-- Window confirm() Method -->
+    <!-- The confirm() method displays a dialog box with a specified message, along with an OK and a Cancel button.
+    A confirm box is often used if you want the user to verify or accept something.
+    Note: The confirm box takes the focus away from the current window, and forces the browser to read the message. Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.
+    The confirm() method returns true if the user clicked "OK", and false otherwise. -->
+
+    <!-- Syntax
+        confirm(message)
+
+        Parameter Values
+        Parameter	Type	Description
+        message	    String	Optional. Specifies the text to display in the confirm box
+        -->
+    <script>
+        var fullname = confirm(firstname + " " + lastname + " is your fullname!");
+        if (fullname == true) {
+            alert("Correct Fullname");
+        } else {
+            alert("Incorrect Fullname");
+        }
+
+        confirm("Press a button!\nEither OK or Cancel.");//Confirmation box with line-breaks
+    </script>
+
+</body>
+
+</html>
