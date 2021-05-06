@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1if_else</title>
+</head>
+
+<body>
+    <!-- To find the largest among the three distinct8
+        5
+        4 numbers from taking input from HTML -->
+    <script>
+        var firstNumber = prompt("Enter the first number");
+        var secondNumber = prompt("Enter the second number");
+        var thirdNumber = prompt("Enter the third number");
+
+        if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+            alert("First Number " + firstNumber + " is the largest number.");
+        } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
+            alert("Second Number " + secondNumber + " is the largest number.");
+        } else if (thirdNumber > firstNumber && thirdNumber > secondNumber) {
+            alert("Third Number " + thirdNumber + " is the largest number.");
+        } else {
+            alert("Any two of three numbers are equal...Ambiquity Problem");
+        }
+    </script>
+
+</body>
+
+</html>
