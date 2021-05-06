@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+
+<body>
+    <!-- JavaScript Booleans -->
+    <!-- A JavaScript Boolean represents one of two values: true or false.-->
+
+    <!-- Boolean Values
+    Very often, in programming, you will need a data type that can only have one of two values, like
+
+    YES / NO
+    ON / OFF
+    TRUE / FALSE
+    For this, JavaScript has a Boolean data type. It can only take the values true or false. -->
+
+    <!-- The Boolean() Function
+    You can use the Boolean() function to find out if an expression (or a variable) is true -->
+    <script>
+        console.log(Boolean(10 > 9));// returns true
+    </script>
+
+    <!-- The Boolean value of an expression is the basis for all JavaScript comparisons and conditions. -->
+
+    <!-- Note -->
+    <!-- Everything With a "Value" is True -->
+    <script>
+        console.log(Boolean(100));
+        console.log(Boolean(3.14));
+        console.log(Boolean(-20));
+        console.log(Boolean("false"));
+        console.log(Boolean(100 + 26 + 6 * 8 - 1));
+    </script>
+
+    <!-- Everything Without a "Value" is False -->
+    <script>
+        console.log(Boolean(0));
+        console.log(Boolean(-0));
+        console.log(Boolean(""));
+        var x;
+        console.log(Boolean(x));
+        console.log(Boolean(null));
+        console.log(Boolean(false));
+        console.log(Boolean(NaN));
+    </script>
+
+    <!-- Booleans Can be Objects -->
+    <!--  booleans can also be defined as objects with the keyword new:
+    var y = new Boolean(false); -->
+
+    <!-- Do not create Boolean objects. It slows down execution speed.
+    The new keyword complicates the code. This can produce some unexpected results -->
+    <script>
+        var x = false;
+        var y = new Boolean(false)
+        console.log(typeof x);// typeof x returns boolean
+        console.log(typeof y);// typeof y returns object
+    </script>
+
+    <!-- When using the == operator, equal booleans are equal -->
+    <!-- When using the === operator, equal booleans are not equal, because the === operator expects equality in both type and value. -->
+    <!-- Or even worse. Objects cannot be compared: -->
+    <script>
+        var x = false;
+        var y = new Boolean(false);
+        var z = new Boolean(false);
+        console.log(x == y);// (x == y) is true because x and y have equal values
+        console.log(x === y);// (x === y) is false because x and y have different types
+        console.log(x == y);
+        console.log(x === y);// (x === y) is false because objects cannot be compared
+
+    </script>
+    <!-- Note the difference between (x==y) and (x===y).
+    Comparing two JavaScript objects will always return false. -->
+
+    <!-- Note Complete Boolean Reference-->
+    <!-- https://www.w3schools.com/jsref/jsref_obj_boolean.asp -->
+
+</body>
+
+</html>
