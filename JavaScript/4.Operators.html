@@ -176,6 +176,121 @@
         console.log(x);
     </script>
 
+    <!-- Note :
+        Go Through Boolean in Javascript before Comparison and Logical Operators -->
+
+    <!-- Comparison and Logical operators are used to test for true or false. -->
+
+    <!-- Comparison Operators
+    Comparison operators are used in logical statements to determine equality or difference between variables or values. -->
+    <script>
+        var x = 5;
+        // == equal to
+        console.log(x == 8);
+        console.log(x == 5);
+        console.log(x == "5");
+
+        // ===	equal value and equal type
+        console.log(x === 8);
+        console.log(x === 5);
+        console.log(x === "5");
+
+        // !=	not equal
+        console.log(x != 8);
+        console.log(x != 5);
+        console.log(x != "5");
+
+        //  !==	not equal value or not equal type
+        console.log(x !== 8);
+        console.log(x !== 5);
+        console.log(x !== "5");
+
+        //  >	greater than
+        console.log(x > 8);
+
+        //  <	less than
+        console.log(x < 8);
+
+        //  >=	greater than or equal to
+        console.log(x >= 8);
+
+        //  <=	less than or equal to
+        console.log(x <= 8);
+    </script>
+
+    <!-- Logical Operators
+    Logical operators are used to determine the logic between variables or values. -->
+    <script>
+        var x = 6, y = 3;
+
+        //&&	and(both condition should be true for result to be true)
+        console.log(x < 10 && y > 1);
+
+        //||	or(any one condition should be true for result to be true)
+        console.log(x < 10 || y > 4);
+        console.log(x < 5 || y > 4);
+
+        //!	not
+        console.log(!(x == y));
+    </script>
+
+    <!-- Conditional (Ternary) Operator
+    JavaScript also contains a conditional operator that assigns a value to a variable based on some condition. -->
+
+    <!-- Syntax
+    variablename = (condition) ? value1:value2  -->
+    <script>
+        var age = 15;
+        var voteable = (age < 18) ? "Too young" : "Old enough";
+        console.log(voteable);
+    </script>
+
+    <!-- Comparing Different Types
+    Comparing data of different types may give unexpected results.
+    When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. An empty string converts to 0. A non-numeric string converts to NaN which is always false. -->
+
+    <!-- Note: -->
+    <!-- When comparing two strings, "2" will be greater than "12", because (alphabetically) 1 is less than 2.
+    To secure a proper result, variables should be converted to the proper type before comparison -->
+    <script>
+        console.log(2 < "");
+        console.log(2 == "John");
+        console.log(2 < "12");
+
+        var age = 10;
+        age = Number(age);
+        if (isNaN(age)) {
+            voteable = "Input is not a number";
+        } else {
+            voteable = (age < 18) ? "Too young" : "Old enough";
+        }
+        console.log(voteable);
+
+        var age = "10";
+        age = Number(age);
+        if (isNaN(age)) {
+            voteable = "Input is not a number";
+        } else {
+            voteable = (age < 18) ? "Too young" : "Old enough";
+        }
+        console.log(voteable);
+
+        var age = "10s";
+        age = Number(age);
+        if (isNaN(age)) {
+            voteable = "Input is not a number";
+        } else {
+            voteable = (age < 18) ? "Too young" : "Old enough";
+        }
+        console.log(voteable);
+    </script>
+
+
+
+
+
+
+
 </body>
 
 </html>
