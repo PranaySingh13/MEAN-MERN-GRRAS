@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Of Loop</title>
+</head>
+
+<body>
+    <!-- JavaScript For Of -->
+    <!-- For/of was added to JavaScript in 2015 -->
+    <!-- The For/Of Loop
+    The JavaScript for/of statement loops through the values of an iterable object.
+    It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more -->
+
+    <!-- Syntax
+        for (variable of iterable) {
+        // code block to be executed
+        }
+        variable - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.
+        iterable - An object that has iterable properties. -->
+
+    <!-- Looping over an Array -->
+    <script>
+        let cars = ["audi", "bmw", "tesla"];
+        let text = "";
+        for (const iterator of cars) {
+            text += iterator + "\n";
+        }
+        console.log(text);
+    </script>
+
+    <!-- Looping over a String -->
+    <script>
+        let language = "American English";
+        let result = "";
+        for (const iterator of language) {
+            result += iterator + " ";
+        }
+        console.log(result);
+    </script>
+
+</body>
+
+</html>
