@@ -144,6 +144,28 @@
         }
     </script>
 
+    <!--**** V.Imp Note Conclusion for var and let use**** -->
+
+    <!-- Use var keyword only when you want to set variable as globally in your script or you want
+         to redeclare the same variable in the same scope  -->
+    <!-- As ES2015 came, use let keyword when you want to set variable as function scope, block scope ,loop scope
+        or don't want to redeclare the variable in the same scope  -->
+    <script>
+        let x = 4;
+        console.log("Global " + x);
+        {
+            let x = 5;
+            console.log("block " + x);
+        }
+        console.log("after block " + x);
+
+        for (let x = 0; x <= 10; x++) {
+            console.log("in loop " + x);
+        }
+        console.log("after loop " + x);
+    </script>
+
+
     <!-- Hoisting -->
     <!-- Variables defined with var are hoisted to the top and can be initialized at any time -->
     <!-- Meaning: You can use the variable before it is declared: -->
