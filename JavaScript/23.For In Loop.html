@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In Loop</title>
+</head>
+
+<body>
+    <!-- JavaScript For In -->
+    <!-- The For/In Loop
+    The JavaScript for/in statement loops through the properties of an Object -->
+
+    <!-- Syntax
+        for (key in object) {
+        // code block to be executed
+        } -->
+
+    <script>
+        var person = {
+            firstName: "Pranay",
+            lastName: "Singh",
+            age: 28
+        };
+        var x;
+        var element = "";
+        for (x in person) {
+            element += person[x] + " ";
+        }
+        console.log(element);
+    </script>
+
+    <!-- Example Explained
+    The for in loop iterates over a person object
+    Each iteration returns a key (x)
+    The key is used to access the value of the key
+    The value of the key is person[x]
+    -->
+
+    <!-- For/In Over Arrays
+    The JavaScript for/in statement can also loop over the properties of an Array:
+
+    Syntax
+    for (variable in array) {
+    code
+    } -->
+    <script>
+        var numbers = [1, 2, 3, 4, 5];
+        var x;
+        var storeValueVariable = "";
+        for (x in numbers) {
+            storeValueVariable += numbers[x] + " \n";
+        }
+        console.log(storeValueVariable);
+    </script>
+
+    <!-- Note V.Imp -->
+
+    <!-- Do not use for in over an Array if the index order is important The reason is that one construct.
+    The index order is implementation-dependent, and array values may not be accessed in the order you expect.
+    It is better to use a for loop, a for of loop, or Array.forEach() when the order is important. -->
+    <script>
+        var a = []; // Create a new empty array.
+        a[5] = 5;   // Perfectly legal JavaScript that resizes the array.
+        for (var i = 0; i < a.length; i++) {
+            // Iterate over numeric indexes from 0 to 5, as everyone expects.
+            console.log(a[i]);
+        }
+
+        for (var x in a) {
+            // Shows only the explicitly set index of "5", and ignores 0-4
+            console.log(x);
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
