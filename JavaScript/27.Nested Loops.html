@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested For Loops</title>
+</head>
+
+<body>
+    <!-- Nested Loops -->
+    <!-- For each run of the outer loop, the inner lopp runs maximum number of times -->
+    <script>
+        //outer loop and outer loop variable i
+        for (let i = 1; i <= 3; i++) {
+
+            //inner loop and inner loop variable i
+            for (let j = 1; j <= 5; j++) {
+
+                //-----------------
+            }
+        }
+
+        //  i   j
+        //  1   1-5
+        //  2   1-5
+        //  3   1-5
+    </script>
+
+    <!-- Points to remember -->
+    <!-- 1. Focus on row printing first rather than the column -->
+    <!-- 2. Parameters to find 
+        2.1 Number of outer loop runs (rows)
+        2.1 Number of inner loop runs (columns)
+        2.3 What to print-->
+    <!-- 
+    for(----)
+    {
+        for(----)
+        {
+            ----
+        }
+
+        ----
+    } -->
+
+    <!-- ASCII Pattern Type 1 -->
+    <script>
+        //example
+        // ***
+        // ***
+        // ***
+
+        // no of rows =3
+        // no of columns =3
+
+        let n = prompt("Enter the number");
+        let result = "";
+        //outerloop for row run
+        for (let i = 1; i <= n; i++) {
+
+            //innerloop for column run
+            for (let j = 1; j <= n; j++) {
+                result += "*";
+
+            }
+            result += "\n";
+
+        }
+        console.log(result);
+    </script>
+
+    <!-- ASCII Pattern type 2 -->
+    <script>
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+
+        // no of rows =5
+        // no of columns =5
+
+        let num = prompt("Enter the number");
+        let output = "";
+        //outerloop
+        for (let i = 1; i < num; i++) {
+
+            //innerloop
+            for (let j = 1; j <= i; j++) {
+                output += "*";
+            }
+            output += "\n";
+        }
+        console.log(output);
+    </script>
+
+    <!-- ASCII Pattern type 3 -->
+    <script>
+        //     *
+        //    **
+        //   ***
+        //  ****
+        // *****
+
+        //In this type there is one more loop is added to print the space.
+        //so basically we have the three loops
+        //1.outer loop for row runs
+        //2.inner space loop
+        //3.inner print  loop
+
+        //Parameters to find
+        //1. no of outer loop runs
+        //2. no of space loop runs(inner loop)
+        //3. no of print loop runs(inner loop)
+        //4. What to print
+
+        //space loop priority depends on pattern when it is needed before print loop or after print loop
+        let result4 = "";
+        //outer row loop
+        for (let i = 1; i <= n; i++) {
+
+            //space loop(it works on methodlogy that initialise the start condition with no of outer loop runs-1 and its value will decrement till i)
+            for (let j = n - 1; j >= i; j--) {
+                result4 += " ";//whitespace
+            }
+
+            //print loop
+            for (let k = 1; k <= i; k++) {
+                result4 += "*";
+            }
+
+            result4 += "\n";
+        }
+        console.log(result4);
+    </script>
+
+    <!-- *****
+          ****
+           ***
+            **
+             * -->
+    <script>
+        let result5 = "";
+        //outer row loop
+        for (let i = n; i >= 1; i--) {
+
+            //space loop(it works on methodlogy that initialise the start condition with no of outer loop runs-1 and its value will decrement till i)
+            for (let j = n - 1; j >= i; j--) {
+                result5 += " ";//whitespace
+            }
+
+            //print loop
+            for (let k = 1; k <= i; k++) {
+                result5 += "*";
+            }
+
+            result5 += "\n";
+        }
+        console.log(result5);
+    </script>
+</body>
+
+</html>
