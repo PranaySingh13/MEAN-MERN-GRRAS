@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 Loops</title>
+</head>
+
+<body>
+    <!-- Series Patterns -->
+    <!-- 1. Even Number Series -->
+    <script>
+        var n = 5;
+        for (let index = 1; index <= n; index++) {
+            console.log(2 * index);
+        }
+    </script>
+
+    <!-- 2. Odd Number Series -->
+    <script>
+        var n = 5;
+        for (let index = 1; index <= n; index++) {
+            console.log(2 * index - 1);
+        }
+    </script>
+
+    <!-- 3. Square/Cube Number Series -->
+    <script>
+        var n = 5;
+        for (let index = 1; index <= n; index++) {
+            console.log(index ** 2);
+        }
+        for (let index = 1; index <= n; index++) {
+            console.log(index ** 3);
+        }
+    </script>
+
+    <!-- 4. Patterns -->
+    <script>
+        let a = 5;
+
+        //pattern 1
+        // *****
+        // *****
+        // *****
+        // *****
+        // *****
+        let result1 = "";
+        for (let i = 1; i <= a; i++) {
+            for (let j = 1; j <= a; j++) {
+                result1 += "*";
+            }
+            result1 += "\n";
+        }
+        console.log(result1);
+
+        //pattern 2
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        let result2 = "";
+        for (let i = 1; i <= a; i++) {
+            for (let j = 1; j <= i; j++) {
+                result2 += "*";
+            }
+            result2 += "\n";
+        }
+        console.log(result2);
+
+        //pattern 3
+        // 1
+        // 22
+        // 333
+        // 4444
+        // 55555
+        let result3 = "";
+        for (let i = 1; i <= a; i++) {
+            for (let j = 1; j <= i; j++) {
+                result3 += i;
+            }
+            result3 += "\n";
+        }
+        console.log(result3);
+
+        //pattern 4
+        // 1
+        // 12
+        // 123
+        // 1234
+        // 12345
+        let result4 = "";
+        for (let i = 1; i <= a; i++) {
+            for (let j = 1; j <= i; j++) {
+                result4 += j;
+            }
+            result4 += "\n";
+        }
+        console.log(result4);
+
+        //pattern 5
+        //     * 
+        //    * * 
+        //   * * * 
+        //  * * * * 
+        // * * * * *
+        let result5 = "";
+        //outer loop row runs
+        for (let i = 1; i <= n; i++) {
+
+            //space loop(it works on methodlogy that initialise the start condition with no of outer loop runs-1 and its value will decrement till i)
+            for (let j = n - 1; j >= i; j--) {
+                result5 += " ";//whitespace
+            }
+
+            //print loop
+            for (let k = 1; k <= i; k++) {
+                result5 += "* ";//asterik with space
+            }
+
+            result5 += "\n";
+        }
+        console.log(result5);
+    </script>
+
+    <!-- * * * * *
+          * * * *
+           * * *
+            * *
+             * -->
+    <script>
+        let result6 = "";
+        //outer row loop
+        for (let i = n; i >= 1; i--) {
+
+            //space loop(it works on methodlogy that initialise the start condition with no of outer loop runs-1 and its value will decrement till i)
+            for (let j = n - 1; j >= i; j--) {
+                result6 += " ";//whitespace
+            }
+
+            //print loop
+            for (let k = 1; k <= i; k++) {
+                result6 += "* ";
+            }
+
+            result6 += "\n";
+        }
+        console.log(result6);
+    </script>
+</body>
+
+</html>
