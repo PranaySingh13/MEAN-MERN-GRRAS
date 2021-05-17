@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <!-- JavaScript Array Methods -->
+
+    <!-- Converting Arrays to Strings
+    The JavaScript method toString() converts an array to a string of (comma separated) array values. -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.toString());
+    </script>
+    <!-- The join() method also joins all array elements into a string.
+    It behaves just like toString(), but in addition you can specify the separator -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.join(" - "));
+    </script>
+
+    <!-- Popping and Pushing
+        When you work with arrays, it is easy to remove elements and add new elements.
+        This is what popping and pushing is:
+        Popping items out of an array, or pushing items into an array. -->
+
+    <!-- Popping
+    The pop() method removes the last element from an array: -->
+    <!-- The pop() method returns the value that was "popped out" -->
+
+    <!-- Pushing
+    The push() method adds a new element to an array (at the end) -->
+    <!-- The push() method returns the new array length: -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.pop());// the value is "Mango"
+        console.log(fruits.push("Lemon"));//  the value of x is 4
+    </script>
+
+    <!-- Shifting Elements
+        Shifting is equivalent to popping, working on the first element instead of the last.
+        
+        The shift() method removes the first array element and "shifts" all other elements to a lower index. -->
+    <!-- The shift() method returns the string that was "shifted out" -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.shift());//// Removes the first element "Banana" from fruits
+    </script>
+
+    <!-- The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements -->
+    <!-- The unshift() method returns the new array length. -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.unshift("Lemon");
+        console.log(fruits);// Adds a new element "Lemon" to fruits
+        console.log(fruits.unshift());
+    </script>
+
+    <!-- Deleting Elements
+    Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete: -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(delete fruits[0]);/// Changes the first element in fruits to undefined and returns true
+        console.log(fruits);
+    </script>
+    <!-- Using delete may leave undefined holes in the array. Use pop() or shift() instead. -->
+
+    <!-- Splicing an Array
+    The splice() method can be used to add new items to an array -->
+    <!-- The first parameter (2) defines the position where new elements should be added (spliced in).
+        The second parameter (0) defines how many elements should be removed.
+        The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+        The splice() method returns an array with the deleted items -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log("Old Array: " + fruits);
+        var removedItems = fruits.splice(2, 2, "Lemon", "Kiwi");
+        console.log("New Array: " + fruits);
+        console.log("Removed Items: " + removedItems);
+    </script>
+
+    <!-- Using splice() to Remove Elements
+    With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array: -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.splice(0, 1));// // Removes the first element of fruits
+    </script>
+    <!-- The first parameter (0) defines the position where new elements should be added (spliced in).
+    The second parameter (1) defines how many elements should be removed.
+    The rest of the parameters are omitted. No new elements will be added. -->
+
+    <!-- Merging (Concatenating) Arrays
+    The concat() method creates a new array by merging (concatenating) existing arrays -->
+    <script>
+        var myGirls = ["Cecilie", "Lone"];
+        var myBoys = ["Emil", "Tobias", "Linus"];
+        console.log(myGirls.concat(myBoys));//// Concatenates (joins) myGirls and myBoys
+    </script>
+    <!-- The concat() method does not change the existing arrays. It always returns a new array. -->
+
+    <!-- Example (Merging Three Arrays) -->
+    <!-- The concat() method can take any number of array arguments -->
+    <script>
+        var arr1 = ["Cecilie", "Lone"];
+        var arr2 = ["Emil", "Tobias", "Linus"];
+        var arr3 = ["Robin", "Morgan"];
+        console.log(arr1.concat(arr2, arr3));
+    </script>
+
+    <!-- Example (Merging an Array with Values) -->
+    <!-- The concat() method can also take strings as arguments -->
+    <script>
+        var arr1 = ["Emil", "Tobias", "Linus"];
+        console.log(arr1.concat("Peter"));
+    </script>
+
+    <!-- Slicing an Array
+    The slice() method slices out a piece of an array into a new array.
+    This example slices out a part of an array starting from array element 1 ("Orange") -->
+    <!-- The slice() method creates a new array. It does not remove any elements from the source array. -->
+    <script>
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        console.log(fruits.slice(1));
+    </script>
+
+    <!-- The slice() method can take two arguments like slice(1, 3).
+    The method then selects elements from the start argument, and up to (but not including) the end argument. -->
+    <script>
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        console.log(fruits.slice(1, 3));
+    </script>
+
+    <!-- Automatic toString()
+        JavaScript automatically converts an array to a comma separated string when a primitive value is expected.
+        This is always the case when you try to output an array.
+        These two examples will produce the same result: -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.toString());
+        console.log(fruits);
+    </script>
+
+    <!-- Finding Max and Min Values in an Array
+    There are no built-in functions for finding the highest or lowest value in a JavaScript array. -->
+
+</body>
+
+</html>
