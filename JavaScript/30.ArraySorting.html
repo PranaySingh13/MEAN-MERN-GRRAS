@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Sorting</title>
+</head>
+
+<body>
+    <!-- JavaScript Sorting Arrays -->
+
+    <!-- Sorting an Array
+    The sort() method sorts an array alphabetically: -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log("Sorted Array: " + fruits.sort());//Sorts the elements of fruits
+    </script>
+
+    <!-- Reversing an Array
+    The reverse() method reverses the elements in an array.
+    You can use it to sort an array in descending order -->
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log("Reverse array: " + fruits.reverse());// reverse the order of the elements
+        console.log("Sorted Array: " + fruits.sort());//First sort the elements of fruits
+        console.log("Reverse array: " + fruits.reverse());// Then reverse the order of the elements
+    </script>
+
+    <!-- Numeric Sort
+        By default, the sort() function sorts values as strings.
+        This works well for strings ("Apple" comes before "Banana").
+        However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+        Because of this, the sort() method will produce incorrect result when sorting numbers.
+        You can fix this by providing a compare function: -->
+
+    <!-- ******** Very Important Concept ******** -->
+
+    <!-- The Compare Function
+        The purpose of the compare function is to define an alternative sort order.
+        The compare function should return a negative, zero, or positive value, depending on the arguments:
+
+        function(a, b){return a - b}
+        When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+        If the result is negative a is sorted before b.
+        If the result is positive b is sorted before a.
+        If the result is 0 no changes are done with the sort order of the two values.
+
+        Example:
+        The compare function compares all the values in the array, two values at a time (a, b).
+        When comparing 40 and 100, the sort() method calls the compare function(40, 100).
+        The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will sort 40 as a value lower than 100.
+        You can use this code snippet to experiment with numerically and alphabetically sorting -->
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        console.log("Invalid/Alphabetically sort result: " + points.sort());//invalid results as it is seeing initials of numbers in character form rahter than numeric value. 
+
+        //The Compare Function
+        function sortingNumbersAscending(a, b) {
+            return a - b;//sort an array ascending
+        }
+        console.log("Valid Sort Result: " + points.sort(sortingNumbersAscending));
+        console.log(points.sort(function (a, b) { return a - b }));
+
+        //Use the same trick to sort an array descending
+        function sortingNumbersDescending(a, b) {
+            return b - a;//sort an array descending
+        }
+        console.log("Valid Sort Result: " + points.sort(sortingNumbersDescending));
+        console.log(points.sort(function (a, b) { return b - a }));
+    </script>
+
+    <!-- Sorting an Array in Random Order -->
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        console.log(points.sort(function (a, b) { return 0.5 - Math.random() }));
+    </script>
+
+    <!-- The Fisher Yates Method
+        The above example, array.sort(), is not accurate, it will favor some numbers over the others.
+        The most popular correct method, is called the Fisher Yates shuffle, and was introduced in data science as early as 1938!
+        In JavaScript the method can be translated to this -->
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        for (i = points.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * i)//Math.random() used with Math.floor() can be used to return random integers.
+            k = points[i]
+            points[i] = points[j]
+            points[j] = k
+        }
+        console.log(points);
+    </script>
+
+    <!-- Find the Highest (or Lowest) Array Value
+        There are no built-in functions for finding the max or min value in an array.
+        However, after you have sorted an array, you can use the index to obtain the highest and lowest values.
+        Sorting ascending -->
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function (a, b) { return a - b });
+        console.log(points[0]);// now points[0] contains the lowest value
+        console.log(points[points.length - 1]);// and points[points.length-1] contains the highest value
+    </script>
+    <!-- Sorting descending: -->
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function (a, b) { return b - a });
+        console.log(points[0]);// now points[0] contains the highest value
+        console.log(points[points.length - 1]);// and points[points.length-1] contains the lowest value
+    </script>
+
+    <!-- Sorting a whole array is a very inefficient method if you only want to find the highest (or lowest) value. -->
+
+    <!-- Using Math.max() on an Array
+    You can use Math.max.apply to find the highest number in an array -->
+
+    <!-- Math.max.apply(null, [1, 2, 3]) is equivalent to Math.max(1, 2, 3). -->
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+
+        function myArrayMax(arr) {
+            return Math.max.apply(null, arr);
+        }
+        console.log(myArrayMax(points));
+    </script>
+
+    <!-- Using Math.min() on an Array
+    You can use Math.min.apply to find the lowest number in an array: -->
+
+    <!-- Math.min.apply(null, [1, 2, 3]) is equivalent to Math.min(1, 2, 3). -->
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+
+        function myArrayMin(arr) {
+            return Math.min.apply(null, arr);
+        }
+        console.log(myArrayMin(points));
+    </script>
+
+    <!-- Sorting Object Arrays
+    JavaScript arrays often contain objects -->
+
+    <!-- Even if objects have properties of different data types, the sort() method can be used to sort the array.
+
+    The solution is to write a compare function to compare the property values -->
+    <script>
+        var cars = [
+            { type: "Volvo", year: 2016 },
+            { type: "Saab", year: 2001 },
+            { type: "BMW", year: 2010 }
+        ];
+
+        console.log(cars.sort(function (a, b) { return a.year - b.year }));
+
+        //Comparing string properties is a little more complex:
+        var sortedArray = cars.sort(
+            function (a, b) {
+                var x = a.type.toLowerCase();
+                var y = b.type.toLowerCase();
+                if (x < y) {
+                    return -1;
+                }
+                if (x > y) {
+                    return 1;
+                }
+                return 0;
+            }
+        );
+        console.log(sortedArray);
+    </script>
+
+</body>
+
+</html>
