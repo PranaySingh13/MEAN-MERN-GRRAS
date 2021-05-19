@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Iteration</title>
+</head>
+
+<body>
+    <!-- JavaScript Array Iteration Methods -->
+
+    <!-- Array iteration methods operate on every array item.-->
+
+    <!-- Array.forEach()
+    The forEach() method calls a function (a callback function) once for each array element. -->
+
+    <!-- Note that the function takes 3 arguments:
+
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var text = "", result = "";
+        var numbers = [45, 4, 9, 16, 25];
+
+        function myCallbackFunction(value, index, array) {
+            text += value + " \n";
+        }
+
+        numbers.forEach(myCallbackFunction);
+        console.log(text);
+
+        //The example above uses only the value parameter. The example can be rewritten to
+        function myFunction(value) {
+            result += value + " ";
+        }
+        numbers.forEach(myFunction);
+        console.log(result);
+    </script>
+
+    <!-- Array.map()
+        The map() method creates a new array by performing a function on each array element.
+        The map() method does not execute the function for array elements without values.
+        The map() method does not change the original array.
+        This example multiplies each array value by 2 -->
+
+    <!-- Note that the function takes 3 arguments:
+
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var numbers1 = [45, 4, 9, 16, 25];
+        function myCallbackFunction1(value, index, array) {
+            return value * 2;
+        }
+        console.log(numbers1.map(myCallbackFunction1));
+
+        //When a callback function uses only the value parameter, the index and array parameters can be omitted
+        function myCallbackFunction2(value) {
+            return value * 4;
+        }
+        console.log(numbers1.map(myCallbackFunction2));
+    </script>
+
+    <!-- Array.filter()
+        The filter() method creates a new array with array elements that passes a test.
+        This example creates a new array from elements with a value larger than 18 -->
+
+    <!-- Note that the function takes 3 arguments:
+        
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myPredicateFunction1(value, index, array) {
+            return value > 18;
+        }
+
+        console.log(numbers.filter(myPredicateFunction1));
+
+        // the predicate function does not use the index and array parameters, so they can be omitted
+        function myPredicateFunction2(value) {
+            return value > 10;
+        }
+
+        console.log(numbers.filter(myPredicateFunction2));
+    </script>
+
+    <!-- Array.reduce()
+        The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+        The reduce() method works from left-to-right in the array. See also reduceRight().
+        The reduce() method does not reduce the original array.
+        This example finds the sum of all numbers in an array -->
+
+    <!-- Note that the function takes 4 arguments:
+
+        The total (the initial value / previously returned value)
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myCallbackFunction1(previousValue, currentValue, currentIndex, array) {
+            return previousValue + currentValue;
+        }
+        console.log(numbers.reduce(myCallbackFunction1));
+
+        //The example above does not use the index and array parameters. It can be rewritten to
+        function myCallbackFunction2(previousValue, currentValue) {
+            return previousValue + currentValue;
+        }
+        console.log(numbers.reduce(myCallbackFunction2));
+
+        //The reduce() method can accept an initial value
+        function myCallbackFunction2(previousValue, currentValue) {
+            return previousValue + currentValue;
+        }
+        console.log(numbers.reduce(myCallbackFunction1, 100));//199
+    </script>
+
+    <!-- Array.reduceRight()
+        The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+        The reduceRight() works from right-to-left in the array. See also reduce().
+        The reduceRight() method does not reduce the original array.
+        This example finds the sum of all numbers in an array -->
+
+    <!-- Note that the function takes 4 arguments:
+
+        The total (the initial value / previously returned value)
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myCallbackFunction1(previousValue, currentValue, currentIndex, array) {
+            return previousValue + currentValue;
+        }
+        console.log(numbers.reduceRight(myCallbackFunction1));
+
+        //The example above does not use the index and array parameters. It can be rewritten to
+        function myCallbackFunction2(previousValue, currentValue) {
+            return previousValue + currentValue;
+        }
+        console.log(numbers.reduceRight(myCallbackFunction2));
+
+        //The reduce() method can accept an initial value
+        function myCallbackFunction2(previousValue, currentValue) {
+            return previousValue + currentValue;
+        }
+        console.log(numbers.reduceRight(myCallbackFunction1, 100));//199
+    </script>
+
+    <!-- Array.every()
+    The every() method check if all array values pass a test and return boolean value true or false.
+    This example check if all array values are larger than 18 -->
+    <!-- Note that the function takes 3 arguments:
+            
+            The item value
+            The item index
+            The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myPredicateFunction1(value, index, array) {
+            return value > 18;
+        }
+
+        console.log(numbers.every(myPredicateFunction1));
+
+        // the predicate function does not use the index and array parameters, so they can be omitted
+        function myPredicateFunction2(value) {
+            return value > 10;
+        }
+
+        console.log(numbers.every(myPredicateFunction2));
+    </script>
+
+    <!-- Array.some()
+        The some() method check if some array values pass a test.
+        This example check if some array values are larger than 18 -->
+
+    <!-- Note that the function takes 3 arguments:
+            
+            The item value
+            The item index
+            The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myPredicateFunction1(value, index, array) {
+            return value > 18;
+        }
+
+        console.log(numbers.some(myPredicateFunction1));
+
+        // the predicate function does not use the index and array parameters, so they can be omitted
+        function myPredicateFunction2(value) {
+            return value > 10;
+        }
+
+        console.log(numbers.some(myPredicateFunction2));
+    </script>
+
+    <!-- Array.indexOf()
+        The indexOf() method searches an array for an element value and returns its position.
+        Note: The first item has position 0, the second item has position 1, and so on. -->
+
+    <!-- Syntax
+        array.indexOf(item, start)
+        item	Required. The item to search for.
+        start	Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the end.
+        Array.indexOf() returns -1 if the item is not found.
+
+        If the item is present more than once, it returns the position of the first occurrence.-->
+    <script>
+        var fruits = ["Apple", "Orange", "Apple", "Mango"];
+        console.log(fruits.indexOf("Apple"));// output index 0
+        console.log(fruits.indexOf("Apple", 1));// output index 2
+    </script>
+
+    <!-- Array.lastIndexOf()
+    Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element. -->
+
+    <!-- Syntax
+        array.lastIndexOf(item, start)
+        item	Required. The item to search for
+        start	Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the beginning -->
+    <script>
+        var fruits = ["Apple", "Orange", "Apple", "Mango"];
+        console.log(fruits.lastIndexOf("Apple"));// output index 2
+        console.log(fruits.lastIndexOf("Apple", 1));// output index 0
+    </script>
+
+    <!-- Array.find()
+    The find() method returns the value of the first array element that passes a test function.
+    This example finds (returns the value of) the first element that is larger than 18 -->
+
+    <!-- Note that the function takes 3 arguments:
+
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myPredicateFunction1(value, index, array) {
+            return value > 18;
+        }
+
+        console.log(numbers.find(myPredicateFunction1));
+
+        // the predicate function does not use the index and array parameters, so they can be omitted
+        function myPredicateFunction2(value) {
+            return value > 10;
+        }
+
+        console.log(numbers.find(myPredicateFunction2));
+    </script>
+
+    <!-- Array.findIndex()
+    The findIndex() method returns the index of the first array element that passes a test function.
+    This example finds the index of the first element that is larger than 18 -->
+
+    <!-- Note that the function takes 3 arguments:
+
+        The item value
+        The item index
+        The array itself -->
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        function myPredicateFunction1(value, index, array) {
+            return value > 18;
+        }
+
+        console.log(numbers.findIndex(myPredicateFunction1));
+
+        // the predicate function does not use the index and array parameters, so they can be omitted
+        function myPredicateFunction2(value) {
+            return value > 10;
+        }
+
+        console.log(numbers.findIndex(myPredicateFunction2));
+    </script>
+
+</body>
+
+</html>
