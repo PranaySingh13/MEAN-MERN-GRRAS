@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+</head>
+
+<body>
+    <!-- JavaScript Regular Expressions -->
+
+    <!-- A regular expression is a sequence of characters that forms a search pattern.
+    The search pattern can be used for text search and text replace operations.-->
+
+    <!-- What Is a Regular Expression?
+        A regular expression is a sequence of characters that forms a search pattern.
+        When you search for data in a text, you can use this search pattern to describe what you are searching for.
+        A regular expression can be a single character, or a more complicated pattern.
+        Regular expressions can be used to perform all types of text search and text replace operations.
+
+        Syntax
+        /pattern/modifiers;
+        Example
+        var patt = /w3schools/i;
+        Example explained:
+
+        /w3schools/i  is a regular expression.
+        w3schools  is a pattern (to be used in a search).
+        i  is a modifier (modifies the search to be case-insensitive).-->
+
+    <!-- Using String Methods
+        In JavaScript, regular expressions are often used with the two string methods: search() and replace().
+        The search() method uses an expression to search for a match, and returns the position of the match.
+        The replace() method returns a modified string where the pattern is replaced. -->
+
+    <!-- Using String search() With a String
+    The search() method searches a string for a specified value and returns the position of the match -->
+    <script>
+        //Use a string to do a search for "W3schools" in a string
+        var str = "Visit W3Schools!";
+        console.log(str.search("W3Schools"));//6
+    </script>
+
+    <!-- Using String search() With a Regular Expression -->
+    <script>
+        //Use a regular expression to do a case-insensitive search for "w3schools" in a string
+        var str = "Visit W3Schools!";
+        console.log(str.search(/w3schools/i));//6
+    </script>
+
+    <!-- Using String replace() With a String
+    The replace() method replaces a specified value with another value in a string -->
+    <script>
+        var str = "Visit Microsoft!";
+        console.log(str.replace("Microsoft", "W3Schools"));
+    </script>
+
+    <!-- Use String replace() With a Regular Expression -->
+    <!-- Use a case insensitive regular expression to replace Microsoft with W3Schools in a string: -->
+    <script>
+        var str = "Please visit Microsoft and Microsoft!";
+        console.log(str.replace(/microsoft/i, "W3Schools"));
+    </script>
+
+    <!-- Note: Complete Regular Expression List -->
+
+    <!-- https://www.w3schools.com/jsref/jsref_obj_regexp.asp -->
+</body>
+
+</html>
