@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this Keyword</title>
+</head>
+
+<body>
+    <!-- The JavaScript this Keyword -->
+
+    <!-- What is this?
+        The JavaScript this keyword refers to the object it belongs to.
+
+        It has different values depending on where it is used:
+
+        In a method, this refers to the owner object.
+        Alone, this refers to the global object.
+        In a function, this refers to the global object.
+        In a function, in strict mode, this is undefined.
+        In an event, this refers to the element that received the event.
+        Methods like call(), and apply() can refer this to any object. -->
+
+    <script>
+        var person = {
+            firstName: "Pranay",
+            lastName: "Singh",
+            age: 28,
+            id: 1,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        // this in a Method
+        // In an object method, this refers to the "owner" of the method.
+        // In the example on the top of this page, this refers to the person object.
+        // The person object is the owner of the fullName method.
+        console.log(person.fullName());
+    </script>
+
+    <!-- this Alone
+        When used alone, the owner is the Global object, so this refers to the Global object.
+        In a browser window the Global object is [object Window] -->
+    <script>
+        var x = this;
+        console.log(x);
+    </script>
+
+    <!-- this in a Function (Default)
+        In a JavaScript function, the owner of the function is the default binding for this.
+        So, in a function, this refers to the Global object [object Window]. -->
+    <script>
+        function myFunction() {
+            return this;
+        }
+        console.log(myFunction());
+    </script>
+
+    <!-- this in Event Handlers
+    In HTML event handlers, this refers to the HTML element that received the event -->
+    <button onclick="this.style.display='none'">
+        Click to Remove Me!
+    </button>
+
+    <!-- Object Method Binding
+    In these examples, this is the person object (The person object is the "owner" of the function) -->
+    <script>
+        var person = {
+            firstName: "Pranay",
+            lastName: "Singh",
+            age: 28,
+            id: 1,
+            myFunction: function () {
+                return this;
+            }
+        };
+        console.log(person.myFunction());
+
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        console.log(person.fullName());
+    </script>
+    <!-- In other words: this.firstName means the firstName property of this (person) object. -->
+
+    <!-- Explicit Function Binding
+        The call() and apply() methods are predefined JavaScript methods.
+        They can both be used to call an object method with another object as argument. -->
+
+    <!-- In the example below, when calling person1.fullName with person2 as argument, this will refer to person2, even if it is a method of person1 -->
+    <script>
+        var person1 = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        var person2 = {
+            firstName: "Pranay",
+            lastName: "Singh"
+        };
+        console.log(person1.fullName.call(person2));//will return Pranay Singh
+        console.log(person1.fullName.apply(person2));//will return Pranay Singh
+    </script>
+
+</body>
+
+</html>
