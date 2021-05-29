@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+
+<body>
+    <!-- JavaScript HTML DOM Events -->
+
+    <!-- HTML DOM allows JavaScript to react to HTML events: -->
+
+    <!-- Reacting to Events
+        A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.
+        To execute code when a user clicks on an element, add JavaScript code (or mainly function) to an HTML event attribute:
+
+        onclick=JavaScript
+        Examples of HTML events:
+
+        When a user clicks the mouse
+        When a web page has loaded
+        When an image has been loaded
+        When the mouse moves over an element
+        When an input field is changed
+        When an HTML form is submitted
+        When a user strokes a key
+        In this example, the content of the <h1> element is changed when a user clicks on it -->
+
+    <h1 onclick="this.innerHTML='Oops!'">Click on me!</h1>
+
+    <!-- In this example, a function is called from the event handler: -->
+    <h1 onclick="changeText(this)">Click on Me!</h1>
+    <script>
+        function changeText(id) {
+            id.innerHTML = "Oops!";
+        }
+    </script>
+
+    <!-- HTML Event Attributes
+    To assign events to HTML elements you can use event attributes. -->
+    <!-- Assign an onclick event to a button element -->
+    <button onclick="displayDate()">Current Date</button>
+    <script>
+        function displayDate() {
+            var date = new Date();
+            document.getElementById("demo1").innerHTML = date.toString();
+            document.getElementById("demo2").innerHTML = date.toUTCString();
+        }
+    </script>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <!-- In the example above, a function named displayDate will be executed when the button is clicked.-->
+
+    <!-- The onload and onunload Events
+        The onload and onunload events are triggered when the user enters or leaves the page.
+        The onload event can be used to check the visitor's browser type and browser version, and load the proper version of the web page based on the information.
+        The onload and onunload events can be used to deal with cookies. -->
+
+    <script>
+        function checkCookies() {
+            var text = "";
+            if (navigator.cookieEnabled == true) {
+                text = "Cookies are enabled";
+            } else {
+                text = "Cookies are not enabled";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+        console.log(navigator);
+    </script>
+
+    <html>
+
+    <head>
+    </head>
+
+    <body onload="checkCookies()">
+        <p id="demo"></p>
+    </body>
+
+    </html>
+
+    <!-- The onchange Event
+        The onchange event is often used in combination with validation of input fields.
+        Below is an example of how to use the onchange. The upperCase() function will be called when a user changes the content of an input field. -->
+
+    Enter Your Name: <input type="text" id="fname" onchange="upperCase()">
+    <script>
+        function upperCase() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+    <!-- When you leave the input field, a function is triggered which transforms the input text to upper case. -->
+
+    <!-- The onmouseover and onmouseout Events
+    The onmouseover and onmouseout events can be used to trigger a function when the user mouses over, or out of, an HTML element: -->
+    <div id="i1" onmouseover="mOver()" onmouseout="mOut()"
+        style="background-color: red;color: whitesmoke;width:120px;height:20px;padding:40px;">Mouse over me!</div>
+    <script>
+        function mOver() {
+            document.getElementById("i1").innerHTML = "Mouse Over!";
+            document.getElementById("i1").style.backgroundColor = "brown";
+        }
+        function mOut() {
+            document.getElementById("i1").innerHTML = "Mouse Out!";
+            document.getElementById("i1").style.backgroundColor = "Orange";
+        }
+    </script>
+
+    <!-- The onmousedown, onmouseup and onclick Events
+    The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is triggered, finally, when the mouse-click is completed, the onclick event is triggered. -->
+    <div id="i2" onmousedown="mDown()" onmouseup="mUp()"
+        style="background-color: red;color: whitesmoke;width:120px;height:20px;padding:40px;margin-top: 40px;">Click me!
+    </div>
+    <script>
+        function mDown() {
+            document.getElementById("i2").innerHTML = "Mouse Clicked!";
+            document.getElementById("i2").style.backgroundColor = "brown";
+        }
+        function mUp() {
+            document.getElementById("i2").innerHTML = "Mouse Released!";
+            document.getElementById("i2").style.backgroundColor = "purple";
+        }
+    </script>
+
+    <!-- Change an image when a user hovers the mouse button. -->
+    <img onmouseover="mOverImg()" onmouseout="mOutImg()" src="bulboff.jpg" id="img" width="100" height="180" alt=""
+        style="margin-top: 20px;">
+    <script>
+        function mOverImg() {
+            document.getElementById("img").src = "bulbon.jpg";
+        }
+        function mOutImg() {
+            document.getElementById("img").src = "bulboff.jpg";
+        }
+    </script>
+
+    <!-- Note: Event Reference -->
+    <!-- https://www.w3schools.com/jsref/dom_obj_event.asp -->
+</body>
+
+</html>
