@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM HTML</title>
+</head>
+
+<body>
+    <!-- JavaScript HTML DOM - Changing HTML -->
+
+    <!-- The HTML DOM allows JavaScript to change the content of HTML elements. -->
+
+    <!-- Changing the HTML Output Stream
+        JavaScript can create dynamic HTML content: -->
+
+    <!-- In JavaScript, document.write() can be used to write directly to the HTML output stream -->
+    <script>
+        document.write("Current Date is: " + Date());
+    </script>
+
+    <!-- Never use document.write() after the document is loaded. It will overwrite the document. -->
+
+    <!-- Changing HTML Content
+        The easiest way to modify the content of an HTML element is by using the innerHTML property.
+
+        To change the content of an HTML element, use this syntax:
+
+        document.getElementById(id).innerHTML = new HTML
+        This example changes the content of a <p> element: -->
+
+    <p id="p1">Welcome</p>
+    <script>
+        document.getElementById("p1").innerHTML = "Welcome to Dubai!!";
+    </script>
+    <!-- Example explained:
+        The HTML document above contains a <p> element with id="p1"
+        We use the HTML DOM to get the element with id="p1"
+        A JavaScript changes the content (innerHTML) of that element to "New text!" -->
+
+
+    <!-- Changing the Value of an Attribute
+        To change the value of an HTML attribute, use this syntax:
+
+        document.getElementById(id).attribute = new value
+        This example changes the value of the src attribute of an <img> element: -->
+
+    <img id="myImage" src="facebooklogo.jpg" alt="">
+    <script>
+        document.getElementById("myImage").src = "flipkart logo.png"
+    </script>
+    <!-- Example explained:
+
+The HTML document above contains an <img> element with id="myImage"
+We use the HTML DOM to get the element with id="myImage"
+A JavaScript changes the src attribute of that element from "facebooklogo" to "flipkart logo"-->
+
+</body>
+
+</html>
