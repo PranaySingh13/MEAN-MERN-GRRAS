@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+
+<body>
+    <!-- JavaScript Hoisting -->
+
+    <!-- Hoisting is JavaScript's default behavior of moving declarations to the top. -->
+
+    <!-- JavaScript Declarations are Hoisted
+        In JavaScript, a variable can be declared after it has been used.
+
+        In other words; a variable can be used before it has been declared.
+
+        Example 1 gives the same result as Example 2: -->
+
+    <script>
+        //Example 1
+        x = 10;
+        console.log(x);// 10
+        var x;//Declaring after it has been used.
+    </script>
+    <script>
+        //Example 2
+        var x;//Declaring before it has been used.
+        x = 10;
+        console.log(x);// 10
+    </script>
+
+    <!-- Important -->
+    <!-- To understand this, you have to understand the term "hoisting".
+    Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function). -->
+
+    <!-- The let and const Keywords
+        Variables defined with let and const are hoisted to the top of the block, but not initialized.
+        Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.
+        Using a let variable before it is declared will result in a ReferenceError.
+        The variable is in a "temporal dead zone" from the start of the block until it is declared -->
+
+    <script>
+        try {
+            carName = "Volvo";
+            let carName;
+        } catch (error) {
+            console.log(error.name, error.message);//ReferenceError
+        }
+
+        try {
+            car = "Volvo";
+            const car;
+        } catch (error) {
+            console.log(error.name, error.message);//is a syntax errror, so the code will simply not run.
+        }
+    </script>
+
+    <!-- JavaScript Initializations are Not Hoisted
+        JavaScript only hoists declarations, not initializations.
+        Example 1 does not give the same result as Example 2: -->
+
+    <script>
+        //Example 1
+        var x = 5; // Initialize x
+        var y = 7; // Initialize y
+        console.log(x + " " + y);
+    </script>
+    <script>
+        //Example 2
+        var a = 5; // Initialize x
+        console.log(a + " " + b);
+        var b = 7; // Initialize y
+    </script>
+
+    <!-- Does it make sense that y is undefined in the last example?
+        This is because only the declaration (var y), not the initialization (=7) is hoisted to the top.
+        Because of hoisting, y has been declared before it is used, but because initializations are not hoisted, the value of y is undefined.
+        Example 2 is the same as writing: -->
+    <script>
+        var c = 5; // Initialize x
+        var d;// Declare y
+        console.log(a + " " + b);
+        d = 7; // Initialize y
+    </script>
+
+    <!-- Important -->
+    <!-- Declare Your Variables At the Top !
+        Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.
+        If a developer doesn't understand hoisting, programs may contain bugs (errors).
+        To avoid bugs, always declare all variables at the beginning of every scope.
+        Since this is how JavaScript interprets the code, it is always a good rule. -->
+
+</body>
+
+</html>
