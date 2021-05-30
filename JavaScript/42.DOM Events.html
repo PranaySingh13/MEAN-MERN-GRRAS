@@ -52,6 +52,20 @@
     </script>
     <p id="demo1"></p>
     <p id="demo2"></p>
+
+    <!-- Assign Events Using the HTML DOM
+        The HTML DOM allows you to assign events to HTML elements using JavaScript:
+
+        Example
+        Assign an onclick event to a button element:-->
+    <button id="myBtn">Try it</button>
+    <script>
+        document.getElementById("myBtn").onclick = displayDate;
+    </script>
+
+    <!--In the example above, a function named displayDate is assigned to an HTML element with the id="myBtn".
+    The function will be executed when the button is clicked. -->
+
     <!-- In the example above, a function named displayDate will be executed when the button is clicked.-->
 
     <!-- The onload and onunload Events
