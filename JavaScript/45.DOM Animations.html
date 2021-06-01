@@ -42,12 +42,13 @@
 
         The basic code is -->
     <script>
+    //     The setInterval() method repeats a given function at every given time-interval(in milliseconds).   
     //     var id = setInterval(frame, 5);
 
     //     function frame() {
     //       if (/* test for finished */) {
 
-    //  The clearInterval() method stops the executions of the function specified in the setInterval() method.
+    //      The clearInterval() method stops the executions of the function specified in the setInterval() method.
     //         clearInterval(id);
     //     } else {
     //         /* code to change the element style */
@@ -70,6 +71,8 @@
             clearInterval(id);
             //The setInterval() method repeats a given function at every given time-interval(in milliseconds).
             id = setInterval(frame, 10);
+
+            // The clearInterval() with default value method should be set before setInterval().
 
             function frame() {
                 if (position == 350) {
