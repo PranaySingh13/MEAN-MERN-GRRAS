@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Collections</title>
+</head>
+
+<body>
+    <!-- JavaScript HTML DOM Collections -->
+
+    <!-- The HTMLCollection Object
+    The getElementsByTagName() method returns an HTMLCollection object.
+    An HTMLCollection object is an array-like list (collection) of HTML elements.-->
+
+    <!-- HTML HTMLCollection Length
+    The length property defines the number of elements in an HTMLCollection -->
+    <p>Hello</p>
+    <p>Hi</p>
+    <p id="demo"></p>
+    <script>
+        var myCollection = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML =
+            "This document contains " + myCollection.length + " paragraphs.";;
+    </script>
+
+    <!-- Example explained:
+
+        Create a collection of all <p> elements
+        Display the length of the collection
+        The length property is useful when you want to loop through the elements in a collection: -->
+    <script>
+        var myCollection = document.getElementsByTagName("p");
+        var i;
+        for (i = 0; i < myCollection.length; i++) {
+            myCollection[i].style.color = "red";
+        }
+    </script>
+
+    <!-- Note: -->
+    <!-- An HTMLCollection is NOT an array!
+        An HTMLCollection may look like an array, but it is not.
+        You can loop through the list and refer to the elements with a number (just like an array).
+        However, you cannot use array methods like valueOf(), pop(), push(), or join() on an HTMLCollection. -->
+
+</body>
+
+</html>
