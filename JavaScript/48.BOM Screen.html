@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Screen</title>
+</head>
+
+<body>
+    <!-- JavaScript Window Screen -->
+
+    <!-- The window.screen object contains information about the user's screen. -->
+
+    <!-- Window Screen
+    The window.screen object can be written without the window prefix. -->
+
+    <!-- Properties:
+
+        screen.width
+        screen.height
+        screen.availWidth
+        screen.availHeight
+        screen.colorDepth
+        screen.pixelDepth -->
+
+    <!-- Window Screen Width
+    The screen.width property returns the width of the visitor's screen in pixels. -->
+
+    <!-- Example
+    Display the width of the screen in pixels: -->
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML =
+            "Screen Width: " + screen.width;
+    </script>
+
+    <!-- Window Screen Height
+        The screen.height property returns the height of the visitor's screen in pixels.
+
+        Example
+        Display the height of the screen in pixels: -->
+    <p id="demo1"></p>
+    <script>
+        document.getElementById("demo1").innerHTML =
+            "Screen Height: " + screen.height;
+    </script>
+
+    <!-- Window Screen Available Width
+        The screen.availWidth property returns the width of the visitor's screen, in pixels, minus interface features like the Windows Taskbar.
+
+        Example
+        Display the available width of the screen in pixels: -->
+    <p id="demo3"></p>
+    <script>
+        document.getElementById("demo3").innerHTML =
+            "Screen Availiable Width: " + screen.availWidth;
+    </script>
+
+    <!-- Window Screen Available Height
+        The screen.availHeight property returns the height of the visitor's screen, in pixels, minus interface features like the Windows Taskbar.
+        Example
+        Display the available height of the screen in pixels -->
+    <p id="demo4"></p>
+    <script>
+        document.getElementById("demo4").innerHTML =
+            "Screen Availiable Height: " + screen.availHeight;
+    </script>
+
+    <!-- Window Screen Color Depth
+    The screen.colorDepth property returns the number of bits used to display one color. -->
+
+    <!-- Window Screen Pixel Depth
+    The screen.pixelDepth property returns the pixel depth of the screen. -->
+
+    <!-- For modern computers, Color Depth and Pixel Depth are equal. -->
+
+</body>
+
+</html>
