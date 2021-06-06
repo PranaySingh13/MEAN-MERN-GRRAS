@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM History</title>
+</head>
+
+<body>
+    <!-- JavaScript Window History -->
+
+    <!-- The window.history object contains the browsers history. -->
+
+    <!-- Window History
+        The window.history object can be written without the window prefix.
+        To protect the privacy of the users, there are limitations to how JavaScript can access this object.
+
+        Some methods:
+
+        history.back() - same as clicking back in the browser
+        history.forward() - same as clicking forward in the browser-->
+
+    <!-- Window History Back
+        The history.back() method loads the previous URL in the history list.
+        This is the same as clicking the Back button in the browser.
+
+        Example
+        Create a back button on a page -->
+
+    <input type="button" value="Back" onclick="goBack()">
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <!-- Window History Forward
+        The history.forward() method loads the next URL in the history list.
+        This is the same as clicking the Forward button in the browser.
+
+        Example
+        Create a forward button on a page -->
+    <input type="button" value="Forward" onclick="goForward()">
+    <script>
+        function goForward() {
+            window.history.forward()
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
