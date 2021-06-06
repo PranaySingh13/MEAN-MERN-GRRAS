@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Navigator</title>
+</head>
+
+<body>
+    <!-- JavaScript Window Navigator -->
+
+    <!-- The window.navigator object contains information about the visitor's browser. -->
+
+    <!-- Window Navigator
+        The window.navigator object can be written without the window prefix.
+
+        Some examples:
+
+        navigator.appName
+        navigator.appCodeName
+        navigator.platform-->
+
+    <!-- Browser Cookies
+    The cookieEnabled property returns true if cookies are enabled, otherwise false -->
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML =
+            "Cookies Enabled is: " + window.navigator.cookieEnabled;
+    </script>
+
+    <!-- Browser Application Name
+    The appName property returns the application name of the browser -->
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML =
+            "navigator.appName is " + navigator.appName;
+    </script>
+    <!-- Strange enough, "Netscape" is the application name for both IE11, Chrome, Firefox, and Safari.-->
+
+    <!-- Browser Application Code Name
+    The appCodeName property returns the application code name of the browser -->
+    <p id="demo2"></p>
+    <script>
+        document.getElementById("demo2").innerHTML =
+            "navigator.appCodeName is " + navigator.appCodeName;
+    </script>
+    <!-- "Mozilla" is the application code name for both Chrome, Firefox, IE, Safari, and Opera. -->
+
+    <!-- The Browser Engine
+    The product property returns the product name of the browser engine -->
+    <p id="demo3"></p>
+    <script>
+        document.getElementById("demo3").innerHTML =
+            "navigator.product is " + navigator.product;
+    </script>
+    <!-- Do not rely on this. Most browsers returns "Gecko" as product name !! -->
+
+    <!-- The Browser Version
+    The appVersion property returns version information about the browser -->
+    <p id="demo4"></p>
+
+    <script>
+        document.getElementById("demo4").innerHTML =
+            navigator.appVersion;
+    </script>
+
+    <!-- The Browser Agent
+        The userAgent property returns the user-agent header sent by the browser to the server -->
+    <p id="demo5"></p>
+
+    <script>
+        document.getElementById("demo5").innerHTML =
+            navigator.userAgent;
+    </script>
+
+    <!-- Warning !!!
+        The information from the navigator object can often be misleading, and should not be used to detect browser versions because:
+
+        Different browsers can use the same name
+        The navigator data can be changed by the browser owner
+        Some browsers misidentify themselves to bypass site tests
+        Browsers cannot report new operating systems, released later than the browser
+
+        The Browser Platform
+        The platform property returns the browser platform (operating system) -->
+    <p id="demo6"></p>
+
+    <script>
+        document.getElementById("demo6").innerHTML =
+            "Operating System is: " + navigator.platform;
+    </script>
+
+    <!-- The Browser Language
+    The language property returns the browser's language -->
+    <p id="demo7"></p>
+
+    <script>
+        document.getElementById("demo7").innerHTML =
+            navigator.language;
+    </script>
+
+    <!-- Is The Browser Online?
+    The onLine property returns true if the browser is online -->
+    <p id="demo8"></p>
+
+    <script>
+        document.getElementById("demo8").innerHTML =
+            navigator.onLine;
+    </script>
+
+    <!-- Is Java Enabled?
+    The javaEnabled() method returns true if Java is enabled: -->
+    <p id="demo9"></p>
+
+    <script>
+        document.getElementById("demo9").innerHTML =
+            navigator.javaEnabled();
+    </script>
+
+</body>
+
+</html>
