@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Server</title>
+</head>
+
+<body>
+    <!-- JSON Server -->
+
+    <!-- A common use of JSON is to exchange data to/from a web server.
+
+    When receiving data from a web server, the data is always a string.
+
+    Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+    Sending Data
+    If you have data stored in a JavaScript object, you can convert the object into JSON, and send it to a server -->
+    <p id="demo"></p>
+    <script>
+        const myObj = { name: "John", age: 31, city: "New York" };
+        const myJSON = JSON.stringify(myObj);
+        document.getElementById("demo").innerHTML = myJSON;
+    </script>
+
+    <!-- Receiving Data
+        If you receive data in JSON format, you can easily convert it into a JavaScript object:
+        Example -->
+    <p id="demo2"></p>
+    <script>
+        const myJSON1 = '{ "name": "John", "age": 31, "city": "New York" }';
+        const myObj1 = JSON.parse(myJSON1);
+        document.getElementById("demo2").innerHTML = myObj1.name;
+    </script>
+
+    <!-- JSON From a Server
+        You can request JSON from the server by using an AJAX request
+        As long as the response from the server is written in JSON format, you can parse the string into a JavaScript object.
+
+        Example
+        Use the XMLHttpRequest to get data from the server -->
+    <script>
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function () {
+            const myObj2 = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myObj2.name;
+        };
+        xmlhttp.open("GET", "json_demo.text");//second parameter is the url for getting JSON.
+        xmlhttp.send();
+        //json_demo.text
+        // {
+        //     "name": "John",
+        //         "age": 31,
+        //             "pets": [
+        //                 { "animal": "dog", "name": "Fido" },
+        //                 { "animal": "cat", "name": "Felix" },
+        //                 { "animal": "hamster", "name": "Lightning" }
+        //             ]
+        // }
+    </script>
+
+    <!-- Array as JSON
+        When using the JSON.parse() on JSON derived from an array, the method will return a JavaScript array, instead of a JavaScript object.
+
+        Example
+        JSON returned from a server as an array -->
+    <script>
+        const xmlhttp1 = new XMLHttpRequest();
+        xmlhttp1.onload = function () {
+            const myArr = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myArr[0];
+        };
+        xmlhttp1.open("GET", "json_demo_array.txt", true);
+        xmlhttp1.send();
+        // JSON text
+        //[ "Ford", "BMW", "Audi", "Fiat" ]
+    </script>
+
+</body>
+
+</html>
