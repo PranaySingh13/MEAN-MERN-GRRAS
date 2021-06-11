@@ -26,7 +26,7 @@
         var numbers = [45, 4, 9, 16, 25];
 
         function myCallbackFunction(value, index, array) {
-            text += value + " \n";
+            text += "number[" + index + "] : " + value + ", index value: " + index + ", array: " + array + "\n";
         }
 
         numbers.forEach(myCallbackFunction);
@@ -55,6 +55,8 @@
         var numbers1 = [45, 4, 9, 16, 25];
         function myCallbackFunction1(value, index, array) {
             return value * 2;
+            // return index * 2;
+            // return array;//it will return array 5 Times for each value
         }
         console.log(numbers1.map(myCallbackFunction1));
 
@@ -105,21 +107,23 @@
     <script>
         var numbers = [45, 4, 9, 16, 25];
         function myCallbackFunction1(previousValue, currentValue, currentIndex, array) {
-            return previousValue + currentValue;
+            console.log(previousValue, currentValue);
+            return previousValue - currentValue;
         }
-        console.log(numbers.reduce(myCallbackFunction1));
-
+        console.log(numbers.reduce(myCallbackFunction1));//-9
         //The example above does not use the index and array parameters. It can be rewritten to
         function myCallbackFunction2(previousValue, currentValue) {
-            return previousValue + currentValue;
+            console.log(previousValue, currentValue);
+            return previousValue - currentValue;
         }
-        console.log(numbers.reduce(myCallbackFunction2));
+        console.log(numbers.reduce(myCallbackFunction2));//-9
 
-        //The reduce() method can accept an initial value
-        function myCallbackFunction2(previousValue, currentValue) {
-            return previousValue + currentValue;
+        //The reduce() method can accept an initial(previous) value
+        function myCallbackFunction3(previousValue, currentValue) {
+            console.log(previousValue, currentValue);
+            return previousValue - currentValue;
         }
-        console.log(numbers.reduce(myCallbackFunction1, 100));//199
+        console.log(numbers.reduce(myCallbackFunction3, 100));//1
     </script>
 
     <!-- Array.reduceRight()
@@ -137,21 +141,24 @@
     <script>
         var numbers = [45, 4, 9, 16, 25];
         function myCallbackFunction1(previousValue, currentValue, currentIndex, array) {
-            return previousValue + currentValue;
+            console.log(previousValue, currentValue);
+            return previousValue - currentValue;
         }
-        console.log(numbers.reduceRight(myCallbackFunction1));
+        console.log(numbers.reduceRight(myCallbackFunction1));//-49
 
         //The example above does not use the index and array parameters. It can be rewritten to
         function myCallbackFunction2(previousValue, currentValue) {
-            return previousValue + currentValue;
+            console.log(previousValue, currentValue);
+            return previousValue - currentValue;
         }
-        console.log(numbers.reduceRight(myCallbackFunction2));
+        console.log(numbers.reduceRight(myCallbackFunction2));//-49
 
-        //The reduce() method can accept an initial value
-        function myCallbackFunction2(previousValue, currentValue) {
-            return previousValue + currentValue;
+        //The reduce() method can accept an initial(previous) value
+        function myCallbackFunction3(previousValue, currentValue) {
+            console.log(previousValue, currentValue);
+            return previousValue - currentValue;
         }
-        console.log(numbers.reduceRight(myCallbackFunction1, 100));//199
+        console.log(numbers.reduceRight(myCallbackFunction3, 100));//1
     </script>
 
     <!-- Array.every()
