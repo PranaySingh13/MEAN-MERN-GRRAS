@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4 Animation Wave</title>
+</head>
+<style>
+    #container {
+        width: 100%;
+        height: 600px;
+        position: relative;
+        background: black;
+        box-sizing: border-box;
+        transform: rotateY(65deg);
+    }
+
+    @keyframes circle {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(200px);
+        }
+    }
+
+    #animate0 {
+        top: 307px;
+        left: 307px;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 0.5s;
+    }
+
+    #animate1 {
+        top: 300px;
+        left: 300px;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 0.6s;
+    }
+
+    #animate2 {
+        top: 285px;
+        left: 285px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 0.8s;
+    }
+
+    #animate3 {
+        top: 270px;
+        left: 270px;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 1s;
+    }
+
+    #animate4 {
+        top: 255px;
+        left: 255px;
+        width: 110px;
+        height: 110px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 1.2s;
+    }
+
+    #animate5 {
+        top: 240px;
+        left: 240px;
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 1.4s;
+    }
+
+    #animate6 {
+        top: 225px;
+        left: 225px;
+        width: 170px;
+        height: 170px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 1.6s;
+    }
+
+    #animate7 {
+        top: 210px;
+        left: 210px;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 100px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 1.8s;
+    }
+
+    #animate8 {
+        top: 195px;
+        left: 195px;
+        width: 230px;
+        height: 230px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 150px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 2s;
+    }
+
+    #animate9 {
+        top: 180px;
+        left: 180px;
+        width: 260px;
+        height: 260px;
+        position: absolute;
+        border: 2px solid red;
+        border-radius: 150px;
+        animation-name: circle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        animation-delay: 2.2s;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="animate0"></div>
+        <div id="animate1"></div>
+        <div id="animate2"></div>
+        <div id="animate3"></div>
+        <div id="animate4"></div>
+        <div id="animate5"></div>
+        <div id="animate6"></div>
+        <div id="animate7"></div>
+        <div id="animate8"></div>
+        <div id="animate9"></div>
+    </div>
+</body>
+
+</html>
