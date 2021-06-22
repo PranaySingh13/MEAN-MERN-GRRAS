@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Form Validation</title>
+</head>
+
+<body>
+    <form action="Assignment4AnimationWave.html" onsubmit="return validate()">
+        <label for="">Id : </label>
+        <input type="number" value="1" name="" id=""><br><br>
+        <label for="">Firstname : </label>
+        <input type="text" name="" id="firstname"><br><br>
+        <label for="">Lastname : </label>
+        <input type="text" name="" id="lastname"><br><br>
+        <label for="">Password : </label>
+        <input type="password" name="" id="password"><br><br>
+        <label for="">Gender : </label>
+        <input type="radio" name="gender" id="male" checked>Male
+        <input type="radio" name="gender" id="female">Female
+        <input type="radio" name="gender" id="others">Others
+        <br><br>
+        <label for="">Age : </label>
+        <input type="number" name="" id="age"><br><br>
+        <label for="">Date Of Birth : </label>
+        <input type="date" name="" id=""><br><br>
+        <label for="">Skills : </label>
+        <input type="checkbox" name="skills" id=""> Java
+        <input type="checkbox" name="skills" id=""> Spring
+        <input type="checkbox" name="skills" id=""> Javascript
+        <input type="checkbox" name="skills" id=""> React
+        <br><br>
+        <label for="">Email : </label>
+        <input type="email" name="" id=""><br><br>
+        <label for="">Education : </label>
+        <select name="education" id="">
+            <option value="notChoose">Not Chosen</option>
+            <option value="M.Tech">Master Of Technology</option>
+            <option value="B.E.">Bachelor Of Engineering</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit" name="" id="">
+    </form>
+    <script>
+        function validate() {
+
+            var isValid = true;
+
+            const firstname = document.getElementById("firstname").value;
+            if (firstname == "" || firstname == null || firstname.length == 0) {
+                isValid = false;
+                alert("Firstname can not be empty");
+            }
+
+            const lastname = document.getElementById("lastname").value;
+            if (lastname == "" || lastname == null || lastname.length == 0) {
+                isValid = false;
+                alert("Lastname can not be empty");
+            }
+
+            const password = document.getElementById("password").value;
+            const passwordRegex = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
+            console.log(passwordRegex.test(password));
+            if (!passwordRegex.test(password)) {
+                isValid = false;
+                alert("Password Should have 1 lowercase letter, 1 uppercase letter,"
+                    + "1 number, 1 special character and be at least 8 characters long");
+            }
+
+            const age = document.getElementById("age").value;
+            if (age < 18 || age > 30) {
+                isValid = false;
+                alert("Age Should be between 18 and 30");
+            }
+
+            const skills = document.querySelectorAll('[name="skills"]');
+            console.log(skills);
+            var count = 0;
+            for (let index = 0; index < skills.length; index++) {
+                skills[index].checked ? count++ : "";
+            }
+            console.log(count);
+            if (count < 3) {
+                isValid = false;
+                alert("Atleast 3 skills should be present");
+            }
+
+            const email = document.getElementById("email");
+            const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+            console.log(emailRegex.test(email));
+            if (!emailRegex.test(email)) {
+                isValid = false;
+                alert("Invalid Email Address");
+            }
+            return isValid;
+        }
+    </script>
+</body>
+
+</html>
