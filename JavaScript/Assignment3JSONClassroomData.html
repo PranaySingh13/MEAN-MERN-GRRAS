@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment3JSONClassroomData</title>
+</head>
+
+<body>
+    <!-- //Try to use iteration methods
+    
+    // 1. define a function getStudentsByCity(city) that will take cityName as argument and return all students of
+    //that city.
+    
+    //2. define a function getUniqueCities() that will return an array of city names. cities in arrat must not duplicate.
+    // ["pune", "jaipur","chdgrh"]
+    
+    //3. define a function getPassedStudentsNamesA() that will return all students who passed. passing criteria will be
+    // a.) marks> 33 in each subject.
+    // b.) marks> 33 in each subject and overall avg > 50
+    // c.) for general cat. marks> 33 in each subject and overall avg > 50
+    // for obc cat. marks> 33 in each subject and overall avg > 40
+    // for sc and st cat. marks> 33 in each subject only
+    //4. define a function printCitiesTopper() that will print an array of objects each object will have two properties
+    // cityName and topperName.
+    // [{cityName:"pune", topperName:"kjk"},{...},{...}]
+    
+    // to get all elements that passes from a condition--- filter
+    
+    // to get new element's array from old element's --- map
+    
+    // to check if all elelments of array passes a condition --- every
+    
+    // to check if any one element of array passes the condition --- some
+    
+    // to convert all array elements in a single element ---- reduce
+    
+    // to proccess all elements throuh a logic --- forEach
+    
+    // to get an element that passes a condition first---- find
+    
+    console.log("Testing getStudentByCity function............");
+    console.log(getStudentsByCity("jaipur"));
+    console.log("Testing getUniqueCities function............");
+    console.log(getUniqueCities());
+    console.log("Testing getPassedStudentsNamesA function............");
+    console.log(getPassedStudentsNamesA());
+    console.log("Testing getPassedStudentsNamesB function............");
+    console.log(getPassedStudentsNamesB());
+    console.log("Testing getPassedStudentsNamesC function............");
+    console.log(getPassedStudentsNamesC());
+    console.log("Testing printCitiesTopper function............");
+    printCitiesTopper(); -->
+    <script>
+        var classroom = {
+            number_of_students: 14,
+            students: [
+                { name: "Aayushi", age: 20, city: "pune", marks: [45, 76, 34], cat: "Gen" },
+                { name: "rahul", age: 24, city: "jaipur", marks: [17, 72, 34], cat: "sc" },
+                { name: "prateek", age: 36, city: "pune", marks: [22, 46, 84], cat: "obc" },
+                { name: "sagar", age: 56, city: "chdgrh", marks: [33, 36, 34], cat: "st" },
+                { name: "hanuman", age: 45, city: "jaipur", marks: [49, 26, 34], cat: "obc" },
+                { name: "ram", age: 25, city: "pune", marks: [55, 16, 34], cat: "Gen" },
+                { name: "laxman", age: 27, city: "jaipur", marks: [67, 52, 34], cat: "sc" },
+                { name: "raj", age: 36, city: "pune", marks: [73, 66, 84], cat: "st" },
+                { name: "vipul", age: 66, city: "chdgrh", marks: [15, 76, 34], cat: "obc" },
+                { name: "mahesh", age: 25, city: "jaipur", marks: [35, 86, 34], cat: "st" },
+                { name: "mohan", age: 28, city: "pune", marks: [45, 36, 34], cat: "sc" },
+                { name: "meena", age: 26, city: "jaipur", marks: [57, 22, 34], cat: "sc" },
+                { name: "anita", age: 35, city: "pune", marks: [33, 86, 84], cat: "Gen" },
+                { name: "ganesh", age: 59, city: "chdgrh", marks: [55, 96, 34], cat: "Gen" },
+                { name: "shankar", age: 43, city: "jaipur", marks: [65, 46, 34], cat: "obc" }
+            ]
+        };
+        // console.log(classroom.students); // returns students arrays 
+        // console.log(classroom.students[0]);// returns students array at index 0
+        // console.log(classroom.students[0].name);// returns name of student in students array at index 0
+        // console.log(classroom.students[0].marks);// returns marks of all subject of student in students array at index 0
+        // console.log(classroom.students[0].marks[0]);// returns marks of first subject of student in students array at index 0
+        function getStudentsByCity(cityName) {
+            let new_StudentsArray_with_cityName = classroom.students.filter(function myPredicateFunction(value) {
+                return value.city == cityName;
+            });
+
+            return new_StudentsArray_with_cityName.map(function myCallbackFunction(value) {
+                return value.name;
+            });
+        }
+        console.log("Testing getStudentByCity function............");
+        console.log(getStudentsByCity("jaipur"));
+
+        function getUniqueCities() {
+            let all_Cities = classroom.students.map(function allCitiesCallback(value) {
+                return value.city;
+            });
+            return all_Cities.filter(function uniqueCityCallback(value, index, array) {
+                return array.indexOf(value) === index;
+            });
+
+            // Alternate Option for ES6 version
+            // var uniqueCityArray = [... new Set(all_Cities)];
+            // return uniqueCityArray;
+
+        }
+        console.log("Testing getUniqueCities function............");
+        console.log(getUniqueCities());
+
+        function getPassedStudentsNamesA() {
+            let passedStudentsA = classroom.students.filter(function studentACallback(value, index) {
+                return classroom.students[index].marks.every(function checkNumbersCallback(value) {
+                    return value > 33;
+                });
+            });
+            return passedStudentsA.map(function nameACallback(value) {
+                return value.name;
+            });
+        }
+
+        function getPassedStudentsNamesB() {
+            let passedStudentsB = classroom.students.filter(function studentBCallback(value, index, array) {
+                let passedNumbers = classroom.students[index].marks.every(function checkNumbersCallback(value, index) {
+                    return value > 33;
+                });
+                let sumOfMarks = classroom.students[index].marks.reduce(function sumCallabck(previousValue, currentValue) {
+                    let sum = previousValue + currentValue;
+                    return sum;
+                });
+                let averageOfMarks = sumOfMarks / array[index].marks.length;
+                if (passedNumbers == true && averageOfMarks > 55) {
+                    return array;
+                }
+            });
+            return passedStudentsB.map(function checkName(value) {
+                return value.name;
+            });
+        }
+
+        function getPassedStudentsNamesC() {
+            let passedStudentC = classroom.students.filter(function studentCCallback(value, index, array) {
+                let passedNumbers = classroom.students[index].marks.every(function checkNumbers(value) {
+                    return value > 33;
+                });
+                let sumOfMarks = classroom.students[index].marks.reduce(function sumCallback(previousValue, currentValue) {
+                    return previousValue + currentValue;
+                });
+                let averageOfMarks = sumOfMarks / array[index].marks.length;
+
+                if (passedNumbers == true && averageOfMarks > 50 && array[index].cat == "Gen") {
+                    return array;
+                } else if (passedNumbers == true && averageOfMarks > 40 && array[index].cat == "obc") {
+                    return array;
+                } else if (passedNumbers == true && (array[index].cat == "sc" || array[index].cat == "st")) {
+                    return array;
+                }
+            });
+
+            return passedStudentC.map(function nameCallback(value) {
+                return value.name;
+            });
+        }
+
+        function printCitiesTopper() {
+
+        }
+        console.log("Testing getPassedStudentsNamesA function............");
+        console.log(getPassedStudentsNamesA());
+        console.log("Testing getPassedStudentsNamesB function............");
+        console.log(getPassedStudentsNamesB());
+        console.log("Testing getPassedStudentsNamesC function............");
+        console.log(getPassedStudentsNamesC());
+        console.log("Testing printCitiesTopper function............");
+        console.log(printCitiesTopper());
+    </script>
+</body>
+
+</html>
