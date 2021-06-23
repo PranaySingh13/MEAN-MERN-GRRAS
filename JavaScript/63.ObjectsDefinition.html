@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Definition</title>
+</head>
+
+<body>
+    <!-- JavaScript Objects -->
+
+    <!-- In JavaScript, objects are king. If you understand objects, you understand JavaScript. -->
+
+    <!-- In JavaScript, almost "everything" is an object.
+
+        Booleans can be objects (if defined with the new keyword)
+        Numbers can be objects (if defined with the new keyword)
+        Strings can be objects (if defined with the new keyword)
+        Dates are always objects
+        Maths are always objects
+        Regular expressions are always objects
+        Arrays are always objects
+        Functions are always objects
+        Objects are always objects
+        All JavaScript values, except primitives, are objects.
+
+        JavaScript Primitives
+        A primitive value is a value that has no properties or methods.
+
+        A primitive data type is data that has a primitive value.
+
+        JavaScript defines 5 types of primitive data types:
+
+        string
+        number
+        boolean
+        null
+        undefined
+        Primitive values are immutable (they are hardcoded and therefore cannot be changed).
+
+        if x = 3.14, you can change the value of x. But you cannot change the value of 3.14.
+
+        Value	Type	Comment
+        "Hello"	string	"Hello" is always "Hello"
+        3.14	number	3.14 is always 3.14
+        true	boolean	true is always true
+        false	boolean	false is always false
+        null	null (object)	null is always null
+        undefined	undefined	undefined is always undefined
+        Objects are Variables
+        JavaScript variables can contain single values -->
+    <script>
+        let person = "Pranay Singh";
+        console.log(person);
+    </script>
+
+    <!-- JavaScript variables can also contain many values.
+        Objects are variables too. But objects can contain many values.
+        Object values are written as name : value pairs (name and value separated by a colon).
+        Example -->
+    <script>
+        let person1 = { firstname: "Pranay", lastname: "Singh", age: 28 };
+        console.log(person1);
+    </script>
+
+    <!-- Object Properties
+        The named values, in JavaScript objects, are called properties.
+
+        Property	Value
+        firstName	John
+        lastName	Doe
+        age	50
+        eyeColor	blue
+        Objects written as name value pairs are similar to:
+
+        Associative arrays in PHP
+        Dictionaries in Python
+        Hash tables in C
+        Hash maps in Java
+        Hashes in Ruby and Perl
+        Object Methods
+        Methods are actions that can be performed on objects.
+
+        Object properties can be both primitive values, other objects, and functions.
+
+        An object method is an object property containing a function definition.
+
+        Property	Value
+        firstName	John
+        lastName	Doe
+        age	50
+        eyeColor	blue
+        fullName	function() {return this.firstName + " " + this.lastName;}
+        JavaScript objects are containers for named values, called properties and methods. -->
+
+    <!-- Creating a JavaScript Object
+        With JavaScript, you can define and create your own objects.
+
+        There are different ways to create new objects:
+
+        Create a single object, using an object literal.
+        Create a single object, with the keyword new.
+        Define an object constructor, and then create objects of the constructed type.
+        Create an object using Object.create(). -->
+
+    <!-- Using an Object Literal
+        This is the easiest way to create a JavaScript Object.
+        Using an object literal, you both define and create an object in one statement.
+        An object literal is a list of name:value pairs (like age:50) inside curly braces {}.
+        The following example creates a new JavaScript object with four properties -->
+    <script>
+        let person2 = { firstname: "Pranay", lastname: "Singh", age: 28 };
+        console.log(person2);
+    </script>
+
+    <!-- Spaces and line breaks are not important. An object definition can span multiple lines -->
+    <script>
+        let person3 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+        console.log(person3);
+    </script>
+
+    <!-- This example creates an empty JavaScript object, and then adds 4 properties -->
+    <script>
+        let person4 = {};
+        person4.firstName = "John";
+        person4.lastName = "Doe";
+        person4.age = 50;
+        person4.eyeColor = "blue";
+        console.log(person4);
+    </script>
+
+    <!-- Using the JavaScript Keyword new
+        The following example create a new JavaScript object using new Object(), and then adds 4 properties -->
+    <script>
+        let person5 = new Object();
+        person5.firstName = "John";
+        person5.lastName = "Doe";
+        person5.age = 50;
+        person5.eyeColor = "blue";
+        console.log(person5);
+    </script>
+
+    <!-- V.Imp -->
+    <!-- The examples above do exactly the same.
+
+        But there is no need to use new Object().
+
+        For readability, simplicity and execution speed, use the object literal method. -->
+
+    <!-- JavaScript Objects are Mutable
+        Objects are mutable: They are addressed by reference, not by value.
+
+        If person is an object, the following statement will not create a copy of person:
+
+        const x = person;  // Will not create a copy of person.
+        The object x is not a copy of person. It is person. Both x and person are the same object.
+
+        Any changes to x will also change person, because x and person are the same object. -->
+
+    <script>
+        let person6 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50, eyeColor: "blue"
+        }
+
+        const x = person6;
+        x.age = 10;      // Will change both x.age and person.age
+        console.log(person6.age, x.age);//10,10
+    </script>
+
+</body>
+
+</html>
