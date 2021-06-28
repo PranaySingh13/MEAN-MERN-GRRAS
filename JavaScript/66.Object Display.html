@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Display</title>
+</head>
+
+<body>
+    <!-- JavaScript Display Objects -->
+
+    <!-- How to Display JavaScript Objects?
+        Displaying a JavaScript object will output [object Object]. -->
+    <script>
+        var person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        document.write(person);
+    </script>
+    <br>
+    <!-- Some common solutions to display JavaScript objects are:
+
+        Displaying the Object Properties by name
+        Displaying the Object Properties in a Loop
+        Displaying the Object using Object.values()
+        Displaying the Object using JSON.stringify() -->
+
+    <!-- Displaying Object Properties
+    The properties of an object can be displayed as a string -->
+    <script>
+        var person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        console.log(person.name + " " + person.age + " " + person.city);
+    </script>
+    <br>
+
+    <!-- Displaying the Object in a Loop
+        The properties of an object can be collected in a loop -->
+    <!-- You must use person[x] in the loop.
+        person.x will not work (Because x is a variable). -->
+    <script>
+        var person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        var text = "";
+        for (let x in person) {
+            text += person[x] + " ";
+        }
+        console.log(text);
+    </script>
+    <br>
+
+    <!-- Using Object.values()
+        Any JavaScript object can be converted to an array using Object.values() -->
+    <script>
+        var person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        const myArray = Object.values(person);
+        console.log(myArray);
+    </script>
+
+    <!-- Object.values() is supported in all major browsers since 2016 -->
+
+    <!-- Using JSON.stringify()
+        Any JavaScript object can be stringified (converted to a string) with the JavaScript function JSON.stringify() -->
+
+    <!-- myString is now a JavaScript string, ready to be displayed -->
+    <script>
+        var person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        var myString = JSON.stringify(person);
+        console.log(myString);
+    </script>
+    <!-- The result will be a string following the JSON notation:
+        {"name":"John","age":50,"city":"New York"} -->
+
+    <!-- Stringify Dates
+        JSON.stringify converts dates into strings -->
+    <script>
+        var person = {
+            name: "John",
+            dob: new Date()
+        };
+        console.log(JSON.stringify(person));
+    </script>
+
+    <!-- Stringify Functions
+        JSON.stringify will not stringify functions -->
+    <script>
+        var person = {
+            name: "John",
+            age: function () { return 30; }
+        };
+        console.log(JSON.stringify(person));//{"name":"John"}
+    </script>
+
+    <!-- This can be "fixed" if you convert the functions into strings before stringifying. -->
+    <script>
+        var person = {
+            name: "John",
+            age: function () { return 30; }
+        };
+        person.age = person.age.toString();
+        console.log(JSON.stringify(person));//{"name":"John","age":"function () { return 30; }"}
+    </script>
+
+    <!-- Stringify Arrays
+        It is also possible to stringify JavaScript arrays: -->
+    <script>
+        const arr = ["John", "Peter", 1, "Jane"];
+        var myString = JSON.stringify(arr);
+        console.log(myString);
+    </script>
+
+    <!-- The result will be a string following the JSON notation:
+    ["John","Peter",1,"Jane"] -->
+</body>
+
+</html>
