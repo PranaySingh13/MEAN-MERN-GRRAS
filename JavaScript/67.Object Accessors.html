@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Accessors</title>
+</head>
+
+<body>
+    <!-- JavaScript Object Accessors -->
+
+    <!-- JavaScript Accessors (Getters and Setters)
+        ECMAScript 5 (ES5 2009) introduced Getter and Setters.
+        Getters and setters allow you to define Object Accessors (Computed Properties). -->
+
+    <!-- JavaScript Getter (The get Keyword)
+        This example uses a lang property to get the value of the language property. -->
+
+    <script>
+        var person = {
+            firstname: "Pranay",
+            lastname: "Singh",
+            language: "English",
+            get lang() {
+                return this.language;
+            },
+            fullname: function () {
+                return this.firstname + " " + this.lastname;
+            }
+        };
+        document.write(person.fullname() + "<br>");
+        document.write(person.lang);//lang is the property here not the function
+    </script>
+
+    <!-- JavaScript Setter (The set Keyword)
+        This example uses a lang property to set the value of the language property. -->
+    <script>
+        var person = {
+            firstname: "Apoorva",
+            lastname: "Singh",
+            language: "",
+            set lang(lang) {
+                this.language = lang;
+            }
+        };
+        // Set an object property using a setter:
+        person.lang = "Hindi";
+        document.write("<br>" + person.language);
+    </script>
+
+    <!-- Note: Important
+        When we hover on the object we can see in the object definition that the 
+        get and set keyword use as readonly for property and function defined in object will come along with parenthesis
+        in object defintion-->
+
+    <!-- JavaScript Function or Getter?
+        What is the differences between these two examples? -->
+
+    <!-- Example 1 access fullName as a function: person.fullName().
+         Example 2 access fullName as a property: person.fullName.
+
+        The second example provides a simpler syntax. -->
+    <script>
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            get fullName() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.write("<br>" + person1.fullName());
+        document.write("<br>" + person2.fullName);
+    </script>
+
+    <!-- Data Quality
+        JavaScript can secure better data quality when using getters and setters.
+        Using the lang property, in this example, returns the value of the language property in upper case -->
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            language: "en",
+            get lang() {
+                return this.language.toUpperCase();
+            }
+        };
+        document.write("<br>" + person.lang);
+    </script>
+    <!-- Using the lang property, in this example, stores an upper case value in the language property -->
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            language: "",
+            set lang(lang) {
+                this.language = lang.toUpperCase();
+            }
+        };
+        // Set an object property using a setter:
+        person.lang = "hi";
+        document.write("<br>" + person.language);
+    </script>
+
+    <!-- Why Using Getters and Setters?
+        It gives simpler syntax
+    *** It allows equal syntax for properties and methods
+        It can secure better data quality
+        It is useful for doing things behind-the-scenes -->
+
+    <!-- Object.defineProperty()
+        The Object.defineProperty() method can also be used to add Getters and Setters -->
+    <!-- A Counter Example -->
+    <script>
+        var obj = {
+            counter: 0
+        };
+
+        //Define Setters
+        Object.defineProperty(obj, "reset", {
+            get: function () {
+                this.counter = 0;
+            }
+        });
+        Object.defineProperty(obj, "increment", {
+            get: function () {
+                this.counter++;
+            }
+        });
+        Object.defineProperty(obj, "decrement", {
+            get: function () {
+                this.counter--;
+            }
+        });
+        Object.defineProperty(obj, "add", {
+            set: function (value) {
+                this.counter += value;
+            }
+        });
+        Object.defineProperty(obj, "subtract", {
+            set: function (value) {
+                this.counter -= value;
+            }
+        });
+
+        // Play with the counter:
+        obj.reset;
+        obj.add = 5;
+        obj.subtract = 1;
+        obj.increment;
+        obj.decrement;
+        document.write("<br>" + obj.counter);
+    </script>
+</body>
+
+</html>
