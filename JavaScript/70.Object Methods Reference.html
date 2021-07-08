@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods Reference</title>
+</head>
+
+<body>
+    <!-- JavaScript ES5 Object Methods-->
+    <!-- ECMAScript 5 (2009) added a lot of new Object Methods to JavaScript. -->
+
+    <!-- Managing Objects
+        // Create object with an existing object as prototype
+        Object.create()
+
+        // Adding or changing an object property
+        Object.defineProperty(object, property, descriptor)
+
+        // Adding or changing object properties
+        Object.defineProperties(object, descriptors)
+
+        // Accessing Properties
+        Object.getOwnPropertyDescriptor(object, property)
+
+        // Returns all properties as an array
+        Object.getOwnPropertyNames(object)
+
+        // Accessing the prototype
+        Object.getPrototypeOf(object)
+
+        // Returns enumerable properties as an array
+        Object.keys(object)
+
+        Protecting Objects
+        // Prevents adding properties to an object
+        Object.preventExtensions(object)
+
+        // Returns true if properties can be added to an object
+        Object.isExtensible(object)
+
+        // Prevents changes of object properties (not values)
+        Object.seal(object)
+
+        // Returns true if object is sealed
+        Object.isSealed(object)
+
+        // Prevents any changes to an object
+        Object.freeze(object)
+
+        // Returns true if object is frozen
+        Object.isFrozen(object) -->
+
+    <!-- Changing a Property Value
+        Syntax
+        Object.defineProperty(object, property, {value : value})
+        This example changes a property value -->
+    <!-- Adding a Property
+        This example adds a new property to an object -->
+    <script>
+        var person = {
+            firstname: "Pranay",
+            lastname: "Singh",
+            language: "English"
+        };
+        document.write(person.language + "<br>");
+        // Change a property
+        Object.defineProperty(person, "language", { value: "Hindi" });
+        document.write(person.language + "<br>");
+
+        // Add a property
+        Object.defineProperty(person, "year", { value: "2021" });
+        document.write(person.year + "<br>");
+    </script>
+
+    <!-- Adding Getters and Setters
+        The Object.defineProperty() method can also be used to add Getters and Setters -->
+    <script>
+        var person = {
+            firstname: "Pranay",
+            lastname: "Singh"
+        };
+
+        //Define the getter
+        Object.defineProperty(person, "fullname", {
+            get: function () {
+                return this.firstname + " " + this.lastname;
+            }
+        });
+        document.write(person.fullname);
+
+    </script>
+    <!--A Counter Example-->
+    <script>
+        var obj = {
+            counter: 0
+        };
+
+        //Define Getters and Setters 
+        Object.defineProperty(obj, "reset", {
+            get: function () {
+                this.counter = 0;
+            }
+        });
+        Object.defineProperty(obj, "increment", {
+            get: function () {
+                this.counter++;
+            }
+        });
+        Object.defineProperty(obj, "decrement", {
+            get: function () {
+                this.counter--;
+            }
+        });
+        Object.defineProperty(obj, "add", {
+            set: function (value) {
+                this.counter += value;
+            }
+        });
+        Object.defineProperty(obj, "subtract", {
+            set: function (value) {
+                this.counter -= value;
+            }
+        });
+
+        // Play with the counter:
+        obj.reset;
+        obj.add = 5;
+        obj.subtract = 1;
+        obj.increment;
+        obj.decrement;
+        document.write("<br>" + obj.counter);
+    </script>
+</body>
+
+</html>
