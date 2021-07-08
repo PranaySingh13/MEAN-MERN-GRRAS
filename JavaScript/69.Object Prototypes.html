@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prototypes</title>
+</head>
+
+<body>
+    <!-- JavaScript Object Prototypes-->
+
+    <!-- All JavaScript objects inherit properties and methods from a prototype.
+    In the previous chapter we learned how to use an object constructor: -->
+
+    <!-- Prototype Inheritance
+        All JavaScript objects inherit properties and methods from a prototype:
+
+        Date objects inherit from Date.prototype
+        Array objects inherit from Array.prototype
+        Person objects inherit from Person.prototype
+
+        *** V.Imp***
+        The Object.prototype is on the top of the prototype inheritance chain:
+
+        Date objects, Array objects, and Person objects inherit from Object.prototype.
+
+        Adding Properties and Methods to Objects
+        Sometimes you want to add new properties (or methods) to all existing objects of a given type.
+        Sometimes you want to add new properties (or methods) to an object constructor. -->
+
+    <!-- Using the prototype Property
+    The JavaScript prototype property allows you to add new properties to object constructors -->
+
+    <script>
+        function Person(fname, lname, age, eyecolor) {
+            this.firstname = fname;
+            this.lastname = lname;
+            this.age = age;
+            this.eyeColor = eyecolor;
+        }
+
+        Person.prototype.nationality = "Indian";
+        var myFather = new Person("Dr Kailash", "Singh", 63, "black");
+        document.write(myFather.firstname + " is an " + myFather.nationality + "<br>");
+    </script>
+
+    <!-- The JavaScript prototype property also allows you to add new methods to objects constructors -->
+    <script>
+        function Person(fname, lname, age, eyecolor) {
+            this.firstname = fname;
+            this.lastname = lname;
+            this.age = age;
+            this.eyeColor = eyecolor;
+        }
+
+        Person.prototype.fullName = function () {
+            return this.firstname + " " + this.lastname;
+        }
+
+        var myMother = new Person("Mrs Gayatri", "Singh", 53, "brown");
+        document.write(myMother.fullName() + "<br>");
+    </script>
+
+    <!-- V.Imp 
+    Only modify your own prototypes. Never modify the prototypes of standard JavaScript objects.-->
+
+</body>
+
+</html>
