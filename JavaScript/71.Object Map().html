@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Map()</title>
+</head>
+
+<body>
+    <!-- JavaScript Map Objects-->
+
+    <!-- A Map object holds key-value pairs where the keys can be any datatype.
+
+    A Map object remembers the original insertion order of the keys.
+
+    A Map object has a property that represents the size of the map.
+
+    Essensial Map() Methods
+    Method	            Description
+    new Map()	        Creates a new Map object
+    set(key,value)	    Sets a value for a key in a Map object
+    get(key)	        Gets a value for a key in a Map object
+    entries()	        Returns an array of the key/value pairs in a Map object
+    keys()	            Returns an array of the keys in a Map object
+    values()	        Returns an array of the values in a Map object
+
+    Map() Properties
+    Property	Description
+    size	    Gets a value for a key in a Map object -->
+
+    <!-- Create a Map Object
+        Being able to use an Object as a key is an important Map feature. -->
+
+    <!-- The get() method gets a value for a key in a Map object -->
+    <!-- .set() method returns the map object, so you can chain .set() calls.-->
+    <script>
+        var apples = { name: "apple" };
+        var mangoes = { name: "mango" };
+        var oranges = { name: "orange" };
+
+        //Create a new Map
+        //To create a Map, use the Map constructor:
+        var fruits = new Map();
+
+        //Add new Elements to the Map
+        //  fruits.set(apples, 500);
+        //  fruits.set(mangoes, 300);
+        //  fruits.set(oranges, 200);
+
+        //or
+        fruits.set(apples, 500).set(mangoes, 300).set(oranges, 200);
+        console.log(fruits);
+
+        console.log(fruits.get(apples));//500
+        console.log(fruits.get("apples"));//undefined
+    </script>
+
+    <!-- You can pass an Array to the new Map() constructor -->
+    <script>
+        var apples = { name: "apple" };
+        var mangoes = { name: "mango" };
+        var oranges = { name: "orange" };
+
+        //Create a new Map
+
+        //*** V. Imp ***
+        //It has an optional parameter, which can be any iterable object (for example an array) which contains arrays of two
+        //elements – first is the key, the seconds is the value.
+        var fruits = new Map([
+            [apples, 500],
+            [mangoes, 300],
+            [oranges, 200]
+        ]);
+        console.log(fruits.get(apples));//500
+    </script>
+
+    <!-- Other Map() Methods
+        Method	    Description
+        clear() 	Removes all elements in a Map
+        delete(key)	Removes an element specified by a key.
+        has(key)	    Returns true if a key exists.
+        forEach()	Invokes a callback for each key/value pair. -->
+
+    <!-- Clearing a Map
+        To remove all elements from a Map, use the .clear() method: -->
+    <script>
+        var apples = { name: "apple" };
+        var mangoes = { name: "mango" };
+        var oranges = { name: "orange" };
+
+        //Creating a Map
+        var fruits = new Map([
+            [apples, 500],
+            [mangoes, 300],
+            [oranges, 200]
+        ]);
+
+        console.log(fruits.size);//3 because 3 key value pairs
+        fruits.clear();
+        console.log(fruits.size);//0
+        console.log(fruits.get(apples));//undefined
+    </script>
+
+    <!-- Removing an element from a Map
+        To remove an element from a map use the .delete() method.
+        map.delete(key) -->
+    <script>
+        var apples = { name: "apple" };
+        var mangoes = { name: "mango" };
+        var oranges = { name: "orange" };
+
+        //Creating a Map
+        var fruits = new Map([
+            [apples, 500],
+            [mangoes, 300],
+            [oranges, 200]
+        ]);
+
+        //This method returns true if the element existed and has been removed, otherwise false:
+        console.log(fruits.delete(apples));//true
+
+        fruits.delete(apples);
+
+        console.log(fruits.size);//2
+        console.log(fruits.get(apples));//undefined
+    </script>
+
+    <!-- Checking if a key exists in a Map
+        To check if a key exists in a Map, use the .has() method -->
+
+    <script>
+        var apples = { name: "apple" };
+        var mangoes = { name: "mango" };
+        var oranges = { name: "orange" };
+
+        //Creating a Map
+        var fruits = new Map([
+            [apples, 500],
+            [mangoes, 300],
+            [oranges, 200]
+        ]);
+
+        console.log(fruits.has(apples));//true
+        console.log(fruits.has(200));//false
+    </script>
+
+    <!-- Iterating Maps
+        Map has three methods which returns iterators: .keys(), .values() and .entries(). .entries() is the default
+        Map iterator, and contains [key, value] pairs. -->
+    <script>
+        var apples = { name: "apple" };
+        var mangoes = { name: "mango" };
+        var oranges = { name: "orange" };
+
+        //Creating a Map
+        var fruits = new Map([
+            [apples, 500],
+            [mangoes, 300],
+            [oranges, 200]
+        ]);
+
+        for (const iterator of fruits.keys()) {
+            console.log(iterator);
+        }
+
+        for (const iterator of fruits.values()) {
+            console.log(iterator);
+        }
+
+        for (const iterator of fruits.entries()) {
+            console.log(iterator);
+        }
+
+    </script>
+
+    <!-- Map also has .forEach() method. The first parameter is a callback function, which will be called for each element
+        in the map, and the second parameter is the value which will be used as this when executing the callback function.
+        The callback function has three arguments: value, key, and the map object. -->
+    <script>
+        const map = new Map([[1, 2], [3, 4]]);
+        map.forEach((value, key, theMap) => console.log(`key: ${key}, value: ${value}`));
+    </script>
+
+    <!-- Getting the number of elements of a Map
+        To get the numbers of elements of a Map, use the .size property: -->
+    <script>
+        const map1 = new Map([[1, 2], [3, 4]]);
+        console.log(map1.size);//2
+    </script>
+
+</body>
+
+</html>
