@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Set()</title>
+</head>
+
+<body>
+    <!-- A Set is a collection of unique values.
+    Each value may occur only once in a Set.
+    A Set can hold any values of any data type. -->
+
+    <!-- Creating a Set -->
+
+    <!-- The Set object lets you store unique values of any type, whether primitive values or object references.
+        You can push items into a set and iterate them similar to a plain JavaScript array, but unlike array, you cannot add a
+        value to a Set if the value already exist in it. -->
+
+    <script>
+        var mySet = new Set();
+
+        //Or you can create a set from any iterable object to give it starting values.
+        var arr = [1, 2, 3, 4, 4, 5, 5, 3, 1];
+        var mySet1 = new Set(arr);
+        console.log(mySet1);//the set content would be {1, 2, 3, 4, 5}.
+    </script>
+
+    <!-- Adding a value to a Set -->
+    <!-- To add a value to a Set, use the .add() method: -->
+    <script>
+        var mySet2 = new Set([1, 2, 3, 4, 5]);
+        mySet2.add(6);
+        console.log(mySet2);
+
+        //If the value already exist in the set it will not be added again, as Sets contain unique values.
+        mySet2.add(6);
+        mySet2.add(6);
+        console.log(mySet2);
+
+        //Note that the .add() method returns the set itself, so you can chain add calls together:
+        mySet2.add(7).add(8).add(9);
+        console.log(mySet2);
+    </script>
+
+    <!-- Removing value from a set -->
+    <!-- To remove a value from a set, use .delete() method: -->
+    <script>
+        //This function will return true if the value existed in the set and was removed, or false otherwise.
+        var mySet2 = new Set([1, 2, 3, 4, 5]);
+        mySet2.delete(5);
+        console.log(mySet2);
+    </script>
+
+    <!-- Checking if a value exist in a set -->
+    <!-- To check if a given value exists in a set, use .has() method:-->
+    <script>
+        var mySet2 = new Set([1, 2, 3, 4, 5]);
+        var check = mySet2.has(4);
+        console.log(check);
+    </script>
+
+    <!-- Clearing a Set -->
+    <!-- You can remove all the elements in a set using the .clear() method: -->
+    <script>
+        var mySet2 = new Set([1, 2, 3, 4, 5]);
+        mySet2.clear();
+        console.log(mySet2);
+    </script>
+
+    <!-- Getting set length -->
+    <!-- You can get the number of elements inside the set using the .size property -->
+    <script>
+        var mySet2 = new Set([1, 2, 3, 4, 5]);
+        console.log(mySet2.size);
+    </script>
+    <!-- This property, unlike Array.prototype.length, is read-only, which means that you can't change it by assigning
+        something to it:
+        mySet.size = 5;
+        mySet.size; // 4
+        In strict mode it even throws an error: -->
+
+    <!-- Iterating Sets
+        You can use a simple for-of loop to iterate a Set: -->
+    <script>
+        var mySet = new Set([1, 2, 3]);
+        for (const value of mySet) {
+            console.log(value); // logs 1, 2 and 3
+        }
+    </script>
+
+    <!-- Converting Sets to arrays -->
+
+    <!-- Sometimes you may need to convert a Set to an array, for example to be able to use Array.prototype methods like
+        .filter(). In order to do so, use Array.from() or destructuring-assignment: -->
+    <script>
+        var mySet = new Set([1, 2, 3, 4]);
+        //use Array.from
+        const myArr = Array.from(mySet);
+
+        //use destructuring-assignment
+        //const myArr=[...mySet];
+
+        //Now you can filter the array to contain only even numbers and convert it back to Set using Set constructor:
+        myResultSet = new Set(myArr.filter(x => x % 2 === 0));
+
+        //myResultSet now contains only even numbers
+        console.log(myResultSet);
+    </script>
+
+
+</body>
+
+</html>
