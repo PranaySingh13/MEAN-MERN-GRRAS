@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Parameters</title>
+</head>
+
+<body>
+    <!-- JavaScript Function Parameters -->
+
+    <!-- A JavaScript function does not perform any checking on parameter values (arguments). -->
+
+    <!-- Function Parameters and Arguments
+        Earlier in this tutorial, you learned that functions can have parameters:
+        function functionName(parameter1, parameter2, parameter3) {
+        // code to be executed
+        }
+        Function parameters are the names listed in the function definition.
+        Function arguments are the real values passed to (and received by) the function. -->
+
+    <!-- Parameter Rules
+        JavaScript function definitions do not specify data types for parameters.
+        JavaScript functions do not perform type checking on the passed arguments.
+        JavaScript functions do not check the number of arguments received. -->
+
+    <!-- Default Parameters
+        If a function is called with missing arguments (less than declared), the missing values are set to undefined.
+        Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter -->
+    <script>
+        function multiply(a, b) {
+            console.log("type of parameter b : " + b);//undefined
+            if (b === undefined) {
+                b = 2;
+            }
+            return a * b;
+        }
+        document.write(multiply(4) + "<br>");
+
+
+        //ECMAScript 2015 allows default parameter values in the function declaration:
+        function multiplication(a, b = 3) {
+            return a * b;
+        }
+        document.write(multiplication(4) + "<br>");
+    </script>
+
+    <!-- The Arguments Object
+        JavaScript functions have a built-in object called the arguments object.
+        The argument object contains an array of the arguments used when the function was called (invoked).-->
+
+    <!-- This way you can simply use a function to find (for instance) the highest value in a list of numbers -->
+    <script>
+        function findMax() {
+            let max = -Infinity;
+            for (let index = 0; index < arguments.length; index++) {
+                if (arguments[index] > max) {
+                    max = arguments[index];
+                }
+            }
+            return max;
+        }
+        document.write(findMax(5, 10, 11) + "<br>");
+    </script>
+    <!-- If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments object. -->
+
+</body>
+
+</html>
