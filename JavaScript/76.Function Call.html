@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Call</title>
+</head>
+
+<body>
+    <!-- JavaScript Function Call -->
+
+    <!-- The JavaScript call() Method
+        The call() method is a predefined JavaScript method.
+        It can be used to invoke (call) a method with an owner object as an argument (parameter).
+      
+        Very Important
+        With call(), an object can use a method belonging to another object.
+      
+        This example calls the fullName method of person, using it on person1 -->
+    <script>
+        var person = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        var person1 = {
+            firstName: "Pranay",
+            lastName: "Singh"
+        }
+        var person2 = {
+            firstName: "Ram",
+            lastName: "Jain"
+        }
+
+        //person1 object will be the owner of person object.
+        var result1 = person.fullName.call(person1);
+        document.write(result1 + "<br>");
+
+        //person2 object will be the owner of person object.
+        var result2 = person.fullName.call(person2);
+        document.write(result2 + "<br>");
+    </script>
+
+    <!-- The call() Method with Arguments       
+        The call() method can accept arguments -->
+    <script>
+        var person = {
+            fullName: function (city, country) {
+                return this.firstName + " " + this.lastName + " " + city + " " + country;
+            }
+        }
+        var person1 = {
+            firstName: "Pranay",
+            lastName: "Singh"
+        }
+        var person2 = {
+            firstName: "Ram",
+            lastName: "Jain"
+        }
+        var result1 = person.fullName.call(person1, "Indore", "India");
+        document.write(result1 + "<br>");
+        var result2 = person.fullName.call(person2, "Gurgaon", "India");
+        document.write(result2 + "<br>");
+    </script>
+</body>
+
+</html>
