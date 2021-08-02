@@ -181,6 +181,38 @@
         let result = parentFun();
         console.log(result(5));//10 5
     </script>
+
+    <!-- Conclusion -->
+    <!-- The scope rules the accessibility of variables. There can be a function or a block scope.
+        The lexical scope allows a function scope to access statically the variables from the outer scopes.
+        Finally, a closure is a function that captures variables from its lexical scope. In simple words, the closure remembers the variables from the place where it is defined, no matter where it is executed.
+        Closures allow event handlers, callbacks to capture variables -->
+    <script>
+        function multiply1(num1, num2) {
+            return num1 * num2;
+        }
+        console.log(multiply1(5 * 2));
+
+        //Smart Multiplication
+        //Functional programming
+        //Currying happens when a function returns another function until the arguments are fully supplied.
+
+        function multiply2(num1) {
+            return function doMultiply(num2) {
+                return num1 * num2;
+            }
+        }
+
+        const double = multiply2(2);
+        console.log(double(2));//4
+
+        const triple = multiply2(3);
+        console.log(triple(4));//12
+    </script>
+    <!-- multiply2 is a curried function that returns another function.
+        Currying, an important concept of functional programming, is also possible thanks to closures.
+        doMultiply(num2) is a closure that captures num1 from its lexical scope. When the closure is invoked, the captured variable num1 and the parameter num2 are used to calculate a * b.
+        -->
 </body>
 
 </html>
