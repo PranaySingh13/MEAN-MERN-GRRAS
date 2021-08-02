@@ -185,7 +185,8 @@
     <!-- Conclusion -->
     <!-- The scope rules the accessibility of variables. There can be a function or a block scope.
         The lexical scope allows a function scope to access statically the variables from the outer scopes.
-        Finally, a closure is a function that captures variables from its lexical scope. In simple words, the closure remembers the variables from the place where it is defined, no matter where it is executed.
+        Finally, a closure is a function that captures variables from its lexical scope. In simple words, the
+        closure remembers the variables from the place where it is defined, no matter where it is executed.
         Closures allow event handlers, callbacks to capture variables -->
     <script>
         function multiply1(num1, num2) {
@@ -211,8 +212,12 @@
     </script>
     <!-- multiply2 is a curried function that returns another function.
         Currying, an important concept of functional programming, is also possible thanks to closures.
-        doMultiply(num2) is a closure that captures num1 from its lexical scope. When the closure is invoked, the captured variable num1 and the parameter num2 are used to calculate a * b.
-        -->
+        doMultiply(num2) is a closure that captures num1 from its lexical scope. When the closure is invoked,
+        the captured variable num1 and the parameter num2 are used to calculate a * b.-->
+
+    <!-- If multiply1(num1, numb2) is invoked with 2 arguments, it should return the multiplication of the 2 arguments.
+        But if invoked with 1 argument const anotherFunc = multiply2(num1), the function should return another function.
+        The returned function when called anotherFunc(num2) performs the multiplication num1 * num2. -->
 </body>
 
 </html>
