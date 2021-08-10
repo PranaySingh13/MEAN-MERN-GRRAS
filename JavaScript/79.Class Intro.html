@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Classes</title>
+</head>
+
+<body>
+    <!-- JavaScript Classes-->
+    <!-- ECMAScript 2015, also known as ES6, introduced JavaScript Classes.
+    JavaScript Classes are templates for JavaScript Objects. -->
+
+    <!-- JavaScript Class Syntax
+        Use the keyword class to create a class.
+
+        Always add a method named constructor():
+
+        Syntax
+        class ClassName {
+        constructor() { ... }
+        } -->
+
+    <!-- Creates a class named "Car".
+        The class has two initial properties: "name" and "year".
+        A JavaScript class is not an object.
+        It is a template for JavaScript objects.
+        Using a Class
+        When you have a class, you can use the class to create objects -->
+    <script>
+        class Car {
+            constructor(carName, buyYear) {
+                this.name = carName;
+                this.year = buyYear;
+            }
+        }
+        let myFirstCar = new Car("Audi", 2022);
+        let mySecondCar = new Car("Mercedes", 2024);
+        document.write("I will buy my first car " + myFirstCar.name + " in " + myFirstCar.year + ".<br>");
+        document.write("I will buy my second car " + mySecondCar.name + " in " + mySecondCar.year + ".<br>");
+    </script>
+    <!-- The example above uses the Car class to create two Car objects.
+        The constructor method is called automatically when a new object is created. -->
+
+    <!-- The Constructor Method
+        The constructor method is a special method:
+
+        It has to have the exact name "constructor"
+        It is executed automatically when a new object is created
+        It is used to initialize object properties
+        If you do not define a constructor method, JavaScript will add an empty constructor method. -->
+
+    <!-- Class Methods
+        Class methods are created with the same syntax as object methods.
+
+        Use the keyword class to create a class.
+        Always add a constructor() method.
+        Then add any number of methods. -->
+
+    <!-- Syntax
+        class ClassName {
+        constructor() { ... }
+        method_1() { ... }
+        method_2() { ... }
+        method_3() { ... }
+        }
+        Create a Class method named "age", that returns the Car age -->
+    <script>
+        class Car1 {
+            constructor(carName, buyYear) {
+                this.name = carName;
+                this.year = buyYear;
+            }
+
+            age() {
+                let date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        let myCar = new Car1("Alto", 2013);
+        document.write("My Car is " + myCar.age() + " years old.<br>")
+    </script>
+
+    <!-- You can send parameters to Class methods -->
+    <script>
+        class Car2 {
+            constructor(carName, buyYear) {
+                this.name = carName;
+                this.year = buyYear;
+            }
+            age(x) {
+                return x - this.year;
+            }
+
+        }
+
+        let date1 = new Date();
+        let year = date1.getFullYear();
+
+        let myCar1 = new Car1("Maruti", 2000);
+        document.write("My Car is " + myCar1.age(year) + " years old.")
+    </script>
+
+    <!-- "use strict"
+        The syntax in classes must be written in "strict mode".
+        You will get an error if you do not follow the "strict mode" rules. -->
+
+    <!-- Example
+    In "strict mode" you will get an error if you use a variable without declaring it: -->
+    <script>
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+
+            age() {
+                // date = new Date();  // This will not work
+                let date = new Date(); // This will work
+                return date.getFullYear() - this.year;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
