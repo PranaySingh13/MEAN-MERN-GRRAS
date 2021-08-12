@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Methods</title>
+</head>
+
+<body>
+    <!-- Static class methods are defined on the class itself.
+    You cannot call a static method on an object, only on an object class. -->
+
+    <script>
+        class Car {
+            constructor(name) {
+                this._name = name;
+            }
+            static hello() {
+                return "Hello";
+            }
+
+            static hi(x) {
+                return "Hi " + x._name;
+            }
+        }
+
+        let myCar = new Car("Audi");
+        // You can calll 'hello()' on the Car Class:
+        document.write(Car.hello());
+
+        // But NOT on a Car Object, this will raise an error.
+        // document.write(myCar.hello());
+
+        //If you want to use the myCar object inside the static method, you can send it as a parameter
+        document.write("<br>" + Car.hi(myCar));
+    </script>
+
+</body>
+
+</html>
