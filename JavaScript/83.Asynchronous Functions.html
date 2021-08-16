@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Functions in Javascript</title>
+</head>
+
+<body>
+    <!-- Asynchronous JavaScript -->
+
+    <!-- "I will finish later!"
+
+        Functions running in parallel with other functions are called asynchronous
+        A good example is JavaScript setTimeout() -->
+
+    <!-- Asynchronous JavaScript
+        The examples used in the previous chapter, was very simplified.
+        The purpose of the examples was to demonstrate the syntax of callback functions:
+
+        Example -->
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(params) {
+            document.getElementById("demo").innerHTML = params;
+        }
+
+        function myCalculator(num1, num2, myCallback) {
+            const sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        myCalculator(5, 6, myDisplayer);
+    </script>
+
+    <!-- In the example above, myDisplayer is the name of a function.
+        It is passed to myCalculator() as an argument.
+        In the real world, callbacks are most often used with asynchronous functions.
+        A typical example is JavaScript setTimeout(). -->
+
+    <!-- Waiting for a Timeout
+        When using the JavaScript function setTimeout(), you can specify a callback function to be executed on time-out -->
+    <p id="demo1"></p>
+    <script>
+        setTimeout(myFunction, 3000);
+
+        function myFunction() {
+            document.getElementById("demo1").innerHTML = "Hey";
+        }
+    </script>
+
+    <!-- In the example above, myFunction is used as a callback.
+
+        The function (the function name) is passed to setTimeout() as an argument.
+        3000 is the number of milliseconds before time-out, so myFunction() will be called after 3 seconds.
+        When you pass a function as an argument, remember not to use parenthesis.
+
+        Right: setTimeout(myFunction, 3000);
+        Wrong: setTimeout(myFunction(), 3000);
+
+        Instead of passing the name of a function as an argument to another function, you can always pass a whole function instead -->
+    <p id="demo2"></p>
+    <script>
+        setTimeout(() => document.getElementById("demo2").innerHTML = "Hi", 5000);
+    </script>
+
+    <!-- In the example above , () => document.write("Hi") is used as a callback. It is a complete function. The complete function is passed to setTimeout() as an argument.
+        5000 is the number of milliseconds before time-out, so () will be called after 5 seconds.-->
+
+    <!-- Waiting for Intervals:
+        When using the JavaScript function setInterval(), you can specify a callback function to be executed for each interval -->
+    <h1 id="demo3"></h1>
+    <script>
+        setInterval(date, 1000);
+
+        function date() {
+            let d = new Date();
+            document.getElementById("demo3").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        }
+    </script>
+    <!-- In the example above, date is used as a callback.
+        The function (the function name) is passed to setInterval() as an argument.
+        1000 is the number of milliseconds between intervals, so date() will be called every second. -->
+
+    <!-- Waiting for Files
+        If you create a function to load an external resource (like a script or a file), you cannot use the content before it is fully loaded.
+        This is the perfect time to use a callback.
+        This example loads a HTML file (mycar.html), and displays the HTML file in a web page, after the file is fully loaded -->
+    <p id="demo5"></p>
+    <script>
+        function display(params) {
+            document.getElementById("demo5").innerHTML = params;
+        }
+
+        function getFile(myCallback) {
+            let req = new XMLHttpRequest();
+            req.open('GET', 'Assignment4AnimationWave.html');
+            req.onload = function () {
+                if (req.status == 200) {
+                    myCallback(this.responseText);
+                } else {
+                    myCallback("Error: " + req.status);
+                }
+            }
+            req.send();
+        }
+
+        getFile(display);
+    </script>
+    <!-- In the example above, myDisplay is used as a callback.
+        The function (the function name) is passed to getFile() as an argument. -->
+</body>
+
+</html>
