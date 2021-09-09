@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects - Hide and Show</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- jQuery Effects - Hide and Show -->
+
+    <!-- Hide, Show, Toggle, Slide, Fade, and Animate. WOW! -->
+
+    <!-- jQuery hide() and show()
+        With jQuery, you can hide and show HTML elements with the hide() and show() methods -->
+    <p>If you click on the "Hide" button, I will disappear.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p").hide();
+            });
+            $("#show").click(function () {
+                $("p").show();
+            });
+        });
+    </script>
+
+    <!-- Syntax:
+
+    $(selector).hide(speed,callback);
+
+    $(selector).show(speed,callback);
+
+    The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.
+    The optional callback parameter is a function to be executed after the hide() or show() method completes (you will learn more about callback functions in a later chapter).
+    The following example demonstrates the speed parameter with hide() -->
+    <p id="speed">If you click on the "Hide" button, I will disappear slowly/fastly.</p>
+    <button id="hide1">Hide</button>
+    <button id="show1">Show</button>
+    <script>
+        $(document).ready(function () {
+            $("#hide1").click(function () {
+                $("#speed").hide(2000, function () {
+                    alert("Paragraph disappeard");
+                });
+            });
+            $("#show1").click(function () {
+                $("#speed").show(2000, function () {
+                    alert("Paragraph appeard");
+                });
+            });
+        });
+    </script>
+
+    <!-- jQuery toggle()
+        You can also toggle between hiding and showing an element with the toggle() method.
+        Shown elements are hidden and hidden elements are shown -->
+
+    <!-- Syntax:
+
+    $(selector).toggle(speed,callback);
+    The optional speed parameter can take the following values: "slow", "fast", or milliseconds.
+    The optional callback parameter is a function to be executed after toggle() completes. -->
+
+    <p id="togglePara">Welcome</p>
+    <button id="toggle">Toggle</button>
+    <script>
+        $(document).ready(function () {
+            $("#toggle").click(function () {
+                $("#togglePara").toggle(1000);
+            });
+        });
+    </script>
+</body>
+
+</html>
