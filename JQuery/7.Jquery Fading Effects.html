@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects - Fading</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- jQuery Effects - Fading -->
+
+    <!-- jQuery Fading Methods
+        With jQuery you can fade an element in and out of visibility.
+
+        jQuery has the following fade methods:
+
+        fadeIn()
+        fadeOut()
+        fadeToggle()
+        fadeTo() -->
+
+    <!-- jQuery fadeIn() Method
+        The jQuery fadeIn() method is used to fade in a hidden element.
+
+        Syntax:
+
+        $(selector).fadeIn(speed,callback);
+        The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+        The optional callback parameter is a function to be executed after the fading completes.
+        The following example demonstrates the fadeIn() method with different parameters -->
+    <button id="b1">Click me</button>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#div1").fadeIn();//default fast
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            });
+        });
+    </script>
+
+    <!-- jQuery fadeOut() Method
+        The jQuery fadeOut() method is used to fade out a visible element.
+
+        Syntax:
+
+        $(selector).fadeOut(speed,callback);
+        The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+        The optional callback parameter is a function to be executed after the fading completes.
+
+        The following example demonstrates the fadeOut() method with different parameters -->
+    <button id="b2">Click me</button><br><br>
+    <div id="div4" style="width:80px;height:80px;background-color:red;"></div><br>
+    <div id="div5" style="width:80px;height:80px;background-color:green;"></div><br>
+    <div id="div6" style="width:80px;height:80px;background-color:blue;"></div>
+    <script>
+        $(document).ready(function () {
+            $("#b2").click(function () {
+                $("#div4").fadeOut();//default fast
+                $("#div5").fadeOut("slow");
+                $("#div6").fadeOut(3000);
+            });
+        });
+    </script>
+
+    <!-- jQuery fadeToggle() Method
+        The jQuery fadeToggle() method toggles between the fadeIn() and fadeOut() methods.
+        If the elements are faded out, fadeToggle() will fade them in.
+        If the elements are faded in, fadeToggle() will fade them out.
+
+        Syntax:
+
+        $(selector).fadeToggle(speed,callback);
+        The optional speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+        The optional callback parameter is a function to be executed after the fading completes.
+        The following example demonstrates the fadeToggle() method with different parameters -->
+    <button id="b3">Click to fade in/out boxe</button><br><br>
+    <div id="div7" style="width:80px;height:80px;background-color:red;"></div><br>
+    <div id="div8" style="width:80px;height:80px;background-color:green;"></div><br>
+    <div id="div9" style="width:80px;height:80px;background-color:blue;"></div>
+    <script>
+        $(document).ready(function () {
+            $("#b3").click(function () {
+                $("#div7").fadeToggle();//default fast
+                $("#div8").fadeToggle("slow");
+                $("#div9").fadeToggle(3000);
+            });
+        });
+    </script>
+
+    <!-- jQuery fadeTo() Method
+        The jQuery fadeTo() method allows fading to a given opacity (value between 0 and 1).
+
+        Syntax:
+
+        $(selector).fadeTo(speed,opacity,callback);
+        The required speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds.
+        The required opacity parameter in the fadeTo() method specifies fading to a given opacity (value between 0 and 1).
+        The optional callback parameter is a function to be executed after the function completes.
+        The following example demonstrates the fadeTo() method with different parameters -->
+
+    <button id="b4">Click to fade boxes</button><br><br>
+    <div id="div10" style="width:80px;height:80px;background-color:red;"></div><br>
+    <div id="div11" style="width:80px;height:80px;background-color:green;"></div><br>
+    <div id="div12" style="width:80px;height:80px;background-color:blue;"></div>
+    <script>
+        $(document).ready(function () {
+            $("#b4").click(function () {
+                $("#div10").fadeTo("slow", 0.15);//default fast
+                $("#div11").fadeTo("slow", 0.4);
+                $("#div12").fadeTo("slow", 0.7);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
