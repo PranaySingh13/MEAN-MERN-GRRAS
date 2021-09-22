@@ -271,6 +271,20 @@
         console.log(fruits instanceof Array);// returns true
     </script>
 
+    <!-- How can I create a two dimensional array in JavaScript? -->
+    <!-- Javascript does not support two dimensional arrays, instead 
+        we store an array inside another array and fetch the data from 
+        that array depending on what position  -->
+    <script>
+        var items = [[1, 2], [3, 4], [5, 6]];
+        console.log(items[0][0]);//1
+        console.log(items[0][1]);//2
+        console.log(items[1][0]);//3
+        console.log(items[1][1]);//4
+        console.log(items[2][0]);//5
+        console.log(items[2][1]);//6
+    </script>
+
 </body>
 
 </html>
