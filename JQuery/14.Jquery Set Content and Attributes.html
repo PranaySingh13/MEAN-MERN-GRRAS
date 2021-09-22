@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Set Content and Attributes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- jQuery - Set Content and Attributes -->
+
+    <!-- Set Content - text(), html(), and val()
+        We will use the same three methods from the previous page to set content:
+
+        text() - Sets or returns the text content of selected elements
+        html() - Sets or returns the content of selected elements (including HTML markup)
+        val() - Sets or returns the value of form fields
+        The following example demonstrates how to set content with the jQuery text(), html(), and val() methods -->
+
+    <p id="test1">This is a paragraph.</p>
+    <p id="test2">This is another paragraph.</p>
+
+    <p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#test1").text("Hello world!");
+            });
+            $("#btn2").click(function () {
+                $("#test2").html("<b>Hello world!</b>");
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Dolly Duck");
+            });
+        });
+    </script>
+    </script>
+
+    <!-- A Callback Function for text(), html(), and val()
+        All of the three jQuery methods above: text(), html(), and val(), also come with a callback function. The callback function has two parameters: the index of the current element in the list of elements selected and the original (old) value. You then return the string you wish to use as the new value from the function.
+
+        The following example demonstrates text() and html() with a callback function -->
+    <p id="test5">This is a <b>bold</b> paragraph.</p>
+    <p id="test4">This is another <b>bold</b> paragraph.</p>
+
+    <button id="btn5">Show Old/New Text</button>
+    <button id="btn4">Show Old/New HTML</button>
+    <script>
+        $(document).ready(function () {
+            $("#btn5").click(function () {
+                $("#test5").text(function (i, origText) {
+                    return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+                });
+            });
+
+            $("#btn4").click(function () {
+                $("#test4").html(function (i, origText) {
+                    return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+                });
+            });
+        });
+    </script>
+
+    <!-- Set Attributes - attr()
+        The jQuery attr() method is also used to set/change attribute values.
+        The attr() method also allows you to set multiple attributes at the same time.
+        The following example demonstrates how to set both the href and title attributes at the same time -->
+
+    <p><a href="https://www.w3schools.com" title="some title" id="w3s">W3Schools.com</a></p>
+    <button id="b1">Change href and title</button>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#w3s").attr({
+                    "href": "https://www.w3schools.com/jquery/",
+                    "title": "W3Schools jQuery Tutorial"
+                });
+            });
+        });
+    </script>
+
+    <!-- A Callback Function for attr()
+        The jQuery method attr(), also comes with a callback function. The callback function has two parameters: the index of the current element in the list of elements selected and the original (old) attribute value. You then return the string you wish to use as the new attribute value from the function.
+        The following example demonstrates attr() with a callback function -->
+    <p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+    <button id="b2">Change href Value</button>
+    <script>
+        $(document).ready(function () {
+            $("#b2").click(function () {
+                $("#w3s").attr("href", function (i, origValue) {
+                    return origValue + "/jquery/";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
