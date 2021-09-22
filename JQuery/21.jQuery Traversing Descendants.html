@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing - Descendants</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .descendants * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jQuery Traversing - Descendants -->
+
+    <!-- With jQuery you can traverse down the DOM tree to find descendants of an element.
+
+        A descendant is a child, grandchild, great-grandchild, and so on.
+
+        Traversing Down the DOM Tree
+        Two useful jQuery methods for traversing down the DOM tree are:
+
+        children()
+        find() -->
+
+    <!-- jQuery children() Method
+    The children() method returns all direct children of the selected element.
+    This method only traverses a single level down the DOM tree.
+    The following example returns all elements that are direct children of each <div> elements -->
+
+    <!-- You can also use an optional parameter to filter the search for children.
+
+    The following example returns all <p> elements with the class name "first", that are direct children of <div> -->
+
+    <!-- jQuery find() Method
+        The find() method returns descendant elements of the selected element, all the way down to the last descendant.
+        The following example returns all <span> elements that are descendants of <div> -->
+
+    <!-- * returns all descendants of <div> -->
+    <div class="descendants" style="width:500px;">div (current element)
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p class="first">p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p class="first">p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("div").children().css({ "color": "red", "border": "2px solid red" });
+            $("div").children("p.first").css({ "color": "blue", "border": "2px solid blue" });
+            $("div").find("span").css({ "color": "green", "border": "2px solid green" });
+            $("div").find("*").css({ "font-style": "italic" });
+        });
+    </script>
+
+</body>
+
+</html>
