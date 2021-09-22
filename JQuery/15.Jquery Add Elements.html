@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Add Elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- jQuery - Add Elements-->
+    <!-- With jQuery, it is easy to add new elements/content. -->
+
+    <!-- Add New HTML Content
+        We will look at four jQuery methods that are used to add new content:
+
+        append() - Inserts content at the end of the selected elements
+        prepend() - Inserts content at the beginning of the selected elements
+        after() - Inserts content after the selected elements
+        before() - Inserts content before the selected elements-->
+
+
+    <!-- jQuery append() Method
+        The jQuery append() method inserts content AT THE END of the selected HTML elements. -->
+    <p id="p1">Hi</p>
+    <button id="b1">Click me</button>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#p1").append(" <b>Pranay Singh</b>");
+            });
+        });
+    </script>
+
+    <!-- jQuery prepend() Method
+        The jQuery prepend() method inserts content AT THE BEGINNING of the selected HTML elements. -->
+    <p id="p2">Hi</p>
+    <button id="b2">Click me</button><br><br>
+    <script>
+        $(document).ready(function () {
+            $("#b2").click(function () {
+                $("#p2").prepend(" <b>Good Morning! </b>");
+            });
+        });
+    </script>
+
+    <!-- jQuery after() and before() Methods
+        The jQuery after() method inserts content AFTER the selected HTML elements.
+        The jQuery before() method inserts content BEFORE the selected HTML elements. -->
+    <p id="p3">Hi</p><br>
+    <button id="b3">Click me</button>
+    <script>
+        $(document).ready(function () {
+            $("#b3").click(function () {
+                $("#p3").before("Good Morning! ");
+                $("#p3").after("Pranay Singh");
+            });
+        });
+    </script>
+</body>
+
+</html>
