@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - The noConflict() Method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- jQuery - The noConflict() Method -->
+
+    <!-- What if you wish to use other frameworks on your pages, while still using jQuery? -->
+
+    <!-- jQuery and Other JavaScript Frameworks
+        As you already know; jQuery uses the $ sign as a shortcut for jQuery.
+
+        There are many other popular JavaScript frameworks like: Angular, Backbone, Ember, Knockout, and more.
+
+        What if other JavaScript frameworks also use the $ sign as a shortcut?
+
+        If two different frameworks are using the same shortcut, one of them might stop working.
+
+        The jQuery team have already thought about this, and implemented the noConflict() method. -->
+
+    <!-- The jQuery noConflict() Method
+        The noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.
+
+        You can of course still use jQuery, simply by writing the full name instead of the shortcut -->
+
+    <p id="p1">Is Jquery working ?</p>
+    <button id="b1">Click me</button><br><br>
+    <script>
+        $.noConflict();
+        jQuery(document).ready(function () {
+            jQuery("#b1").click(function () {
+                jQuery("#p1").text("jQuery is still working!")
+                    .css({
+                        "color": "green",
+                        "font-size": "50px"
+                    });
+            });
+        });
+    </script>
+
+    <!-- You can also create your own shortcut very easily. The noConflict() method returns a reference to jQuery, that you can save in a variable, for later use. Here is an example -->
+    <span>Is Jquery Shortcut created ?</span><br><br>
+    <button id="b2">Click me</button>
+    <script>
+        var jq = $.noConflict();
+        jq(document).ready(function () {
+            jq("#b2").click(function () {
+                jq("span").text("Jquery Shortcut created!")
+                    .css({
+                        "color": "green",
+                        "font-size": "50px"
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
