@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing - Siblings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .siblings {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jQuery Traversing - Siblings-->
+
+    <!-- With jQuery you can traverse sideways in the DOM tree to find siblings of an element.
+        Siblings share the same parent.  -->
+
+    <!-- Traversing Sideways in The DOM Tree
+        There are many useful jQuery methods for traversing sideways in the DOM tree:
+
+        siblings()
+        next()
+        nextAll()
+        nextUntil()
+        prev()
+        prevAll()
+        prevUntil() -->
+
+    <!-- jQuery siblings() Method
+        The siblings() method returns all sibling elements of the selected element.
+        The following example returns all sibling elements of <h2> -->
+
+    <!-- You can also use an optional parameter to filter the search for siblings.
+    The following example returns all sibling elements of <h2> that are <p> elements: -->
+
+    <!-- jQuery next() Method
+        The next() method returns the next sibling element of the selected element.
+        The following example returns the next sibling of <h2> -->
+
+    <!-- jQuery nextAll() Method
+        The nextAll() method returns all next sibling elements of the selected element.
+        The following example returns all next sibling elements of <h2> -->
+
+    <!-- jQuery nextUntil() Method
+        The nextUntil() method returns all next sibling elements between two given arguments.
+        The following example returns all sibling elements between a <h2> and a <h6> element -->
+
+    <!-- jQuery prev(), prevAll() & prevUntil() Methods
+        The prev(), prevAll() and prevUntil() methods work just like the methods above but with reverse functionality: they return previous sibling elements (traverse backwards along sibling elements in the DOM tree, instead of forward). -->
+    <div class="siblings" style="border: 2px solid lightgrey;">div (parent)
+        <h4>h4</h4>
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+        <h6>h6</h6>
+        <h5>h5</h5>
+    </div><br><br>
+    <script>
+        $(document).ready(function () {
+            $("h2").siblings().css({
+                "color": "purple",
+                "border": "2px solid red"
+            });
+
+            //to filter the search for siblings.
+            $("h2").siblings("h6").css({
+                "color": "blue",
+                "border": "2px solid maroon"
+            });
+
+            //the next sibling element
+            $("h2").next().css({
+                "font-style": "italic"
+            });
+            $("h2").nextAll().css({
+                "font-weight": "bolder"
+            });
+            $("h2").nextUntil("h5").css({
+                "background-color": "lightblue"
+            });
+
+            //the previous sibling element
+            $("h2").prev().css({
+                "font-style": "italic"
+            });
+            $("h2").prevAll().css({
+                "font-weight": "bolder"
+            });
+            $("h2").prevUntil("h4").css({
+                "background-color": "lightblue"
+            });
+        });
+    </script>
+</body>
+
+</html>
