@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - AJAX load() Method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- jQuery - AJAX load() Method -->
+
+    <!-- jQuery load() Method-->
+    <!-- The jQuery load() method is a simple, but powerful AJAX method.
+
+        The load() method loads data from a server and puts the returned data into the selected element.
+
+        Syntax:
+
+        $(selector).load(URL,data,callback);
+        The required URL parameter specifies the URL you wish to load.
+
+        The optional data parameter specifies a set of querystring key/value pairs to send along with the request.
+
+        The optional callback parameter is the name of a function to be executed after the load() method is completed.
+
+        Here is the content of our example file: "demo_test.txt":
+
+        <h2>jQuery and AJAX is FUN!!!</h2>
+        <p id="p1">This is some text in a paragraph.</p>
+        The following example loads the content of the file "demo_test.txt" into a specific <div> element -->
+
+    <!-- It is also possible to add a jQuery selector to the URL parameter.
+
+        The following example loads the content of the element with id="p1", inside the file "demo_test.txt", into a specific <div> element -->
+
+    <button id="b1">Load Document File</button>
+    <div id="div1"></div><br><br>
+    <div id="div2"></div><br><br>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#div1").load("demo_test.text");
+                $("#div2").load("demo_test.text #p1");
+            });
+        });
+    </script>
+
+    <!-- The optional callback parameter specifies a callback function to run when the load() method is completed. The callback function can have different parameters:
+
+        responseTxt - contains the resulting content if the call succeeds
+        statusTxt - contains the status of the call
+        xhr - contains the XMLHttpRequest object
+        The following example displays an alert box after the load() method completes. If the load() method has succeeded, it displays "External content loaded successfully!", and if it fails it displays an error message -->
+    <button id="b2">Load Document File</button>
+    <div id="div3"></div><br><br>
+    <script>
+        $(document).ready(function () {
+            $("#b2").click(function () {
+                $("#div3").load("demo_test.text", function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success") {
+                        alert("External Content Loaded Successfully");
+                    } else {
+                        alert("Error: " + xhr.status + ": " + xhr.statusTxt);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
