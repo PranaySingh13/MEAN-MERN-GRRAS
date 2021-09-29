@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - Server Response</title>
+</head>
+
+<body>
+    <!-- AJAX - Server Response -->
+
+    <!-- Server Response Properties
+        Property	    Description
+        responseText	get the response data as a string
+        responseXML	    get the response data as XML data -->
+
+    <!-- The responseText Property
+        The responseText property returns the server response as a JavaScript string, and you can use it accordingly -->
+    <div id="demo2"></div>
+    <h2>The XMLHttpRequest Object</h2>
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("demo2").innerHTML =
+                    this.responseText;
+            }
+            xhttp.open("GET", "ajax_info.txt");
+            xhttp.send();
+        }
+    </script>
+
+    <!-- The responseXML Property
+        The XMLHttpRequest object has an in-built XML parser.
+
+        The responseXML property returns the server response as an XML DOM object.
+
+        Using this property you can parse the response as an XML DOM object -->
+
+    <!-- Server Response Methods
+        Method	                Description
+        getResponseHeader()	    Returns specific header information from the server resource
+        getAllResponseHeaders()	Returns all the header information from the server resource -->
+
+    <!-- The getAllResponseHeaders() Method
+The getAllResponseHeaders() method returns all header information from the server response. -->
+
+    <p id="demo"></p>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementById("demo").innerHTML =
+                this.getAllResponseHeaders();
+        }
+        xhttp.open("GET", "ajax_info.txt");
+        xhttp.send();
+    </script>
+
+    <!-- The getResponseHeader() Method
+The getResponseHeader() method returns specific header information from the server response. -->
+    <p id="demo1"></p>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementById("demo1").innerHTML =
+                this.getResponseHeader("Last-Modified");
+        }
+        xhttp.open("GET", "ajax_info.txt");
+        xhttp.send();
+    </script>
+
+</body>
+
+</html>
