@@ -17,6 +17,6 @@ con.connect(function (error) {
   console.log("Connected");
   con.query("CREATE DATABASE mynode", function (error, result) {
     if (error) throw error;
-    console.log("Database Connected");
+    console.log("Database Created");
   });
 });
