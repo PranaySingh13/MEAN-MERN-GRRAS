@@ -18,7 +18,7 @@ var con = mysql.createConnection({
 con.connect(function (error) {
   if (error) throw error;
   console.log("Connected");
-  var sql = "CREATE TABLE Customers(name varchar(255), address varchar(255))";
+  var sql = "CREATE TABLE customers(name varchar(255), address varchar(255))";
   con.query(sql, function (error, result) {
     if (error) throw error;
     console.log("Table Created");
@@ -39,7 +39,7 @@ con.connect(function (error) {
   if (error) throw error;
   console.log("Connected");
   var sql =
-    "CREATE TABLE Customers1(id int(11) AUTO_INCREMENT PRIMARY KEY,name varchar(255), address varchar(255))";
+    "CREATE TABLE customers1(id int(11) AUTO_INCREMENT PRIMARY KEY,name varchar(255), address varchar(255))";
   con.query(sql, function (error, result) {
     if (error) throw error;
     console.log("Customers1 Table Created");
