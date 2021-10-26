@@ -19,7 +19,7 @@ var con = mysql.createConnection({
 con.connect(function (error) {
   if (error) throw error;
   console.log("Connected");
-  var sql = "INSERT INTO CUSTOMERS(name,address) VALUES ('Pranay','Indore')";
+  var sql = "INSERT INTO customers(name,address) VALUES ('Pranay','Indore')";
   con.query(sql, function (error, result) {
     if (error) throw error;
     console.log("1 record inserted");
@@ -34,7 +34,7 @@ con.connect(function (error) {
   if (error) throw error;
   console.log("Connected");
 
-  var sql = "INSERT INTO CUSTOMERS(name,address) VALUES ?";
+  var sql = "INSERT INTO customers(name,address) VALUES ?";
 
   var values = [
     ["Apoorva", "Gwalior"],
@@ -77,7 +77,7 @@ Note: To be able to get the inserted id, only one row can be inserted.
 con.connect(function (error) {
   if (error) throw error;
   console.log("Connected");
-  var sql = "INSERT INTO CUSTOMERS(name,address) VALUES ('Amit','Indore')";
+  var sql = "INSERT INTO customers(name,address) VALUES ('Amit','Indore')";
   con.query(sql, function (error, result) {
     if (error) throw error;
     console.log("1 record inserted, ID: " + result.insertId);
