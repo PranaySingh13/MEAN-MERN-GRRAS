@@ -1,0 +1,32 @@
+{
+  "name": "nodejs_mysql_mongodb",
+  "version": "1.0.0",
+  "description": "Node Js MySql and MongoDB",
+  "main": "1.Node Introduction.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PranaySingh13/MEAN-MERN-GRRAS.git"
+  },
+  "keywords": [
+    "node",
+    "integration",
+    "with",
+    "mysql",
+    "and",
+    "mongodb",
+    "database"
+  ],
+  "author": "Pranay Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PranaySingh13/MEAN-MERN-GRRAS/issues"
+  },
+  "homepage": "https://github.com/PranaySingh13/MEAN-MERN-GRRAS#readme",
+  "dependencies": {
+    "mongodb": "^4.1.4",
+    "mysql": "^2.18.1"
+  }
+}
