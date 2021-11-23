@@ -1,0 +1,26 @@
+{
+  "name": "expressjs_apis",
+  "version": "1.0.0",
+  "description": "Express JS",
+  "main": "1.SimpleApi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PranaySingh13/MEAN-MERN-GRRAS.git"
+  },
+  "keywords": [
+    "Express",
+    "JS"
+  ],
+  "author": "Pranay Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PranaySingh13/MEAN-MERN-GRRAS/issues"
+  },
+  "homepage": "https://github.com/PranaySingh13/MEAN-MERN-GRRAS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
