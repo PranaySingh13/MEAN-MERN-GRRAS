@@ -26,5 +26,9 @@ Now you have downloaded and installed a mongodb database driver.
 
 Node.js can use this module to manipulate MongoDB databases:
 
-var mongo = require('mongodb');
+const MongoClient = require("mongodb").MongoClient;
+
+or 
+
+const {MongoClient} = require("mongodb");//modern use in javascript
  */
