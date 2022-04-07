@@ -79,63 +79,33 @@
         // console.log(classroom.students[0].name);// returns name of student in students array at index 0
         // console.log(classroom.students[0].marks);// returns marks of all subject of student in students array at index 0
         // console.log(classroom.students[0].marks[0]);// returns marks of first subject of student in students array at index 0
-        function getStudentsByCity(cityName) {
-            let new_StudentsArray_with_cityName = classroom.students.filter(function myPredicateFunction(value) {
-                return value.city == cityName;
-            });
 
-            return new_StudentsArray_with_cityName.map(function myCallbackFunction(value) {
-                return value.name;
-            });
+        function getStudentsByCity(cityName) {
+            return classroom.students.filter(student => student.city == cityName).map(student => student.name);
         }
+
         console.log("Testing getStudentByCity function............");
         console.log(getStudentsByCity("jaipur"));
 
         function getUniqueCities() {
-            let all_Cities = classroom.students.map(function allCitiesCallback(value) {
-                return value.city;
-            });
-            return all_Cities.filter(function uniqueCityCallback(value, index, array) {
-                return array.indexOf(value) === index;
-            });
-
-            // Alternate Option for ES6 version
-            // var uniqueCityArray = [... new Set(all_Cities)];
-            // return uniqueCityArray;
-
+            return [... new Set(classroom.students.map(student => student.city))];
         }
         console.log("Testing getUniqueCities function............");
         console.log(getUniqueCities());
 
-        function getPassedStudentsNamesA() {
-            let passedStudentsA = classroom.students.filter(function studentACallback(value, index) {
-                return classroom.students[index].marks.every(function checkNumbersCallback(value) {
-                    return value > 33;
-                });
-            });
-            return passedStudentsA.map(function nameACallback(value) {
-                return value.name;
-            });
+        function getPassedStudentNamesWithGradeA() {
+            return classroom.students.filter(student => student.marks.every(mark => mark > 33)).map(student => student.name);
         }
 
-        function getPassedStudentsNamesB() {
-            let passedStudentsB = classroom.students.filter(function studentBCallback(value, index, array) {
-                let passedNumbers = classroom.students[index].marks.every(function checkNumbersCallback(value, index) {
-                    return value > 33;
-                });
-                let sumOfMarks = classroom.students[index].marks.reduce(function sumCallabck(previousValue, currentValue) {
-                    let sum = previousValue + currentValue;
-                    return sum;
-                });
-                let averageOfMarks = sumOfMarks / array[index].marks.length;
-                if (passedNumbers == true && averageOfMarks > 55) {
-                    return array;
-                }
-            });
-            return passedStudentsB.map(function checkName(value) {
-                return value.name;
-            });
+        console.log("Testing getPassedStudentNamesWithGradeA function............");
+        console.log(getPassedStudentNamesWithGradeA());
+
+        function getPassedStudentsNamesWithGradeB() {
+            return classroom.students.filter(student => student.marks.every(mark => mark > 33)).filter(student => student.marks.reduce((a, b) => a + b) / student.marks.length > 50).map(student => student.name);
         }
+
+        console.log("Testing getPassedStudentsNamesWithGradeB function............");
+        console.log(getPassedStudentsNamesWithGradeB());
 
         function getPassedStudentsNamesC() {
             let passedStudentC = classroom.students.filter(function studentCCallback(value, index, array) {
@@ -164,10 +134,6 @@
         function printCitiesTopper() {
 
         }
-        console.log("Testing getPassedStudentsNamesA function............");
-        console.log(getPassedStudentsNamesA());
-        console.log("Testing getPassedStudentsNamesB function............");
-        console.log(getPassedStudentsNamesB());
         console.log("Testing getPassedStudentsNamesC function............");
         console.log(getPassedStudentsNamesC());
         console.log("Testing printCitiesTopper function............");
