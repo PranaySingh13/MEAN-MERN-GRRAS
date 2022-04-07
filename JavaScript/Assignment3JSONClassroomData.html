@@ -81,27 +81,39 @@
         // console.log(classroom.students[0].marks[0]);// returns marks of first subject of student in students array at index 0
 
         function getStudentsByCity(cityName) {
-            return classroom.students.filter(student => student.city == cityName).map(student => student.name);
+            return classroom
+                .students
+                .filter(student => student.city == cityName)
+                .map(student => student.name);
         }
 
         console.log("Testing getStudentByCity function............");
         console.log(getStudentsByCity("jaipur"));
 
         function getUniqueCities() {
-            return [... new Set(classroom.students.map(student => student.city))];
+            return [... new Set(classroom
+                .students
+                .map(student => student.city))];
         }
         console.log("Testing getUniqueCities function............");
         console.log(getUniqueCities());
 
         function getPassedStudentNamesWithGradeA() {
-            return classroom.students.filter(student => student.marks.every(mark => mark > 33)).map(student => student.name);
+            return classroom
+                .students
+                .filter(student => student.marks.every(mark => mark > 33))
+                .map(student => student.name);
         }
 
         console.log("Testing getPassedStudentNamesWithGradeA function............");
         console.log(getPassedStudentNamesWithGradeA());
 
         function getPassedStudentsNamesWithGradeB() {
-            return classroom.students.filter(student => student.marks.every(mark => mark > 33)).filter(student => student.marks.reduce((a, b) => a + b) / student.marks.length > 50).map(student => student.name);
+            return classroom
+                .students
+                .filter(student => student.marks.every(mark => mark > 33))
+                .filter(student => student.marks.reduce((a, b) => a + b) / student.marks.length > 50)
+                .map(student => student.name);
         }
 
         console.log("Testing getPassedStudentsNamesWithGradeB function............");
