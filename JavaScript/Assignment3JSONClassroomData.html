@@ -150,6 +150,29 @@
 
         function printCitiesTopper() {
 
+            let puneStudents = classroom.students.filter(student => student.city == "pune");
+            let jaipurStudents = classroom.students.filter(student => student.city == "jaipur");
+            let chdgrhStudents = classroom.students.filter(student => student.city == "chdgrh");
+
+            let puneStudentsSum = puneStudents.map(student => student.marks.reduce((a, b) => a + b));
+            let maxSumOfPuneStudents = puneStudentsSum.reduce((a, b) => Math.max(a, b));
+            let puneTopperName = puneStudents.filter(student => student.marks.reduce((a, b) => a + b) == maxSumOfPuneStudents)
+                .map(student => student.name);
+
+            let jaipurStudentsSum = jaipurStudents.map(student => student.marks.reduce((a, b) => a + b));
+            let maxSumOfJaipurStudents = jaipurStudentsSum.reduce((a, b) => Math.max(a, b));
+            let jaipurTopperName = jaipurStudents.filter(student => student.marks.reduce((a, b) => a + b) == maxSumOfJaipurStudents)
+                .map(student => student.name);
+
+            let chdgrhStudentsSum = chdgrhStudents.map(student => student.marks.reduce((a, b) => a + b));
+            let maxSumOfchdgrhStudents = chdgrhStudentsSum.reduce((a, b) => Math.max(a, b));
+            let chdgrhTopperName = chdgrhStudents.filter(student => student.marks.reduce((a, b) => a + b) == maxSumOfchdgrhStudents)
+                .map(student => student.name);
+
+            let printCitiesTopper = puneTopperName.concat(jaipurTopperName, chdgrhTopperName);
+
+            return "Pune: " + puneTopperName + ", Jaipur: " + jaipurTopperName + ", Chandigarh: " + chdgrhTopperName;
+
         }
 
         console.log("Testing printCitiesTopper function............");
