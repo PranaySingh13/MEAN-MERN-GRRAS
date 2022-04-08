@@ -55,7 +55,7 @@
     printCitiesTopper(); -->
     <script>
         var classroom = {
-            number_of_students: 14,
+            number_of_students: 15,
             students: [
                 { name: "Aayushi", age: 20, city: "pune", marks: [45, 76, 34], cat: "Gen" },
                 { name: "rahul", age: 24, city: "jaipur", marks: [17, 72, 34], cat: "sc" },
@@ -119,35 +119,39 @@
         console.log("Testing getPassedStudentsNamesWithGradeB function............");
         console.log(getPassedStudentsNamesWithGradeB());
 
-        function getPassedStudentsNamesC() {
-            let passedStudentC = classroom.students.filter(function studentCCallback(value, index, array) {
-                let passedNumbers = classroom.students[index].marks.every(function checkNumbers(value) {
-                    return value > 33;
-                });
-                let sumOfMarks = classroom.students[index].marks.reduce(function sumCallback(previousValue, currentValue) {
-                    return previousValue + currentValue;
-                });
-                let averageOfMarks = sumOfMarks / array[index].marks.length;
+        function getPassedStudentsNamesWithGradeC() {
 
-                if (passedNumbers == true && averageOfMarks > 50 && array[index].cat == "Gen") {
-                    return array;
-                } else if (passedNumbers == true && averageOfMarks > 40 && array[index].cat == "obc") {
-                    return array;
-                } else if (passedNumbers == true && (array[index].cat == "sc" || array[index].cat == "st")) {
-                    return array;
-                }
-            });
+            let generalPassedStudents = classroom.students.filter(student => student.cat == "Gen")
+                .filter(student => student.marks.every(mark => mark > 33))
+                .filter(student => student.marks.reduce((a, b) => a + b) / student.marks.length > 50)
+                .map(student => student.name);
 
-            return passedStudentC.map(function nameCallback(value) {
-                return value.name;
-            });
+            let obcPassedStudents = classroom.students.filter(student => student.cat == "obc")
+                .filter(student => student.marks.every(mark => mark > 33))
+                .filter(student => student.marks.reduce((a, b) => a + b) / student.marks.length > 40)
+                .map(student => student.name);
+
+            let scPassedStudents = classroom.students.filter(student => student.cat == "sc")
+                .filter(student => student.marks.every(mark => mark > 33))
+                .map(student => student.name);
+
+            let stPassedStudents = classroom.students.filter(student => student.cat == "st")
+                .filter(student => student.marks.every(mark => mark > 33))
+                .map(student => student.name);
+
+            let passedStudentsNamesWithGradeC = generalPassedStudents.concat(obcPassedStudents,
+                scPassedStudents, stPassedStudents);
+
+            return passedStudentsNamesWithGradeC;
         }
+
+        console.log("Testing getPassedStudentsNamesWithGradeC function............");
+        console.log(getPassedStudentsNamesWithGradeC());
 
         function printCitiesTopper() {
 
         }
-        console.log("Testing getPassedStudentsNamesC function............");
-        console.log(getPassedStudentsNamesC());
+
         console.log("Testing printCitiesTopper function............");
         console.log(printCitiesTopper());
     </script>
